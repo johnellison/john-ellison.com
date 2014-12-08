@@ -1,38 +1,7 @@
 doctype html
 html(lang='')
   head
-    meta(charset='utf-8')
-    meta(name='description', content='')
-    meta(name='viewport', content='width=device-width, initial-scale=1, minimal-ui')
-    title John Ellison | Storyteller &amp; UX Designer
-    // Place favicon.ico and apple-touch-icon.png in the root directory
-    // build:css styles/vendor.css
-    // bower:css
-    link(rel='stylesheet', href='../bower_components/foundation/css/foundation.css')
-    link(rel='stylesheet', href='../bower_components/foundation-icon-fonts/foundation-icons.css')
-    // endbower
-    // endbuild
-    // build:css styles/main.css
-    link(rel='stylesheet', href='styles/main.css')
-    // endbuild
-    script(src='//use.typekit.net/bzq0alk.js')
-    script.
-      try{Typekit.load();}catch(e){}
-    meta(property='og:url', content='index')
-    meta(property='og:title', content='John Ellison | Storyteller & UX Designer')
-    meta(property='og:type', content='website')
-    meta(property='fb:profile_id', content='https://www.facebook.com/je4light')
-    meta(property='og:image', content='assets/img/john-ellison-wedding-headshot-1201x630.jpg')
-    meta(property='og:image:type', content='image/jpg')
-    meta(property='og:image:width', content='1201')
-    meta(property='og:image:height', content='630')
-    meta(property='fb:admins', content='100002872817691')
-    meta(name='twitter:card', content='summary_large_image')
-    meta(name='twitter:site', content='@iamjohnellison')
-    meta(name='twitter:creator', content='@iamjohnellison')
-    meta(name='twitter:title', content='John Ellison | Storyteller & UX Designer')
-    meta(name='twitter:description', content='UX Designer John Ellison shares his story of finding himself and the purpose and his work.')
-    meta(name='twitter:image:src', content='assets/img/john-ellison-ux-designer-code-560x300.jpg')
+    include includes/head
   body
     //if lt IE 10
       p.browsehappy
@@ -44,35 +13,7 @@ html(lang='')
     
     block content 
       
-    // Google Analytics
-    script.
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-56831522-1', 'auto');
-      ga('send', 'pageview');
-
-    // Add this 
-    script(type='text/javascript', src='//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-546a58ee7521fc97', async='async')
-    script(type='text/javascript').
-      var addthis_config = {
-      data_ga_property: 'UA-56831522-1',
-      data_ga_social : true
-      };
-
-    // Wistia
-    script(src='http://fast.wistia.net/static/embed_shepherd-v1.js')
-    script.
-      wistiaEmbeds.onFind(function(video){
-      video.bind("play", function(){
-      ga('send', 'event', 'Video', 'Play', video.name());
-      return this.unbind;
-      }).bind("end", function(){
-      ga('send', 'event', 'Video', 'Complete', video.name());
-      return this.unbind;
-      });
-      });
+    include includes/scripts
 
     // build:js scripts/vendor.js
     // bower:js
@@ -84,6 +25,7 @@ html(lang='')
     script(src='../bower_components/foundation/js/foundation.js')
     // endbower
     // endbuild
+
     // build:js scripts/main.js
     script(src='scripts/main.js')
     // endbuild
