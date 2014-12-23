@@ -80,7 +80,7 @@ gulp.task('uncss', ['styles', 'html', 'extras'], function () {
     .pipe(gulp.dest('dist/styles'))
 });
 
-gulp.task('serve', ['styles'], function () {
+gulp.task('serve', ['styles', 'views'], function () {
   browserSync({
     notify: false,
     port: 9000,
