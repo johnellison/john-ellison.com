@@ -8,7 +8,19 @@
 @import "settings";
 
 // You can import only specific elements by adjusting the import below
-@import "foundation";
+@import "foundation/components/block-grid",
+        "foundation/components/buttons",
+        "foundation/components/forms",
+        "foundation/components/global",
+        "foundation/components/icon-bar",
+        "foundation/components/inline-lists",
+        "foundation/components/magellan",
+        "foundation/components/panels",
+        "foundation/components/icon-bar",
+        "foundation/components/side-nav",
+        "foundation/components/top-bar",
+        "foundation/components/type",
+        "foundation/components/visibility";
 
 //01-base
  @import "01-base/config";
@@ -39,8 +51,6 @@
 
 //debug
 // @import "01-base/debug";
-
-
 
 .browsehappy {
   margin: 0.2em 0;
