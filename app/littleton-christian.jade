@@ -1,3 +1,100 @@
 extends layout
 
+block title 
+  | Littleton Christian UX Project
+
 block content
+  article
+    .row
+      .main-article-content
+        p.lead.text-center
+          a.button(href="/") &#65513; Back to Home
+        hgroup.text-center
+          h1  Littleton Christian
+          h2.subheader UX Research &amp; Design
+          h4.subheader 
+            a(href="http://littletonchristian.com" title="view littleton christian's website live") www.littletonchristian.com
+        h3 The Story
+        p Mike Wright, the pastor of Littleton Christian Church ("LCC"), was writing sermons, ministering to his church, organizing events, meeting with his Elders and ontop of all that &mdash; managing his website.     
+
+        h3 The Problem
+
+        p His yearly subscription to their website's CMS ("Content Management System") was due in 30-days. Mike needed a solution and needed it fast. He needed someone to take control of the website so he could do his work as a pastor instead of fiddling around as a webmaster. 
+
+        p Countless times Mike heard from people that their website was hard to use, messy and confusing. Worst of all, it didn't represent Mike's church the way it deserved.   
+
+        h3 The Goal
+
+        p After reading through Mike's list of objectives, we landed on a very clear description of the project: Redesign LCC's website such that it was easy to use and represented LCC's beliefs as well as its body. 
+
+        p The project would involve migrating their website from their existing CMS to a more managable and affordable solution. They had hundreds of sermons as well as dozens of blog posts, pages and images.
+
+        p They needed a platform that would allow them to add new content easily, as well as make updates to existing content. They needed a website that would show up on search results and lead the user to the front door of the church.
+
+        h3 My Process
+
+        h4.subheader Step 1. Brainstorm
+
+        p Having just finished a 
+          a(href="/thengine.html") UX research &amp; design project with Thengine
+          | , I knew the importance of letting users and their needs drive the design process. In my meetings with Mike, we determined the core user segments for the website. They didn't have any analytics in place so a lot of this was educated guessing, but if anybody knew the audience of his church, Mike did.
+
+        p Once we had a strong sense of our core user segments, I began to brainstorm possible user scenarios on a whiteboard. UX shares a lot in common with storytelling. For example, the user (or character) wants something. The experience (or story) is about their journey to get what they want and the obstacles that they must overcome.
+
+        p I started looking at the different flows for each user and postulating their context as well as their expectation. I knew this was just groundwork for hypotheses that would need to be tested by real users. But in order to test your hypothesis you must first define it... 
+
+        img.m-sketch(src="images/lcc-user-stories.jpg" alt="UX brainstorming user stories for Littleton Christian Church's website")
+
+        h4.subheader Step 2. Research
+
+        p With Mike's permission, I sent out a message to the entire church body asking to speak with anyone who had used the website. I heard back from about five people and scheduled time for an interview over a cup of coffee.
+
+        p I sat with each person and went through an informal interview and audit of the existing site. I wanted to know what brought them to the website, and once they were on the website what action they took.
+
+        p I watched the users as they tried to accomplish various tasks: find a specific piece information, access a specific sermon, find information about the church. These informal usability sessions affirmed everything Mike said about the website. It was difficult to use and nearly impossible to navigate.
+
+        p Some of the gems that I uncovered from these informal user interviews were the pieces of valuable content that persuaded people to visit the church. Mike had written a lot of content for the website, and there were some specific pieces of content that stood out above the rest. This was an invaluable discovery because those pieces of content could have easily been trimmed or re-organized in the process of migration and simplification.
+
+        p Also, I learned a lot about the importance of navigation design and information architecture. The way that content is grouped and accessed is fundamental to the experience. Categorizing content by topic has a different impact than categorizing by date. Giving the user a choice to access content in different contexts is crucial to a positive well-rounded experience for the entire user audience.
+
+        p One fascinating response from a user interview was that it was difficult to find a specific sermon because the sermon's were given names on the website that were never declared during the sermon itself. The user said that if the sermon notes which were passed out to everyone on Sunday mornings were included in the sermon post on the website they would be able to recognize sermons much more easily. They also said they wanted the ability to search a term or phrase on the website and find sermons that had those keywords.
+
+        h4.subheader Step 3. Design &amp; CMS Integration
+
+        p The budget of the project limited the scope significantly, which made for a fun design and CMS integration process. I started building websites in Wordpress using various themes and so it was the platform I was most comfortable with, but I knew the involvement of MySql databases, Wordpress core and plugins meant a higher starting cost.
+
+        p I was beginning to hear a lot about SquareSpace at the time. This was when they first launched their TV ads for SquareSpace 6 and started doing a lot of work on social networks and guest blogs.
+
+        p One of Mike's friends is a principal at a web development firm and highly recommended SquareSpace. After giving it a quick try, we decided that SquareSpace would be the best option for LCC and its staff.
+
+        p We chose a template that featured simple and obvious navigation, along with consistent pagination.
+
+        h4.subheader Step 4. Information Architecture
+
+        p After doing some card-sorting activities, I arrived on a relatively simple Information Architecture (IA) for the sitemap. 
+
+        img(src="images/lcc-sitemap.jpg" alt="littleton christian sitemap designed by John Ellison")
+
+        h4.subheader Step 5. Putting It All Together
+
+        p I had a clear vision in mind about how the sub-navigation would work for the larger content pieces on the website and SquareSpace's drag-and-drop interface allowed me to do a lot of designing in the browser. I didn't do much sketching because I wanted to use very basic single column layouts on most the pages.
+
+        p Finding a good solution for the Sermon pages took some time. Being limited by the functionality of a CMS without plugins and widgets (or enough budget for custom code) was a challenge. The navigation of the Sermon pages took a few iterations. It was great to have easy and direct access to users for prototyping and iteration.
+
+        p After only a few days of desiging in the browser, the website was all put together and ready for launch. We didn't have to worry about migrating databases, running Sql queries to change table prefixes, or modifying .htaccess files (oh Wordpress). Thanks to SquareSpace, the whole publishing process was a breeze.
+
+        h3 The Outcome
+
+        p The launch of the website was incredibly well received by the users I'd interviewed as well as by Mike and his staff.  The project concluded with usabilty tests and determined that LCC finally had a website that was easy to use and represented their church well.
+
+        img.m-sketch(src='images/littleton-chrisitan-leadership-imac.jpg' alt='littleton christian church website on an imac')
+        img.m-sketch(src='images/littleton-christian-about-page-ipad.jpg' alt='littleton christian church about page on an iPad')
+        img.m-sketch(src='images/littleton-christian-leadership-macbook.jpg' alt='littleton christian church website on a macbook ')
+        img.m-sketch(src='images/littleton-christian-website-home-ipad.jpg' alt='littleton christian church website about page on an iPad')
+        img.m-sketch(src='images/littleton-christian-website-home-iphone.jpg' alt='littleton christian church website on an iPhone')
+        img.m-sketch(src='images/littleton-christian-worship-macbook.jpg' alt='littleton christian church worship page on an macbook')
+
+        h3 Feedback
+        p  Feedback is a huge part of any design process, and I would be honored to get your input about this project and my process.
+
+

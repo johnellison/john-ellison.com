@@ -6,6 +6,11 @@ var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
+gulp.task('pdf', function () {
+  return gulp.src('app/pdf/*')
+    .pipe(gulp.dest('dist/pdf'));
+})
+
 gulp.task('views', function () {
   return gulp.src(['app/*.jade', '!app/layout.jade'])
       .pipe($.jade({pretty: true}))
@@ -54,7 +59,6 @@ gulp.task('images', function () {
 });
 
 gulp.task('fonts', function () {
-  console.log(require('main-bower-files')().concat('app/fonts/**/*'));
   return gulp.src(require('main-bower-files')().concat('app/fonts/**/*'))
     .pipe($.filter('**/*.{eot,svg,ttf,woff}'))
     .pipe($.flatten())
