@@ -8,13 +8,18 @@
 
 //Mixins
 
+
 @mixin linear-gradient($fromColor, $toColor) {
   background-color: $toColor; /* Fallback Color */
   background-image: linear-gradient(90deg, $fromColor, $toColor);
   filter: progid:DXImageTransform.Microsoft.gradient(GradientType=90,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
 }
 
-@mixin global-hover() {
+@mixin global-transition {
+  transition: all .2s ease-in-out;
+}
+
+@mixin global-hover {
   transition: all .2s ease-in-out;
   &:hover {
       transform: scale(1.009);
