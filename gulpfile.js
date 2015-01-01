@@ -100,7 +100,7 @@ gulp.task('serve', ['styles', 'views'], function () {
   gulp.watch(['.tmp/*.html'], reload);
   gulp.watch(['.tmp/styles/**/*.css'], reload);
   gulp.watch(['app/scripts/**/*.js'], ['jshint']);
-  gulp.watch(['app/*.jade', 'app/includes/*.jade'], ['views']);
+  gulp.watch(['app/*.jade', 'app/views/**/*.jade'], ['views']);
   gulp.watch(['app/images/**/*'], reload);
 
   gulp.watch(['app/styles/**/*.scss'], ['styles', reload]);
