@@ -277,7 +277,7 @@
   @media #{$medium-up} {
     @include grid-column($columns: 8, $center: true);
   }
-  padding: 2rem 1rem 4rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
   border-radius: $global-radius;
   background-color: $blue-grey;
   text-align: center;

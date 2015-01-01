@@ -1,3 +1,11 @@
+// applies to browsehappy notification if users are less than specified browser support
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
 //Mixins
 
 @mixin linear-gradient($fromColor, $toColor) {

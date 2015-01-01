@@ -1,13 +1,20 @@
 .m-portfolio-list {
   @include block-grid(1);
+  display: table;
+  margin: 0 auto;
+  text-align: center;
 
   @media #{$medium-up} {
     @include block-grid(3);
   }
-  li {
-    
+
+  .m-portfolio-list-item {
+
   }
 
-
+  .m-portfolio-list-thumbnail {
+    @include global-hover();
+    background: white;
+  }
 }
 /* TODO: fix odd padding that expands beyond container. */
