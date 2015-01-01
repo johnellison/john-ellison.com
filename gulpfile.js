@@ -12,7 +12,7 @@ gulp.task('pdf', function () {
 })
 
 gulp.task('views', function () {
-  return gulp.src(['app/*.jade', '!app/layout.jade'])
+  return gulp.src(['app/*.jade', '!app/layout.jade', '!app/portfolio-layout.jade'])
       .pipe($.jade({pretty: true}))
       .pipe(gulp.dest('.tmp'));
 });
