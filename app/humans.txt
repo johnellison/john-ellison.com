@@ -1,0 +1,7 @@
+Hand-crafted by John Ellison
+
+Contact: john [at] john-ellison.com
+Twitter: @iamjohnellison
+From: Denver, CO
+
+Software: Zurb Foundation 5, jQuery, Git, Sublime Text 3

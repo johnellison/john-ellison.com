@@ -8,13 +8,10 @@
     @include block-grid(3);
   }
 
-  .m-portfolio-list-item {
-
-  }
-
   .m-portfolio-list-thumbnail {
     @include global-hover();
     background: white;
+    border-radius: $global-radius;
   }
 }
 /* TODO: fix odd padding that expands beyond container. */

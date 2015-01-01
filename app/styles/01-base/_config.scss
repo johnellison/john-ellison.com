@@ -23,7 +23,7 @@
   transition: all .2s ease-in-out;
   &:hover {
       transform: scale(1.009);
-      box-shadow: 2px 2px 7px $body-font-color;
+      box-shadow: 2px 2px 7px $blue-grey-shade;
     }
 }
 
@@ -38,6 +38,7 @@
 
 .button {
   @include button($radius: $global-radius);
+  @include global-hover;
 }
   
 p {

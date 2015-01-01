@@ -372,15 +372,15 @@ block content
             i.fi-mail
             |  Contact
           |           
-          h3.subheader Want to get in touch?
-    |   
+          h3.subheader
+            a(href="mailto:john@john-ellison.com?subject=Saw%20Your%20Website" data-event="contact-button") john@john-ellison.com
     .row
       .contact-form
-        form(method='post', action='//forms.brace.io/john@john-ellison.com')
+        form(method='post', action='//formspree.io/john@john-ellison.com')
           input(type='hidden', name='_subject', value='Contact Form on John-Ellison.com')
           |  
           |       
-          input(type='hidden', name='_next', value='//www.john-ellison.com/thanks')
+          input(type='hidden', name='_next', value='//www.john-ellison.com/thanks.html')
           |         
           p.lead
             | Hey John,

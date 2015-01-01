@@ -353,6 +353,7 @@
 
   img {
     margin-bottom: .8rem;
+    border-radius: $global-radius;
   }
 }
 
@@ -379,7 +380,6 @@
   @media #{$medium-up} {
     @include grid-column($columns: 8, $center: true);
     //margin-top: 5.7rem;
-    @include global-hover;
   }
 
   h3 {
@@ -430,6 +430,7 @@
       @include button;
       border-radius: $global-radius;
       float: right;
+      @include global-hover;
       @media #{$small-only} {
         margin-right: 1rem;
       }
@@ -450,7 +451,10 @@ footer {
 .contact-info {
   @include grid-column(12);
   @media #{$medium-up} {
-    @include grid-column(4);
+    @include grid-column($columns: 6, $center: true);
+  }
+  @media #{$large-up} {
+    @include grid-column($columns: 4, $center: true);
   }
   text-align: center;
   h3, h4 {
@@ -477,15 +481,19 @@ footer {
 .social-list {
   list-style: none;
   text-align: center;
-
+  margin-bottom: 1rem;
   li {
     display: inline-block;
+    height: 2.5rem;
     // float: left;
+    margin-right: .5rem;
   }
+}
 
-  .fi-mail {
-    width: 48px;
-    height: 48px;
+.social-list-icon {
+  font-size: 2.5rem;
+  &:hover {
+    color: darken(white, 20%);
   }
 }
 
@@ -495,15 +503,23 @@ footer {
   a, p {
     color: white;
   }
+  a:hover {
+    color: darken(white, 20%);
+  }
 
 }
 
 .footer-bottom {
-  padding: 2rem;
+  padding: 2rem 0rem 1rem 0rem;
   background-color: $smoke;
   li {
     font-size: .8rem;
   }
+}
+
+.footer-made-by {
+  background-color: $smoke;
+  padding-bottom: 1rem;
 }
 
 .footer-copyright {
@@ -522,13 +538,10 @@ footer {
 
 //Thanks 
 
-.thank-you {
-  padding: 6rem;
-}
 .thank-you-content {
   @include grid-column(12);
   text-align: center;
-
+  padding: 6rem;
   h4 {
     color: #46925d;
   }
