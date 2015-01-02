@@ -255,21 +255,22 @@
    hgroup {
     text-align: center;
    }
+   margin-bottom: 2rem;
  }
 
- .purpose-paragraph {
-  @include grid-column(12);
-  @media #{$medium-up} {
-    @include grid-column (7);
-  }
- }
+ // .purpose-paragraph {
+ //  @include grid-column(12);
+ //  @media #{$medium-up} {
+ //    @include grid-column (7);
+ //  }
+ // }
 
-  .freelance-paragraph {
-  @include grid-column(12);
-  @media #{$medium-up} {
-    @include grid-column (5);
-  }
- }
+ //  .freelance-paragraph {
+ //  @include grid-column(12);
+ //  @media #{$medium-up} {
+ //    @include grid-column (5);
+ //  }
+ // }
 
  .get-in-touch {
   @include grid-column(12);
