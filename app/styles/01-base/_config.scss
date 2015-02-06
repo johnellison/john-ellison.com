@@ -36,9 +36,10 @@
   color: $blue-tint;
 }
 
-.button {
+.button, button {
   @include button($radius: $global-radius);
   @include global-hover;
+  border: 1px solid $primary-color;
 }
   
 p {

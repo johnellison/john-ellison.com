@@ -119,11 +119,11 @@ block content
           h5 Cadmon Whitty
         .medium-9.columns
           p.lead
-            | &quot;As a direct result of 
+            | &ldquo;As a direct result of 
             span.lead-color John&apos;s expertise
             | , I am now a top blogger, have been approached by a publisher to write a book, have 
             span.accent-color more leads than ever
-            | ... and I have a feeling this is just the beginning.&quot;
+            | ... and I have a feeling this is just the beginning.&rdquo;
     .row
       .portfolio-items
         hgroup
@@ -207,11 +207,11 @@ block content
         |       
         .medium-9.medium-pull-3.columns
           p.lead
-            | &quot;
+            | &ldquo;
             span.accent-color John is at the top of my list
-            |  of &ldquo;go to&rdquo; people because of his experience, knowledge, and most importantly&mdash;his 
+            |  of &lsquo;go-to&rsquo; people because of his experience, knowledge, and most importantly&mdash;his 
             span.lead-color superior listening skills
-            | . Prepare to be impressed, John will exceed your expectations.&quot;
+            | . Prepare to be impressed, John will exceed your expectations.&rdquo;
   // //Portfolio
   section#services.content-section(data-magellan-destination='services', name='services')
     .row
@@ -260,73 +260,79 @@ block content
         |        
         a.button.secondary(href='mailto:john@john-ellison.com?subject=Your%20Teaching%20Services', data-event='service-contact-button') Learn More
   |   
-  section#process.content-section(data-magellan-destination='process')
-    .row
-      .process-content
+  section#consulting.content-section(data-magellan-destination='process')
+    a(href='http://thengine.co' target='_blank')
+      .row.testimonial
+        // TODO: insert retina size images
+        .medium-3.medium-push-9.columns.text-center
+            img(src='images/michael-catlin-headshot.jpg')
+            |           
+            h5 Michael Catlin
+        |       
+        .medium-9.medium-pull-3.columns.text-center
+          p.lead
+            | &ldquo;John 
+            span.lead-color understood our vision
+            |  and crafted it into reality. He was the guy who took charge and made it all happen. From 
+            span.accent-color business strategy to user needs
+            | , he was a rockstar.&rdquo;
+
+    .consulting-wrapper
+      .consulting-content
         h2
           i.fi-pencil
-          |  Process
-        |       
-        h3.subheader Storytelling &amp; UX Design
-        |       
-        p
-          | At the core of every project is a story. It is often several stories intertwined.
-        |       
-        |       
-        |       
-        p
-          span
-            | UX Design is about understanding each character in the story and crafting a design that empowers them to do what they love well.
-        |       
-        |       
-        p
-          | Unlike traditional web design which is a linear process with one large deliverable, my workflow represents a more adaptive methodology. Some call it 
-          a(href='http://www.amazon.com/Lean-UX-Applying-Principles-Experience/dp/1449311652') lean ux
-          | , and others call it 
-          a(href='http://en.wikipedia.org/wiki/Iterative_design') iterative design
-          | .
-        |       
-        p
-          | My design decisions are driven by data and based upon a solid foundation of universal design principles.
-        |       
-        .view-more
-          a.view-more-link(href='#')
-            | &mdash; Read 
-            span.view-toggle More
-            |  &mdash;
-        |       
-        .text-concealed
-          p
-            | Behind my continually improving design workflow is a dedication to quality that resembles craftsmanship of old.
-          |  
-          |         
-          |         
-          p
-            span
-              | Writing code is like writing poetry. There is always a cleaner and more concise way to express an idea.
-      |     
-      .process-video
-        img(data-interchange='[images/john-ellison-ux-design-process.jpg, (default)], [images/john-ellison-ux-design-process@2x.jpg, (retina)]')
+          |  Consulting
+        img(data-interchange='[images/john-ellison-ux-design-process.jpg, (default)], [images/john-ellison-ux-design-process@2x.jpg, (retina)]', class='service-header-image')
         noscript
           img(src='images/john-ellison-ux-design-process.jpg', alt='my user experience design process')
-        p
-          | Video coming soon - directed and produced by 
-          a(href='http://www.imdb.com/name/nm4896227/') Blake Talley
-  |   
-  section#clients.content-section(data-magellan-destination='clients')
-    .row
-      .small-12.columns.text-center
+        h4 Background
+        p When I built my first eCommerce website back in 2007, I started to glimpse the great importance of crafting effective experiences on the web. Countless times I would have an idea for a way to grow my business online and run into complications when I tried to implement them. Everything was much more difficult then it seemed. I was throwing time and money at my online business without a fundamental understanding of a digital marketing strategy let alone a website's role in the business.
+        p The lessons I learned in the failures of multiple web projects were building into a skillset that had great value to other Entrepreneurs. I realized there were other entrepreneurs who had brilliant ideas, but had trouble implementing them just like I did.
+        h4 Work
+        p My consulting work involves turning ideas into reality. Using the tools of the web, I help my clients create digital strategies and implement those strategies into a website or a web application.
+        p I've learned that the best way to approach a project is through a series of iterations. Once a project is launched, it is then tested to improve each key performance indicator identified in the project requirements. 
+        p I often work under the principles of &ldquo;Fail early and fail often&rdquo; and &ldquo;If you can't measure it, you cannot improve it&rdquo;.
+        h4 Expertise
+        p The following are a list of the services I consider in my domain of expertise as a User Experience Designer:
+        ul 
+          li Brand strategy
+          li Interaction design
+          li Visual design
+          li Interface design
+          li Mobile-first web development
+        h4 Competencies
+        p Given my range of experience as an Entrepreneur on the web, I've acquired a long list of competencies which I can provide as is appropriate:
+        ul 
+          li Wordpress 
+          li Squarespace 
+          li Digital marketing strategy
+          li Google Analytics configuration
+          li User research
+          li User testing
+          li Interaction design
+
+    a(href='http://roperwoodturning.com')
+      .row.testimonial
+        // TODO: insert retina size images
+        .medium-3.columns.text-center
+          img(src='images/roper-headshot.png')
+          h5 Michael Roper
+        .medium-9.columns
+          p.lead
+            | &ldquo;If it wasn&apos;t for the 
+            span.lead-color amazing website
+            |  John built me, I wouldn&apos;t have scored these video gigs or a bunch of the jobs I&apos;ve gotten lately. John doesn&apos;t just build you a website, he 
+            span.accent-color builds you a business online
+            | .&rdquo;
+
+  section#coaching.content-section
+    .coaching-wrapper
+      .coaching-content
         h2
           i.fi-crown
-          |  Clients
-        |       
-        h3.subheader Hear what my clients are saying
-        |       
-        p.lead
-          | I am passionate about creating deep, strategic partnerships with my clients. We share a vision to grow their business and a mission to make the world a better place.
-      |     
-      br
-    |   
+          |  Coaching
+        img(src="http://placehold.it/800x450", alt="coaching image" class='service-header-image')
+        p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, pariatur magni est deleniti nisi, ut consequuntur nihil omnis dolor eveniet sapiente dolorum aperiam quaerat animi unde fuga similique, rem laudantium.
     //- .row.testimonial
     //-   // TODO: insert retina size images
     //-   .medium-3.columns.text-center
@@ -357,34 +363,20 @@ block content
     //-       |  of &ldquo;go to&rdquo; people because of his experience, knowledge, and most importantly&mdash;his 
     //-       span.lead-color superior listening skills
     //-       | . Prepare to be impressed, John will exceed your expectations.&quot;
-    a(href='http://roperwoodturning.com')
-    .row.testimonial
-      // TODO: insert retina size images
-      .medium-3.columns.text-center
-        img(src='images/roper-headshot.png')
-        h5 Michael Roper
-      .medium-9.columns
-        p.lead
-          | &quot;If it wasn&apos;t for the 
-          span.lead-color amazing website
-          |  John built me, I wouldn&apos;t have scored these video gigs or a bunch of the jobs I&apos;ve gotten lately. John doesn&apos;t just build you a website, he 
-          span.accent-color builds you a business online
-          | .&quot;
-    .row.testimonial
-      // TODO: insert retina size images
-      .medium-3.medium-push-9.columns.text-center
-        a(href='http://thengine.co')
-          img(src='images/michael-catlin-headshot.jpg')
-          |           
-          h5 Michael Catlin
-      |       
-      .medium-9.medium-pull-3.columns.text-center
-        p.lead
-          | &quot;John 
-          span.lead-color understood our vision
-          |  and crafted it into reality. He was the guy who took charge and made it all happen. From 
-          span.accent-color business strategy to user needs
-          | , he was a rockstar.&quot;
+    //- a(href='http://roperwoodturning.com')
+    //-   .row.testimonial
+    //-     // TODO: insert retina size images
+    //-     .medium-3.columns.text-center
+    //-       img(src='images/roper-headshot.png')
+    //-       h5 Michael Roper
+    //-     .medium-9.columns
+    //-       p.lead
+    //-         | &ldquo;If it wasn&apos;t for the 
+    //-         span.lead-color amazing website
+    //-         |  John built me, I wouldn&apos;t have scored these video gigs or a bunch of the jobs I&apos;ve gotten lately. John doesn&apos;t just build you a website, he 
+    //-         span.accent-color builds you a business online
+    //-         | .&rdquo;
+    
   // Contact
   section#contact.content-section(data-magellan-destination='contact')
     .row

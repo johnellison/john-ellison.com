@@ -349,13 +349,32 @@
 
 
 
-// Process
+// Consulting, Coaching, Speaking
 
-.process-content, .process-video {
+#coaching {
+  background-color: $silver;
+}
+
+.consulting-wrapper, .coaching-wrapper {
+  @include grid-row();
+  margin-bottom: 2rem;
+}
+
+.consulting-content, .coaching-content {
+  h2 {
+    text-align: center;
+  }
   @include grid-column(12);
   @media #{$medium-up} {
-    @include grid-column(6)
+    @include grid-column($columns: 10, $center: true);
   }
+  @media #{$large-up} {
+  @include grid-column($columns: 8, $center: true);
+  }
+}
+
+.service-header-image {
+  margin-bottom: 1rem;
 }
 
 .process-video {
