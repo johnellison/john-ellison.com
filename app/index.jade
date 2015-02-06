@@ -110,6 +110,20 @@ block content
   // /My Story
   // Portfolio
   section#portfolio.content-section(data-magellan-destination='portfolio', name='portfolio')
+    a(href='http://pajaconstruction.com' target='_blank' title='see the work I did for Cadmon')
+      .row.testimonial
+        // TODO: insert retina size images
+        .medium-3.columns.text-center
+          img(src='images/cadmon-whitty-headshot.png')
+          |           
+          h5 Cadmon Whitty
+        .medium-9.columns
+          p.lead
+            | &quot;As a direct result of 
+            span.lead-color John&apos;s expertise
+            | , I am now a top blogger, have been approached by a publisher to write a book, have 
+            span.accent-color more leads than ever
+            | ... and I have a feeling this is just the beginning.&quot;
     .row
       .portfolio-items
         hgroup
@@ -119,17 +133,20 @@ block content
           h3.subheader Some of my most recent projects
         ul.m-portfolio-list.small-centered
           li.m-portfolio-list-item
-            img.m-portfolio-list-thumbnail(data-interchange='[images/nomster.jpg, (default)], [images/nomster@2x.jpg, (retina)]' alt='Nomster App – Ruby on Rails development')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
+            a(href="http://nomster-john-ellison.herokuapp.com" target='_blank' title='view the nomster app live')
+              img.m-portfolio-list-thumbnail(data-interchange='[images/nomster.jpg, (default)], [images/nomster@2x.jpg, (retina)]' alt='Nomster App – Ruby on Rails development')
+              noscript
+                img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
           li.m-portfolio-list-item
-            img.m-portfolio-list-thumbnail(data-interchange='[images/cloudegy.jpg, (default)], [images/cloudegy@2x.jpg, (retina)]' alt='Cloudegy Denver – Digital Product Strategy Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
+            a(href="http://cloudegydenver.com" target='_blank' title='live cloudegy website')
+              img.m-portfolio-list-thumbnail(data-interchange='[images/cloudegy.jpg, (default)], [images/cloudegy@2x.jpg, (retina)]' alt='Cloudegy Denver – Digital Product Strategy Project')
+              noscript
+                img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
           li.m-portfolio-list-item
-            img.m-portfolio-list-thumbnail(data-interchange='[images/jackie-stone.jpg, (default)], [images/jackie-stone@2x.jpg, (retina)]' alt='Jackie Stone – UX Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
+            a(href="http://jackiestonemusic.com" target='_blank' title='view jackie stone music website live')
+              img.m-portfolio-list-thumbnail(data-interchange='[images/jackie-stone.jpg, (default)], [images/jackie-stone@2x.jpg, (retina)]' alt='Jackie Stone – UX Design Project')
+              noscript
+                img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
           li.m-portfolio-list-item
             img.m-portfolio-list-thumbnail(data-interchange='[images/michael-mcdaniel-music.jpg, (default)], [images/michael-mcdaniel-music@2x.jpg, (retina)]' alt='Michael McDaniel – UX Design Project')
             noscript
@@ -148,13 +165,13 @@ block content
                 img.m-portfolio-list-thumbnail(src='images/littleton-christian.jpg', alt='Littleton Christian – UX Research & Design Project')
 
           li.m-portfolio-list-item
-            a(href="http://roperwoodturning.com" title="link to roperwoodturning.com")
+            a(href="http://roperwoodturning.com" title="link to roperwoodturning.com" target='_blank')
               img.m-portfolio-list-thumbnail(data-interchange='[images/roper-woodturning.jpg, (default)], [images/roper-woodturning@2x.jpg, (retina)]', alt='Michael Roper - Website Design Project')
               noscript
                 img.m-portfolio-list-thumbnail(src='images/roper-woodturning.jpg' alt='Michael Roper - Website Design Project')
 
           li.m-portfolio-list-item
-            a(href="http://pajaconstruction.com" title="link to pajaconstruction.com")
+            a(href="http://pajaconstruction.com" title="link to pajaconstruction.com" target='_blank')
               img.m-portfolio-list-thumbnail(data-interchange='[images/paja-construction.jpg, (default)], [images/paja-construction@2x.jpg, (retina)]', alt='Paja Construction – Website Design Project')
               noscript
                 img.m-portfolio-list-thumbnail(src='images/paja-construction.jpg', alt='Paja Construction – Website Design Project')
@@ -181,6 +198,20 @@ block content
               fjs.parentNode.insertBefore(js, fjs);
               return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
               }(document, "script", "twitter-wjs"));
+    a(href='http://carcmedia.com')
+      .row.testimonial
+        .medium-3.medium-push-9.columns.text-center
+          img(src='images/cory-arcarese-headshot.png')
+          |           
+          h5 Cory Arcarese
+        |       
+        .medium-9.medium-pull-3.columns
+          p.lead
+            | &quot;
+            span.accent-color John is at the top of my list
+            |  of &ldquo;go to&rdquo; people because of his experience, knowledge, and most importantly&mdash;his 
+            span.lead-color superior listening skills
+            | . Prepare to be impressed, John will exceed your expectations.&quot;
   // //Portfolio
   section#services.content-section(data-magellan-destination='services', name='services')
     .row
@@ -296,45 +327,42 @@ block content
       |     
       br
     |   
+    //- .row.testimonial
+    //-   // TODO: insert retina size images
+    //-   .medium-3.columns.text-center
+    //-     a(href='http://pajaconstruction.com')
+    //-       img(src='images/cadmon-whitty-headshot.png')
+    //-       |           
+    //-       h5 Cadmon Whitty
+    //-   |       
+    //-   .medium-9.columns
+    //-     p.lead
+    //-       | &quot;As a direct result of 
+    //-       span.lead-color John&apos;s expertise
+    //-       | , I am now a top blogger, have been approached by a publisher to write a book, have 
+    //-       span.accent-color more leads than ever
+    //-       | ... and I have a feeling this is just the beginning.&quot;
+    //- |   
+    //- .row.testimonial
+    //-   .medium-3.medium-push-9.columns.text-center
+    //-     a(href='http://carcmedia.com')
+    //-       img(src='images/cory-arcarese-headshot.png')
+    //-       |           
+    //-       h5 Cory Arcarese
+    //-   |       
+    //-   .medium-9.medium-pull-3.columns
+    //-     p.lead
+    //-       | &quot;
+    //-       span.accent-color John is at the top of my list
+    //-       |  of &ldquo;go to&rdquo; people because of his experience, knowledge, and most importantly&mdash;his 
+    //-       span.lead-color superior listening skills
+    //-       | . Prepare to be impressed, John will exceed your expectations.&quot;
+    a(href='http://roperwoodturning.com')
     .row.testimonial
       // TODO: insert retina size images
       .medium-3.columns.text-center
-        a(href='http://pajaconstruction.com')
-          img(src='images/cadmon-whitty-headshot.png')
-          |           
-          h5 Cadmon Whitty
-      |       
-      .medium-9.columns
-        p.lead
-          | &quot;As a direct result of 
-          span.lead-color John&apos;s expertise
-          | , I am now a top blogger, have been approached by a publisher to write a book, have 
-          span.accent-color more leads than ever
-          | ... and I have a feeling this is just the beginning.&quot;
-    |   
-    .row.testimonial
-      .medium-3.medium-push-9.columns.text-center
-        a(href='http://carcmedia.com')
-          img(src='images/cory-arcarese-headshot.png')
-          |           
-          h5 Cory Arcarese
-      |       
-      .medium-9.medium-pull-3.columns
-        p.lead
-          | &quot;
-          span.accent-color John is at the top of my list
-          |  of &ldquo;go to&rdquo; people because of his experience, knowledge, and most importantly&mdash;his 
-          span.lead-color superior listening skills
-          | . Prepare to be impressed, John will exceed your expectations.&quot;
-    |   
-    .row.testimonial
-      // TODO: insert retina size images
-      .medium-3.columns.text-center
-        a(href='http://roperwoodturning.com')
-          img(src='images/roper-headshot.png')
-          |           
-          h5 Michael Roper
-      |       
+        img(src='images/roper-headshot.png')
+        h5 Michael Roper
       .medium-9.columns
         p.lead
           | &quot;If it wasn&apos;t for the 
@@ -342,7 +370,6 @@ block content
           |  John built me, I wouldn&apos;t have scored these video gigs or a bunch of the jobs I&apos;ve gotten lately. John doesn&apos;t just build you a website, he 
           span.accent-color builds you a business online
           | .&quot;
-    |   
     .row.testimonial
       // TODO: insert retina size images
       .medium-3.medium-push-9.columns.text-center

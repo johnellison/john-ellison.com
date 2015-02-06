@@ -1,13 +1,22 @@
 .testimonial {
   background-color: white;
   padding: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 3rem;
   border-radius: $global-radius;
+  @include global-hover();
+
+  p.lead {
+    margin-top: 2rem;
+    color: $body-font-color;
+    
+  }
+
+  a {
+  }
 
   img {
     margin-top: .5rem;
     border-radius: 50%;
-    @include global-hover();
   }
 
   h4 {
