@@ -44,35 +44,50 @@
    }
  }
 
- h1.welcome {
-  font-weight: 900;
-  color: $body-font-color;
-  line-height: 1;
-  text-align: center;
-  text-shadow: 3px 5px 0 white;
-
-  @media #{$small-up} {
-    font-size: 3rem;
-    margin: 2rem 0;
-  }  
-
+.welcome {
+  margin: 2rem 0;
   @media #{$medium-up} {
-    font-size: 5.3rem;
-    margin: 3rem 0;
     transform: rotate(-5deg);
-  }  
-  
+    margin: 3rem 0;
+  }
   @media #{$large-up} {
-    font-size: 6.5rem;
     margin: 6rem 0 2rem 0;
   }  
-
-@media #{$xlarge-up} {
+  @media #{$xlarge-up} {
     margin: 9rem 0 4rem 0;
   } 
-  
 
- }
+  h1 {
+    font-weight: 900;
+    color: white;
+    line-height: 1;
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 0;
+
+    @media #{$medium-up} {
+      font-size: 5.3rem;
+      text-shadow: 3px 5px 0 white;
+      color: $body-font-color;
+    }  
+    
+    @media #{$large-up} {
+      font-size: 6.5rem;
+    }  
+  }
+
+  h2 {
+    color: white;
+    text-align: center;
+    font-family: $font-family-sans-serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 0;
+    @media #{$medium-up} {
+      font-size: 2.5rem;
+    }
+  }
+}
 
  .elaborate, .view-toggle  {
   display: inline !important;

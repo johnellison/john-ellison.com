@@ -3,14 +3,12 @@ extends layout
 block content
   section#top.top(data-magellan-destination='top', name='top')
     .row
-      h1.welcome.hide-for-small
-        | What's  
-        span.accent-color
-          | Your
-        |  Story?
+      hgroup.welcome
+        h1 John Ellison
+        h2.subheader Storyteller &amp; UX Designer
     .row
       .callout
-        p.lead My name is John Ellison. I'm a freelance UX Designer who loves to bring great stories into the light. Through hand-crafting responsive websites, I help build successful businesses online.
+        p.lead Hey, my name is John. I'm a freelance UX Designer who loves to bring great stories into the light. Through crafting and executing digital strategies, I help build successful businesses online.
     a(href='#journey-passion-video')
       .arrow.bounce
   .icon-bar.six-up.label-right.show-for-large-up(role='navigation', data-magellan-expedition='fixed')
@@ -120,6 +118,18 @@ block content
             |  Portfolio
           h3.subheader Some of my most recent projects
         ul.m-portfolio-list.small-centered
+          li.m-portfolio-list-item
+            img.m-portfolio-list-thumbnail(data-interchange='[images/nomster.jpg, (default)], [images/nomster@2x.jpg, (retina)]' alt='Nomster App – Ruby on Rails development')
+            noscript
+              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
+          li.m-portfolio-list-item
+            img.m-portfolio-list-thumbnail(data-interchange='[images/cloudegy.jpg, (default)], [images/cloudegy@2x.jpg, (retina)]' alt='Cloudegy Denver – Digital Product Strategy Project')
+            noscript
+              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
+          li.m-portfolio-list-item
+            img.m-portfolio-list-thumbnail(data-interchange='[images/jackie-stone.jpg, (default)], [images/jackie-stone@2x.jpg, (retina)]' alt='Jackie Stone – UX Design Project')
+            noscript
+              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
           li.m-portfolio-list-item
             img.m-portfolio-list-thumbnail(data-interchange='[images/michael-mcdaniel-music.jpg, (default)], [images/michael-mcdaniel-music@2x.jpg, (retina)]' alt='Michael McDaniel – UX Design Project')
             noscript
