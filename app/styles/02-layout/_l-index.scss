@@ -326,12 +326,6 @@
   text-align: center;
 }
 
-
-
-#clients {
-  background-color: $smoke;
-}
-
 #services {
   @media #{$small-up} {
     background-image: url('/images/john-ellison-ux-wall-gradient-768x510.jpg');
@@ -363,18 +357,18 @@
 
 
 
-// Consulting, Coaching, Speaking
+// UX-Design, Web Development, Digital Stratgegy
 
-#coaching {
-  background-color: $silver;
+#web-development {
+  background-color: $smoke;
 }
 
-.consulting-wrapper, .coaching-wrapper {
+.service-detail-wrapper {
   @include grid-row();
   margin-bottom: 2rem;
 }
 
-.consulting-content, .coaching-content {
+.service-detail-content {
   h2 {
     text-align: center;
   }
@@ -404,6 +398,10 @@
 }
 
 // Contact
+
+#contact {
+  background-color: $smoke;
+}
 
 .contact-content {
   @include grid-column(12);
