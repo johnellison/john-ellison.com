@@ -1,0 +1,38 @@
+section#contact.content-section(data-magellan-destination='contact')
+  .row
+    .contact-content
+      hgroup.text-center
+        h2
+          i.fi-mail
+          |  Contact
+        h3.subheader
+          a(href="mailto:john@john-ellison.com?subject=Saw%20Your%20Website" data-event="contact-button") john@john-ellison.com
+  .row
+    .contact-form
+      form(method='post', action='//formspree.io/john@john-ellison.com')
+        input(type='hidden', name='_subject', value='Contact Form on John-Ellison.com')
+        input(type='hidden', name='_next', value='//www.john-ellison.com/thanks.html')
+        p.lead
+          | Hey John,
+        p.lead
+          | My name is 
+          input.madlib(type='text', name='name', placeholder='Jon Doe...', required='')
+          |  and I&apos;d like to talk to you about
+          textarea.madlib(type='text', name='reason', list='reasons', placeholder='a website project...')
+          datalist#reasons
+            option a website project
+            option freelance coaching
+            option a teaching engagement
+            option something else
+          | .
+        p.lead
+          | You can reach me at 
+          input.madlib(type='email', name='_replyto', placeholder='address@email.com', required='')
+          |  or 
+          input.madlib(placeholder='(123) 456-7891')
+          | .
+        p.lead
+          | Thanks,
+        p#name-from-above.lead
+        p
+        input(type='submit', value='Send Message', data-event='contact-form')
