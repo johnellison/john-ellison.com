@@ -1,0 +1,96 @@
+footer {
+  padding-bottom: 4rem;
+
+  @media #{$large-up} {
+    padding-bottom: 0;
+  }
+}
+
+.contact-info {
+  @include grid-column(12);
+  @media #{$medium-up} {
+    @include grid-column($columns: 6, $center: true);
+  }
+  @media #{$large-up} {
+    @include grid-column($columns: 4, $center: true);
+  }
+  text-align: center;
+  h3, h4 {
+    color: white;
+  }
+}
+
+.get-updates {
+  @include grid-column(12);
+  @media #{$medium-up} {
+    @include grid-column($columns: 7, $float: right);
+    margin-top: 4.5rem;
+  }
+
+  text-align: center;
+
+  h3, h4 {
+    color: white;
+  }
+
+}
+
+
+.social-list {
+  list-style: none;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  li {
+    display: inline-block;
+    height: 2.5rem;
+    // float: left;
+    margin-right: .5rem;
+  }
+}
+
+.social-list-icon {
+  font-size: 2.5rem;
+  &:hover {
+    color: darken(white, 20%);
+  }
+}
+
+.footer-top {
+  background-color: $blue-grey;
+  padding: 2rem;
+  a, p {
+    color: white;
+  }
+  a:hover {
+    color: darken(white, 20%);
+  }
+
+}
+
+.footer-bottom {
+  padding: 2rem 0rem 1rem 0rem;
+  background-color: $smoke;
+  li {
+    font-size: .8rem;
+  }
+}
+
+.footer-made-by {
+  background-color: $smoke;
+  padding-bottom: 1rem;
+}
+
+.footer-copyright {
+  @include grid-column(12);
+  text-align: center;
+  @media #{$medium-up} {
+    @include grid-column(3);
+  }
+}
+
+.footer-logo {
+  width: 92px;
+  height: 150px;
+  margin-top: .4rem;
+}
