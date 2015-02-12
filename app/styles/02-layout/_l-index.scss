@@ -287,20 +287,6 @@
    margin-bottom: 2rem;
  }
 
- // .purpose-paragraph {
- //  @include grid-column(12);
- //  @media #{$medium-up} {
- //    @include grid-column (7);
- //  }
- // }
-
- //  .freelance-paragraph {
- //  @include grid-column(12);
- //  @media #{$medium-up} {
- //    @include grid-column (5);
- //  }
- // }
-
  .get-in-touch {
   @include grid-column(12);
   margin-bottom: 4rem;
@@ -316,6 +302,11 @@
 
   h4 {
     color: white;
+  }
+
+  .cta {
+    margin-right: 1rem;
+    @include cta-white-font;
   }
  }
 
@@ -343,7 +334,9 @@
   @media #{$xlarge-up} {
     background-image: url('/images/john-ellison-ux-wall-gradient-1920x1275.jpg')
   }
-  
+  .cta {
+    @include cta-white-font;
+  }
 }
 
 .service-column {
@@ -474,8 +467,9 @@
       width: 185px;
     }
     &[type="submit"] {
-      @include button;
-      border-radius: $global-radius;
+      @extend .cta;
+      @include cta-white-font;
+      background-color: $blue-grey;
       float: right;
       @include global-hover;
       @media #{$small-only} {

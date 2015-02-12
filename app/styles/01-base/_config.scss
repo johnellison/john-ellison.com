@@ -36,10 +36,24 @@
   color: $blue-tint;
 }
 
-.button, button {
-  @include button($radius: $global-radius);
+.cta {
+  @include button($bg: false, $radius: $global-radius);
+  color: $header-font-color;
+  border: 2px solid $red-tint;
   @include global-hover;
-  border: 1px solid $primary-color;
+  &:hover {
+    color: $header-font-color;
+  }
+  &.secondary {
+    border: 2px solid $blue-tint;
+  }
+}
+
+@mixin cta-white-font {
+  color: white;
+  &:hover {
+    color: white;
+  }
 }
   
 p {
