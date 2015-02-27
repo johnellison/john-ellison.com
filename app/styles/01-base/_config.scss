@@ -41,6 +41,8 @@
   color: $header-font-color;
   border: 2px solid $red-tint;
   @include global-hover;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
   &:hover {
     color: $header-font-color;
   }
