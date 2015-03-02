@@ -4,13 +4,6 @@ footer {
   @media #{$large-up} {
     padding-bottom: 0;
   }
-  ul.inspiration-list {
-    margin: 0;
-    list-style: none;
-    li a {
-      color: $body-font-color;
-    }
-  }
 }
 
 .contact-info {
@@ -79,8 +72,32 @@ footer {
 .footer-bottom {
   padding: 2rem 0rem 1rem 0rem;
   background-color: $smoke;
-  li {
-    font-size: .8rem;
+  h5 {
+    @media #{$small-only} {
+      text-align: center;
+      margin-bottom: .25rem;
+    }
+  }
+  ul.inspiration-list {
+    margin: 0;
+    list-style: none;
+    @media #{$small-only} {
+      text-align: center;
+    }
+    li {
+      font-size: .8rem;
+      @media #{$small-only} {
+        margin-bottom: .5rem;
+      }
+      a {
+        color: $body-font-color;
+      }
+    }
+  }
+  @media #{$small-only} {
+    .columns {
+      margin-bottom: 2rem;
+    }
   }
 }
 
