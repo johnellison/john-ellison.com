@@ -1,25 +1,27 @@
 // Top
 
 #top {
-  background-image: url('/images/john-ellison-storyteller-1280x720-gradient.jpg');
+  background-image: url('/images/john-ellison-storyteller-1280x720-gradient-flip.jpg');
   background-size: cover;
+  background-size: auto,auto,100% 1000px,100% 1000px;
+  background-repeat: no-repeat;
 
   @media #{$small-up} {
-    background-image: url('/images/john-ellison-storyteller-640x1080-gradient.jpg');
+    background-image: url('/images/john-ellison-storyteller-640x1080-gradient-flip.jpg');
     background-size: cover;
   }
 
   @media #{$medium-up} {
-    background-image: url('/images/john-ellison-storyteller-980x551-gradient.jpg');
+    background-image: url('/images/john-ellison-storyteller-980x551-gradient-flip.jpg');
     background-size: cover;
   }
 
   @media #{$large-up} {
-    background-image: url('/images/john-ellison-storyteller-1280x720-gradient.jpg');
+    background-image: url('/images/john-ellison-storyteller-1280x720-gradient-flip.jpg');
     background-size: cover;
   }
   @media #{$xlarge-up} {
-    background-image: url('/images/john-ellison-storyteller-1920x1080-gradient.jpg');
+    background-image: url('/images/john-ellison-storyteller-1920x1080-gradient-flip.jpg');
     background-size: cover;
   }
 }
@@ -160,31 +162,8 @@
 
 // secondary nav
 
-.secondary-nav {
-  @include icon-bar(
-    // Set the background color of the icon bar. Default: $icon-bar-bg.
-    $bar-bg: $body-font-color,
-    //  Set the font color of the icon bar. Default: $icon-bar-font-color.
-    $bar-font-color: $icon-bar-font-color,
-    // Set the hover background color for the icon bar. Default: $icon-bar-hover-color.
-    // $bar-hover-color,
-    // Set the color of the icons for the icon bar. Default: $icon-bar-icon-color
-    $bar-icon-color: $icon-bar-icon-color,
-    // Set the background of the color when the icon bar is clicked or tapped on (or items within the icon bar). Default: $icon-bar-active-color.
-    // $bar-active-color,
-    // Set the padding for icon bar. Default: $icon-bar-item-padding.
-    $padding: 1rem,
-    // Set the font-size of the icon bar. Default: $icon-bar-font-size.
-    // $font-size,
-    // Set the size of the icons within the icon bar. Default: $icon-bar-icon-size.
-    // $icon-size,
-    // Set the width of /images within the icon bar. Default: $icon-bar-image-width
-    // $image-width,
-    // Set the height of /images within the icon bar. Default: $icon-bar-image-height
-    // $image-height,
-    // Assign whether or not base styles usually associated with the icon bar to appear the way it usually does should be included. Default: true.
-    $base-style: true
-    );
+.icon-bar {
+  @include uppercase-styling;
 }
 
 // Story
@@ -318,24 +297,24 @@
 }
 
 #services {
-  @media #{$small-up} {
-    background-image: url('/images/john-ellison-ux-wall-gradient-768x510.jpg');
-    background-size: cover;
-    h2, p {
-    color: white;
-  }
-    h3 {
-      color: $blue-grey-tint;
-    }
-  }
-  @media #{$large-up} {
-    background-image: url('/images/john-ellison-ux-wall-gradient-1024x680.jpg');
-  }
-  @media #{$xlarge-up} {
-    background-image: url('/images/john-ellison-ux-wall-gradient-1920x1275.jpg')
-  }
+  // @media #{$small-up} {
+  //   background-image: url('/images/john-ellison-ux-wall-gradient-768x510.jpg');
+  //   background-size: cover;
+  //   h2, p {
+  //   color: white;
+  //   }
+  //   h3 {
+  //     color: $body-font-color;
+  //   }
+  // }
+  // @media #{$large-up} {
+  //   background-image: url('/images/john-ellison-ux-wall-gradient-1024x680.jpg');
+  // }
+  // @media #{$xlarge-up} {
+  //   background-image: url('/images/john-ellison-ux-wall-gradient-1920x1275.jpg')
+  // }
   .cta {
-    @include cta-white-font;
+    // @include cta-white-font;
   }
 }
 
@@ -350,9 +329,9 @@
 
 
 
-// UX-Design, Web Development, Digital Stratgegy
+//  Digital Stratgegy, UX-Design, Web Development
 
-#ux-design {
+#digital-strategy, #web-development {
   background-color: $silver;
   p {
     color: darken($body-font-color, 10%);
@@ -394,10 +373,6 @@
 }
 
 // Contact
-
-#contact {
-  background-color: $silver;
-}
 
 .contact-content {
   @include grid-column(12);

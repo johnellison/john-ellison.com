@@ -3,7 +3,7 @@
   height: 175px;
   border-radius: 175px;
   border-radius: 50%;
-  border: 2px solid $red-tint;
+  border: 2px solid $header-font-color;
   margin: 0 auto 1rem auto;
   padding: 40px 0;
 
@@ -12,7 +12,7 @@
   }
 
   i {
-    color: white;
+    color: $body-font-color;
     font-size: 4.5rem;
     // font-weight: 200;
     line-height: 1.3;

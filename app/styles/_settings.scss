@@ -88,12 +88,12 @@ $row-width: rem-calc(1100);
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
 // We use these to define default font stacks
-  $font-family-sans-serif: "proxima-nova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-   $font-family-serif: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
+  $font-family-sans-serif: "museo-sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  $font-family-serif: "museo-slab", Georgia, Cambria, "Times New Roman", Times, serif;
 // $font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
 
 // We use these to define default font weights
-// $font-weight-normal: normal !default;
+  $font-weight-normal: 300 !default;
 // $font-weight-bold: bold !default;
 
 // $white       : #FFFFFF;
@@ -143,7 +143,7 @@ $secondary-color: $blue;
 // $body-bg: $white;
    $body-font-color: $blue-grey-tint;
 // $body-font-family: $font-family-sans-serif;
-// $body-font-weight: $font-weight-normal;
+$body-font-weight: $font-weight-normal;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -212,7 +212,7 @@ $secondary-color: $blue;
 
 // We use these to control header font styles
    $header-font-family: $font-family-serif;
-$header-font-weight: 300;
+   $header-font-weight: 500;
 // $header-font-style: normal;
    $header-font-color: $blue-grey;
 // $header-line-height: 1.4;

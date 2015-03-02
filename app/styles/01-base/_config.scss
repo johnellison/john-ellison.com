@@ -8,6 +8,11 @@
 
 //Mixins
 
+@mixin uppercase-styling {
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+}
+
 
 @mixin linear-gradient($fromColor, $toColor) {
   background-color: $toColor; /* Fallback Color */
@@ -40,9 +45,9 @@
   @include button($bg: false, $radius: $global-radius);
   color: $header-font-color;
   border: 2px solid $red-tint;
+  @include uppercase-styling;
   @include global-hover;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+  font-weight: 500;
   &:hover {
     color: $header-font-color;
   }
@@ -66,12 +71,15 @@ ul {
   margin-left: 3rem;
 }
 
-h2,h3,h4 {
+
+h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   line-height: 1.3;
 }
+
 .subheader {
   margin-bottom: 1rem;
+  font-weight: 300;
 }
 
 img {
