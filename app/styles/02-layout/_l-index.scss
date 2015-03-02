@@ -164,6 +164,9 @@
 
 .icon-bar {
   @include uppercase-styling;
+  label {
+    font-weight: 100;
+  }
 }
 
 // Story

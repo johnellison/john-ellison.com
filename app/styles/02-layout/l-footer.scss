@@ -4,6 +4,13 @@ footer {
   @media #{$large-up} {
     padding-bottom: 0;
   }
+  ul.inspiration-list {
+    margin: 0;
+    list-style: none;
+    li a {
+      color: $body-font-color;
+    }
+  }
 }
 
 .contact-info {
