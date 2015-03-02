@@ -47,7 +47,7 @@
   border: 2px solid $red-tint;
   @include uppercase-styling;
   @include global-hover;
-  // font-weight: 500;
+  font-weight: 500;
   &:hover {
     color: $header-font-color;
   }
