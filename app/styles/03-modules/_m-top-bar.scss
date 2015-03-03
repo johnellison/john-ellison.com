@@ -1,7 +1,6 @@
 .top-bar-section {
   display: table;
   margin: 0 auto;
-
   ul li {
     background: none;
     &:hover {
@@ -9,6 +8,31 @@
     }
     i {
       margin-right: .5rem;
+    }
+    a {
+      @include uppercase-styling;
+      font-family: $font-family-sans-serif;
+    }
+    &.site-logo {
+      margin-right: 0;
+      position: relative;
+      top: -3px;
+      @media #{$small-only} {
+        display: none;
+      }
+      span.j {
+        text-transform: none;
+        font-weight: 300;
+        position: relative;
+        // top: -5px;
+        font-size: 1.5rem;
+      }
+      span.e {
+        font-family: $font-family-serif;
+        position: relative;
+        left: -7.6px;
+        margin-right: -7.6px;
+      }
     }
   }
 } 
