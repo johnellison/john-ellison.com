@@ -35,8 +35,16 @@
       line-height: 1;
     }
   }
+  background-position: 50% 50%; 
+  background-size: cover;
   &#thengine {
-    background-image: url('../images/thengine-test-bg.jpg'); 
+    background-image: url('../images/thengine-bg.jpg');
+  }
+  &#michael-mcdaniel {
+    background-image: url('../images/michael-mcdaniel-bg.jpg');
+  }
+  &#littleton-christian {
+    background-image: url('../images/littleton-christian-bg.jpg');
   }
 
 }
