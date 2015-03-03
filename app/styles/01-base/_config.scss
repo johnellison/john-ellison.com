@@ -12,6 +12,7 @@
   text-transform: uppercase;
   letter-spacing: 1.3px;
   font-weight: 100;
+  font-family: $font-family-sans-serif;
 }
 
 
@@ -81,6 +82,11 @@ h2, h3, h4, h5, h6 {
 .subheader {
   margin-bottom: 1rem;
   font-weight: 300;
+}
+
+h2.subheader {
+  @include uppercase-styling;
+  font-size: 1.5rem;
 }
 
 img {

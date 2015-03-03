@@ -19,5 +19,24 @@
     margin: .5rem auto 1rem auto;
     display: block;
   }
-  
+}
+
+.portfolio-welcome {
+  height: 550px;
+  hgroup {
+    padding-top: 10rem;
+    > * {
+      color: white;
+    }
+    .cta {
+      @include cta-white-font;
+    }
+    h1 {
+      line-height: 1;
+    }
+  }
+  &#thengine {
+    background-image: url('../images/thengine-test-bg.jpg'); 
+  }
+
 }

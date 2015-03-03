@@ -221,7 +221,7 @@ $body-font-weight: $font-weight-normal;
 // $header-text-rendering: optimizeLegibility;
 
 // We use these to control header font sizes
-$h1-font-size: rem-calc(62);
+$h1-font-size: rem-calc(70);
 // $h2-font-size: rem-calc(37);
 // $h3-font-size: rem-calc(27);
 // $h4-font-size: rem-calc(23);
@@ -229,7 +229,7 @@ $h1-font-size: rem-calc(62);
 // $h6-font-size: 1rem;
 
 // We use these to control header size reduction on small screens
-   $h1-font-reduction: rem-calc(50) !default;
+   // $h1-font-reduction: rem-calc(50) !default;
 // $h2-font-reduction: rem-calc(10) !default;
 // $h3-font-reduction: rem-calc(5) !default;
 // $h4-font-reduction: rem-calc(5) !default;
