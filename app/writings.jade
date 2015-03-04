@@ -1,61 +1,41 @@
 extend layout
 
+block title
+  | Writings - John Ellison | Storyteller &amp; UX Designer
+
 block content
-  //- main content 
-  .main-content
-    article
-      ul.m-story-list
-        li.m-story-item
-          a(href='stories/how-to-measure-your-story-engagement.html')
-            img.m-story-thumb(src='4.jpg', alt="How to Measure Your Story's Engagement", width='100')
-            h3.m-story-title  How to Measure Your Story&apos;s Engagement 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non nobis molestiae dolores accusamus tenetur facilis sequi, vitae natus magnam iusto a provident eius dicta sit perferendis, impedit tempore...
-        li.m-story-item
-          a(href='stories/top-5-ux-tools-for-freelancers.html')
-            img.m-story-thumb(src='5.jpg', alt='Top 5 UX Tools for Freelancers', width='100')
-            h3.m-story-title  Top 5 UX Tools for Freelancers 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/this-is-gonna-be-awesome.html')
-            img.m-story-thumb(src='9.jpg', alt='This is gonna be awesome', width='100')
-            h3.m-story-title  This is gonna be awesome 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/how-to-tell-your-story-online.html')
-            img.m-story-thumb(src='2.jpg', alt='How to Tell Your Story Online', width='100')
-            h3.m-story-title  How to Tell Your Story Online 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/top-10-design-principles-for-modern-web-design.html')
-            img.m-story-thumb(src='3.jpg', alt='Top 10 Design Principles for Modern Web Design', width='100')
-            h3.m-story-title  Top 10 Design Principles for Modern Web Design 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/how-to-grow-your-business-online-in-30-days.html')
-            img.m-story-thumb(src='7.jpg', alt='How to Grow Your Business Online in 30-days', width='100')
-            h3.m-story-title  How to Grow Your Business Online in 30-days 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/how-storytelling-effects-conversion-rates.html')
-            img.m-story-thumb(src='1.jpg', alt='How Storytelling Effects Conversion Rates', width='100')
-            h3.m-story-title  How Storytelling Effects Conversion Rates 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/how-lean-can-bring-your-ideas-to-life.html')
-            img.m-story-thumb(src='6.jpg', alt='How Lean Can Bring your Ideas to Life', width='100')
-            h3.m-story-title  How Lean Can Bring your Ideas to Life 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
-        li.m-story-item
-          a(href='stories/another-name-of-something-cool.html')
-            img.m-story-thumb(src='8.jpg', alt='Another Name of Something Cool', width='100')
-            h3.m-story-title  Another Name of Something Cool 
-          p.m-story-excerpt
-            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quibusdam eaque mollitia impedit libero ipsum sint, laborum facilis ratione rerum est, exercitationem enim perspiciatis. Accusantium vitae, p...
+  article
+    section.writings-welcome-index
+      hgroup
+        h1 Writings
+        h2.subheader About life and work as a storyteller and a ux designer...
+    .writings-wrapper
+      .writings-content
+        ul.m-writings-list
+          li.m-writing-item
+            a(href='javascript:void(0)')
+              .m-writing-thumb
+                img(src='images/freedom.jpg', alt="How to Measure Your Story's Engagement")
+              h2.m-writing-title  How to Measure Your Story&apos;s Engagement 
+            p.m-writing-excerpt  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore libero aperiam nihil aliquam vel nesciunt, voluptate odio cum ipsam eius velit maiores. Et magnam cumque soluta quaerat id, impedit itaque.
+            p.m-writing-excerpt Est dolorum molestias quia atque. Iste dolore voluptatem maiores sed, excepturi obcaecati consectetur sint quasi perferendis cum? Neque ratione, labore? Id, nostrum.
+            a.cta(href='javascript:void(0)') Continue Reading
+          hr
+          li.m-writing-item
+            a(href='javascript:void(0)')
+              .m-writing-thumb
+                img(src='images/grid.jpg', alt="How to Measure Your Story's Engagement")
+              h2.m-writing-title  How to Use Your Story As Fuel for Personal Branding
+            p.m-writing-excerpt  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore libero aperiam nihil aliquam vel nesciunt, voluptate odio cum ipsam eius velit maiores. Et magnam cumque soluta quaerat id, impedit itaque.
+            a.cta(href='javascript:void(0)') Continue Reading
+
+          hr
+          li.m-writing-item
+            a(href='javascript:void(0)')
+              .m-writing-thumb
+                img(src='images/ideation.jpg', alt="How to Measure Your Story's Engagement")
+              h2.m-writing-title  UX Fundamentals: Interface Ideation
+            p.m-writing-excerpt  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore libero aperiam nihil aliquam vel nesciunt, voluptate odio cum ipsam eius velit maiores. Et magnam cumque soluta quaerat id, impedit itaque.
+            p.m-writing-excerpt Est dolorum molestias quia atque. Iste dolore voluptatem maiores sed, excepturi obcaecati consectetur sint quasi perferendis cum? Neque ratione, labore? Id, nostrum.
+            a.cta(href='javascript:void(0)') Continue Reading
+          hr

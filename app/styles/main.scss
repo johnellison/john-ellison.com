@@ -23,17 +23,17 @@
         "foundation/components/visibility";
 
 //01-base
- @import "01-base/config";
+@import "01-base/config";
 
 //02-layout
 @import "02-layout/l-index",
         "02-layout/l-portfolio",
-        "02-layout/l-sidebar",
+        "02-layout/l-writings",
         "02-layout/l-footer";
 
 //03-modules
 @import "03-modules/m-arrow",
-        "03-modules/m-story", 
+        "03-modules/m-writings", 
         "03-modules/m-video",
         "03-modules/m-top-bar",
         "03-modules/icon-bar",

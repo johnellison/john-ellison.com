@@ -1,0 +1,30 @@
+.m-writings-list {
+  margin: 0;
+  hr {
+    margin-bottom: 2rem;
+  }
+}
+
+.m-writing-item {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.m-writing-thumb {
+  width: 100%;
+  height: 215px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.m-writing-date {
+  color: lighten($body-font-color, 25%);
+}
+
+.m-writing-title {
+  font-weight: 700;
+}
+
+.m-writing-excerpt {
+
+}
