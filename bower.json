@@ -5,5 +5,10 @@
     "jquery": "~2.1.1",
     "foundation": "zurb/bower-foundation",
     "foundation-icon-fonts": "zurb/foundation-icon-fonts"
+  },
+  "overrides": {
+    "foundation": {
+      "main": ["js/foundation/foundation.js", "js/foundation/foundation.topbar.js", "js/foundation/foundation.interchange.js", "js/foundation/foundation.magellan.js", "js/foundation/foundation.topbar.js"]
+    }
   }
 }

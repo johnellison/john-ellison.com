@@ -1,29 +1,3 @@
-.writings-welcome-index {
-  height: 550px;
-  background-image: url('../images/writings-bg.jpg');
-  background-size: cover;
-  background-position: 50% 50%;
-
-  @media #{$medium-up} {
-    background-image: url('../images/writings-bg-1280x710.jpg');
-  }
-
-  @media #{$large-up} {
-    background-image: url('../images/writings-bg-1440x799.jpg');
-  }
-
-  hgroup {
-    padding-top: 11rem;
-    text-align: center;
-    > * {
-      color: white;
-    }
-    h1 {
-      line-height: 1;
-    }
-  }
-}
-
 .writings-wrapper {
   @include grid-row();
 }
@@ -40,40 +14,6 @@
     @include grid-column($columns: 8, $center: true);
   }
 }
-
-// .marquee {
-//     height: 450px;
-//     padding-top: 150px;
-
-//     @media #{$small-up} {
-//       height: 350px;
-//       padding-top: 100px;
-//     }
-
-//     @media #{$large-up} {
-//        height: 550px;
-//        padding-top: 200px;
-//     }
-   
-//     text-align: center;
-    
-
-//     h1 {
-//       color: white;
-//     }
-
-//     h4 {
-//       color: white;
-//     }
-//   }
-
-// #stories {
-//   @include linear-gradient($red, $blue);
-// }
-
-// #talks {
-//   @include linear-gradient($river-green, $blue-tint);
-// }
 
 // body.with-sidebar {
 //   background-color: $silver;

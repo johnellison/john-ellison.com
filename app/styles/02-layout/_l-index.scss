@@ -25,8 +25,7 @@
     background-size: cover;
   }
 }
- .top {
-  @include grid-column($columns:12, $center: true);
+.top {
    padding-bottom: 5.5rem;
 
    @media #{$small-up} {
@@ -46,7 +45,7 @@
    }
  }
 
-.welcome {
+.welcome.home {
   margin: 3rem 0;
   @media #{$medium-up} {
     transform: rotate(-5deg);
