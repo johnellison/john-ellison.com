@@ -30,5 +30,8 @@
     "serve-index": "^1.5.2",
     "serve-static": "^1.7.1",
     "wiredep": "^1.4.3"
+  },
+  "dependencies": {
+    "ghost": "^0.5.9"
   }
 }
