@@ -62,12 +62,10 @@ section#portfolio.content-section(data-magellan-destination='portfolio', name='p
   .row
     .get-in-touch
       h4 Get in Touch
-      p Send me an email or follow me on Twitter if you want to talk about working together. I'd love to hear about the project you have in mind.
+      p Send me an email if you want to talk about working together. I'd love to hear about the project you have in mind.
       .row
         .call-to-action
           a.cta(data-event='contact-button', href='mailto:john@john-ellison.com?subject=Saw%20Your%20Website') Send Me an Email
-          a.cta.secondary(href='https://twitter.com/iamjohnellison', data-size='large', data-lang='en', data-event='twitter-follow')
-            | Follow Me on Twitter
           script(type='text/javascript').
             window.twttr = (function (d, s, id) {
             var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -77,17 +75,3 @@ section#portfolio.content-section(data-magellan-destination='portfolio', name='p
             fjs.parentNode.insertBefore(js, fjs);
             return window.twttr || (t = { _e: [], ready: function (f) { t._e.push(f) } });
             }(document, "script", "twitter-wjs"));
-  a(href='http://pajaconstruction.com' title='see the work I did for Cadmon')
-    .row.testimonial
-      // TODO: insert retina size images
-      .medium-3.columns.text-center
-        img(src='images/cadmon-whitty-headshot.png')
-        |           
-        h5 Cadmon Whitty
-      .medium-9.columns
-        p.lead
-          | &ldquo;As a direct result of 
-          span.lead-color John&apos;s expertise
-          | , I am now a top blogger, have been approached by a publisher to write a book, have 
-          span.accent-color more leads than ever
-          | ... and I have a feeling this is just the beginning.&rdquo;
