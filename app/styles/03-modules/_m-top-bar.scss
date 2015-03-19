@@ -6,6 +6,9 @@ nav.top-bar {
   }
   a {
     text-decoration: none;
+    &.cta.white {
+      margin: 0;
+    }
   }
 } 
 

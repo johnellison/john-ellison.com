@@ -1388,18 +1388,18 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: rgba(255, 255, 255, .8);
+  $topbar-link-color: $white;
 // $topbar-link-color-hover: rgba(255, 255, 255, 1);
 // $topbar-link-color-active: rgba(255, 255, 255, .8);
 // $topbar-link-color-active-hover: rgba(255, 255, 255, 1);
 // $topbar-link-weight: $font-weight-normal;
 $topbar-link-font-size: rem-calc(15);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
-// $topbar-link-bg: none;
+$topbar-link-bg: $topbar-bg-color;
 // $topbar-link-bg-color-hover: none;
-// $topbar-link-bg-hover: none;
-// $topbar-link-bg-active: none;
-// $topbar-link-bg-active-hover: none;
+$topbar-link-bg-hover: darken($topbar-bg-color, 10%);
+$topbar-link-bg-active: darken($topbar-bg-color, 10%);
+$topbar-link-bg-active-hover: $topbar-link-bg-active;
 // $topbar-link-font-family: $font-family-sans-serif;
 // $topbar-link-text-transform: none;
 // $topbar-link-padding: $topbar-height / 3;
