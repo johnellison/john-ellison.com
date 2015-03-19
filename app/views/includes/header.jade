@@ -1,18 +1,26 @@
-nav.top-bar(data-topbar='')
-  ul.title-area
-    li.name
-    li.toggle-topbar.menu-icon
-      a(href='#') Menu   
-  section.top-bar-section
-    ul.left
-      li.active
-        a(href='/') Home
-      li
-        a(href='http://writings.john-ellison.com/') Writings
-      li.site-logo
-        a(href="/")
-          img(src="images/je-logo-bw-35x45@2x.png", alt="")
-      li
-        a(href='/#story') About
-      li
-        a(href='/#contact') Contact
+header
+  nav.top-bar(data-topbar='')
+    ul.title-area
+      li.name
+        h1
+          a(href='/')
+            img(src="images/je-logo-bw-35x45@2x.png", alt="")
+      li.toggle-topbar.menu-icon
+        a(href='#') 
+          span Menu
+    section.top-bar-section
+      ul.left
+        li.active
+          a(href='/' data-event='referral') Home
+        li
+          a(href='http://writings.john-ellison.com/') Writings
+      // Right Nav Section
+      ul.right
+        li.active
+          a(href='/') My Story
+        li
+          a(href='#about') Portfolio
+        li
+          a(href='#stories') Services
+        li
+          a(href='#footer') Contact

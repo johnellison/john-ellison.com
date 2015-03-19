@@ -1,149 +1,25 @@
 // l-index
 
-// Top
-
-#top {
-  background-image: url('/images/john-ellison-storyteller-1280x720-gradient-flip.jpg');
-  background-size: cover;
-  background-size: auto,auto,100% 1000px,100% 1000px;
-  background-repeat: no-repeat;
-
-  @media #{$small-up} {
-    background-image: url('/images/john-ellison-storyteller-640x1080-gradient-flip.jpg');
-    background-size: cover;
-  }
-
-  @media #{$medium-up} {
-    background-image: url('/images/john-ellison-storyteller-980x551-gradient-flip.jpg');
-    background-size: cover;
-  }
-
-  @media #{$large-up} {
-    background-image: url('/images/john-ellison-storyteller-1280x720-gradient-flip.jpg');
-    background-size: cover;
-  }
-  @media #{$xlarge-up} {
-    background-image: url('/images/john-ellison-storyteller-1920x1080-gradient-flip.jpg');
-    background-size: cover;
-  }
-}
-.top {
-   padding-bottom: 5.5rem;
-
-   @media #{$small-up} {
-    padding-bottom: 4rem;
-   }
-
-   @media #{$medium-up} {
-    padding-bottom: 5rem;
-   }
-
-   @media #{$large-up} {
-    min-height: 735px;
-   }
-
-   @media #{$xlarge-up} {
-    min-height: 890px;
-   }
- }
-
-.welcome.home {
-  margin: 3rem 0;
-  @media #{$medium-up} {
-    transform: rotate(-5deg);
-    margin: 4.5rem 0 1rem 0;
-  }
-  @media #{$large-up} {
-    margin: 7rem 0 2rem 0;
-  }  
-  @media #{$xlarge-up} {
-    margin: 8rem 0 4rem 0;
-  } 
-
-  h1 {
-    color: white;
-    line-height: 1.2;
-    text-align: center;
-    font-size: 2.4rem;
-    margin: 0;
-    @media #{$medium-up} {
-      font-size: 5.3rem;
-      color: white;
-      line-height: 1;
-    }  
-    
-    @media #{$large-up} {
-      font-size: 6.5rem;
-      line-height: .9;
-    }
-
-    @media #{$xlarge-up} {
-      font-size: 8rem;
-      line-height: .8;
-    }  
-  }
-
-  h2 {
-    color: white;
-    text-align: center;
-    font-family: $font-family-sans-serif;
-    font-size: 1.2rem;
-    font-weight: 100;
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1.3px;
-    line-height: 1.2;
-
-    @media #{$medium-up} {
-      font-size: 2rem;
-      letter-spacing: 2px;
-    }
-    @media #{$large-up} {
-      font-size: 2.2rem;
-      letter-spacing: 2.5px;
-    }
-    @media #{$xlarge-up} {
-      font-size: 2.8rem;
-      letter-spacing: 2.8px;
-    }
-  }
+#welcome {
+  padding-bottom: 4rem;
 }
 
- .elaborate, .view-toggle  {
-  display: inline !important;
- }
-
- .callout {
-  padding: 20px 5px;
-  border: 2px solid $red-tint;
-  border-radius: $global-radius;
-  margin-bottom: 3rem;
-  color: white;
-  background-color: none;
-  
-  @include grid-column($columns:12, $center: true);
-
-  @media #{$medium-up} {
-    @include grid-column($columns:7, $offset:5);
-    transform: skew(-8deg) rotate(-5deg);
-  }
-
-  @media #{$large-up} {
-    @include grid-column($columns:6, $offset:6);
-  }
-
-  > :first-child {
-    margin-bottom: 0;
-  }
-
- }
-
- .video-container {
-  @include grid-column($columns:12, $center: true);
+ .welcome-container {
+  @include grid-column($columns: 12, $center: true);
   text-align: center;
   padding: 0;
   p {
     margin-top: 1.5rem;
+  }
+
+  @media #{$large-up} {
+    @include grid-column($columns: 10, $center: true);
+  }
+ }
+
+ hgroup.welcome {
+  h1 {
+    line-height: .9;
   }
  }
 
@@ -152,10 +28,10 @@
  }
 
 .content-section {
-   padding: 4rem 0;
+   padding-top: 4rem;
 
    @media #{$xlarge-up} {
-    padding: 6rem 0;
+    padding-top: 6rem;
    }
 }
 
@@ -169,50 +45,28 @@
 
 // Story
 
-#story {
-
-   @media #{$medium-up} {
-     background: url('/images/john-ellison-wedding-headshot-1024x588.jpg');
-     background-size: cover;
-       h2 {
-        color: black;
-       }
-       p {
-        margin-bottom: .8rem;
-        color: black;
-       }
-   }
-
-    @media #{$large-up} {
-     background: url('/images/john-ellison-wedding-headshot-1400x713.jpg');
-     background-size: cover;
-     padding: 8rem 0;
-   }
-
-   @media #{$xlarge-up} {
-    padding: 10rem 0;
-   }
-   
-}
-
 .story-content {
-  
+
+  margin-top: 2rem;
   @include grid-column(12);
 
-  .story-text {
-    @include grid-column(12);
+  @media #{$medium-up} {
+    @include grid-column($columns: 10, $center: true);
+  }
 
-    @media #{$medium-up} {
-      @include grid-column(6);
-    }
+  @media #{$large-up} {
+    @include grid-column($columns: 8, $center: true);
+  }
 
-    p {
-      line-height: 1.4;
-    }
+  h2 {
+    text-align: center;
+  }
 
-    p.first:first-child:first-letter { 
+  p {
+    line-height: 1.4;
+    &:first-child:first-letter { 
       float: left;
-      color: $body-font-color;
+      color: $header-font-color;
       font-size: 2.75rem;
       line-height: 2.5rem;
       padding-top: 4px;
@@ -220,37 +74,10 @@
       // padding-left: 3px;
       // margin-top: -5px;
       font-family: $header-font-family; 
-      @media #{$medium-up} {
-        color: black;
-      }
-    }    
+    } 
   }
 
-  // .video {
-  //   @media #{$medium-up} {
-  //     @include grid-column(
-  //       $columns:6,
-  //       $push: 6);
-  //   }
-  // }
 }
- .call-to-action {
-  @include grid-column($columns:12, $center: true);
-  text-align: center;
-  .button {
-    margin-right: 1rem;
-  }
-}
-
-.view-more {
-  text-align: center;
-  margin-bottom: 1rem;
-  margin-top: .2rem;
-}
-
-.text-concealed {
-  display: none;
- }
 
  // Portfolio 
 
@@ -267,44 +94,6 @@
    margin-bottom: 2rem;
  }
 
- .get-in-touch {
-  @include grid-column(12);
-  margin-bottom: 4rem;
-
-  @media #{$medium-up} {
-    @include grid-column($columns: 8, $center: true);
-  }
-  padding: 2rem 1rem 2rem 1rem;
-  border-radius: $global-radius;
-  background-color: $blue-grey;
-  text-align: center;
-  color: white;
-
-  h4 {
-    color: white;
-  }
-
-  .cta {
-    @include cta-white-font;
-    margin: 0;
-  }
- }
-
- // Services
-
-.services-content {
-  @include grid-column(12);
-  text-align: center;
-}
-
-.service-column {
-  @include grid-column(12);
-  text-align: center;
-
-  @media #{$medium-up} {
-    @include grid-column(4);
-  }
-}
 
 // Clients
 #clients {
@@ -326,119 +115,31 @@
   }
 }
 
-
 // Contact
 
-.contact-content {
-  @include grid-column(12);
-}
-.contact-photo {
-  text-align: center;
-  width: 150px;
-  height: 150px;
-  margin-bottom: 1rem;
+#contact {
+  background: $smoke;
+  padding-bottom: 4rem;
 }
 
-.contact-form {
-  @include grid-column(12);
-  padding: 2rem 1rem 4rem 1rem;
-  border-radius: $global-radius;
-  // @include linear-gradient($red, $blue);
-  background-color: $blue-grey;
-  color: white;
+.get-in-touch {
+ @include grid-column(12);
 
-  @media #{$medium-up} {
-    @include grid-column($columns: 8, $center: true);
-    //margin-top: 5.7rem;
-  }
+ @media #{$medium-up} {
+   @include grid-column($columns: 8, $center: true);
+ }
+ padding: 2rem 1rem 2rem 1rem;
+ border-radius: $global-radius;
+ background-color: $blue-grey;
+ text-align: center;
+ color: white;
 
-  h3 {
-    text-align: center;
-  }
+ h4 {
+   color: white;
+ }
 
-  input, textarea {
-    border: none;
-    box-shadow: none;
-    &.madlib {
-      display: inline-block;
-      width: auto;
-      background: none;
-      border-bottom: 2px solid $blue-tint;
-      text-align: center;
-      color: white;
-      font-size: 1.1944rem;
-      line-height: 1.5;
-      padding: 0;
-      :focus {
-        background: rgba(255,255,255,0.1);
-        outline: 0;
-        box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-      }
-      &[name="name"] {
-       @media #{$small-only} {
-         width: 155px;
-       }
-
-      }
-      &[type="text"]:focus {
-        box-shadow: none !important;
-        -webkit-box-shadow: none !important;
-      }
-    }
-    &[name="reason"] {
-      width: 95%;
-      text-align: left;
-      @media #{$small-only} {
-        width: 73%;
-      }
-    }
-    &[type="tel"] {
-      width: 185px;
-    }
-    &[type="submit"] {
-      @extend .cta;
-      @include cta-white-font;
-      background-color: $blue-grey;
-      float: right;
-      @include global-hover;
-      @media #{$small-only} {
-        margin-right: 1rem;
-      }
-    }
-  }
-}
-
-//footer
-
-//Thanks 
-
-.thank-you-content {
-  @include grid-column(12);
-  text-align: center;
-  padding: 6rem;
-  h4 {
-    color: #46925d;
-  }
-}
-
-.back-to-home-content {
-  @include grid-column(12);
-  text-align: center;
-
-  i {
-    display: inline;
-    width: 64px;
-    height: 64px;
-  }
-
-  p {
-    display: inline;
-    color: white;
-  }
-}
-
-
-
-
- 
+ .cta.white {
+   margin: 0;
+   color: white;
+ }
+} 

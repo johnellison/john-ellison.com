@@ -12,7 +12,7 @@
 
 .icon-bar.hide-for-large-up {
   @media #{$small-up} {
-    background-color: $blue-grey-shade;
+    background-color: $blue-grey;
     position: fixed;
     bottom: 0;
     z-index: 99;
@@ -28,25 +28,4 @@
     }
    }
   }
-}
-
-.icon-bar.show-for-large-up {
-  height: 3.8rem;
-  border: none;
-  background-color: $blue-grey-shade;
-
-  > * {
-    padding: .5rem;
-  }
-
-  i, label {
-    color: white;
-  }
-
-  i + label {
-    margin-left: .8rem;
-    font-size: 1.1rem;
-  }
-}
-
-  
+}  

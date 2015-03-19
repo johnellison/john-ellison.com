@@ -1,25 +1,8 @@
-section#contact.content-section(data-magellan-destination='contact')
+section#contact
   .row
-    .contact-content
-      hgroup.text-center
-        h2 Contact
-        h3.subheader
-          a(href="mailto:john@john-ellison.com?subject=Saw%20Your%20Website" data-event="contact-button") john@john-ellison.com
-  .row
-    .contact-form
-      form(method='post', action='//formspree.io/john@john-ellison.com')
-        input(type='hidden', name='_subject', value='Contact Form on John-Ellison.com')
-        input(type='hidden', name='_next', value='//www.john-ellison.com/thanks.html')
-        p.lead
-          | Hey John,
-        p.lead
-          | My name is 
-          input.madlib(type='text', name='name', placeholder='Jon Doe...', required='')
-          |  and I&apos;d like to talk to you about a web project. You can reach me at 
-          input.madlib(type='email', name='_replyto', placeholder='address@email.com', required='').
-          | .
-        p.lead
-          | Thanks,
-        p#name-from-above.lead
-        p
-        input(type='submit', value='Send Message', data-event='contact-form')
+    .get-in-touch
+      h4 Ready To Tell Your Story Online?
+      p I'd love to hear about your story and your vision for your life.
+      .row
+        .call-to-action
+          a.cta.white(data-event='contact-button', href='mailto:john@john-ellison.com?subject=Saw%20Your%20Website') Send Me an Email

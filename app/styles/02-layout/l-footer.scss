@@ -1,44 +1,38 @@
 // l-footer
 footer {
-  padding-bottom: 4rem;
+  padding: 2rem 0;
+  text-align: center;
+}
 
-  @media #{$large-up} {
-    padding-bottom: 0;
+.footer-section {
+  @include grid-column(12);
+  @media #{$small-only} {
+    margin-bottom: 2rem;
   }
-
-  h2, h3, h4 {
-    color: white;
+  @media #{$medium-up} {
+    @include grid-column(4);
+  }
+  h4 {
+    margin-bottom: 1rem;
   }
 }
 
+.contact-photo {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 0;
+}
+
 .contact-info {
-  @include grid-column(12);
-  @media #{$medium-up} {
-    @include grid-column($columns: 6, $center: true);
-  }
-  @media #{$large-up} {
-    @include grid-column($columns: 4, $center: true);
-  }
   text-align: center;
 
-  .subheader {
+  p.subheader {
+    font-size: .8rem;
     @include uppercase-styling;
     margin: 0;
     margin-top: .2rem;
   }
 }
-
-.get-updates {
-  @include grid-column(12);
-  @media #{$medium-up} {
-    @include grid-column($columns: 7, $float: right);
-    margin-top: 4.5rem;
-  }
-
-  text-align: center;
-
-}
-
 
 .social-list {
   list-style: none;
@@ -46,6 +40,7 @@ footer {
   margin-bottom: 1rem;
   margin-left: 0;
   margin-top: 0;
+
   li {
     display: inline-block;
     // height: 2.5rem;
@@ -56,70 +51,10 @@ footer {
 
 .social-list-icon {
   font-size: 2rem;
+  @media #{$large-up} {
+    font-size: 2.5rem;
+  }
   &:hover {
     color: darken(white, 20%);
   }
-}
-
-.footer-top {
-  background-color: $blue-grey;
-  padding: 2rem;
-  a, p {
-    color: white;
-  }
-  a:hover {
-    color: darken(white, 20%);
-  }
-
-}
-
-.footer-bottom {
-  padding: 2rem 0rem 1rem 0rem;
-  background-color: $smoke;
-  h5 {
-    @media #{$small-only} {
-      text-align: center;
-      margin-bottom: .25rem;
-    }
-  }
-  ul.inspiration-list {
-    margin: 0;
-    list-style: none;
-    @media #{$small-only} {
-      text-align: center;
-    }
-    li {
-      font-size: .8rem;
-      @media #{$small-only} {
-      margin-bottom: .5rem;
-      }
-      a {
-        color: $body-font-color;
-      }
-    }
-  }
-  @media #{$small-only} {
-    .columns {
-      margin-bottom: 2rem;
-    }
-  }
-}
-
-.footer-made-by {
-  background-color: $smoke;
-  padding-bottom: 1rem;
-}
-
-.footer-copyright {
-  @include grid-column(12);
-  text-align: center;
-  @media #{$medium-up} {
-    @include grid-column(3);
-  }
-}
-
-.footer-logo {
-  width: 92px;
-  height: 150px;
-  margin-top: .4rem;
 }
