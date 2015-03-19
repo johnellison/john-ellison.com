@@ -28,10 +28,10 @@
  }
 
 .content-section {
-   padding-top: 4rem;
+   padding: 4rem 0;
 
    @media #{$xlarge-up} {
-    padding-top: 6rem;
+    padding: 6rem 0;
    }
 }
 
@@ -94,6 +94,22 @@
    margin-bottom: 2rem;
  }
 
+ // Services
+  // Services
+
+ .services-content {
+   @include grid-column(12);
+   text-align: center;
+ }
+
+ .service-column {
+   @include grid-column(12);
+   text-align: center;
+
+   @media #{$medium-up} {
+     @include grid-column(4);
+   }
+ }
 
 // Clients
 #clients {
@@ -136,6 +152,7 @@
 
  h4 {
    color: white;
+   margin-bottom: 2rem;
  }
 
  .cta.white {
