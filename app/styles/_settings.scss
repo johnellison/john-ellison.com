@@ -119,6 +119,7 @@ $black       : #000000;
 //Variables
 $blue-grey: #464f5d ; //header
 $blue-grey-tint: lighten($blue-grey, 20%); //body-font
+$red: lighten(#670205, 20%);
 
 // We use these as default colors throughout
 $primary-color: $blue-grey;
