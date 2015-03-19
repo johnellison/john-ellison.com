@@ -4,28 +4,33 @@
   padding-bottom: 4rem;
 }
 
- .welcome-container {
-  @include grid-column($columns: 12, $center: true);
-  text-align: center;
-  padding: 0;
-  p {
-    margin-top: 1.5rem;
-  }
+.welcome-container {
+  @include grid-row();
+}
 
-  @media #{$large-up} {
-    @include grid-column($columns: 10, $center: true);
-  }
- }
+.welcome-content {
+@include grid-column($columns: 12, $center: true);
+text-align: center;
+padding: 0;
+p {
+  margin-top: 1.5rem;
+}
 
- hgroup.welcome {
-  h1 {
-    line-height: .9;
-  }
- }
+@media #{$large-up} {
+  @include grid-column($columns: 10, $center: true);
+}
+}
 
- .flex-video.widescreen.vimeo {
+hgroup.welcome {
+h1 {
+  line-height: .9;
+}
+}
+
+.welcome-video {
+  @include flex-video-container();
   margin-top: 1rem;
- }
+}
 
 .content-section {
    padding: 4rem 0;
@@ -85,38 +90,45 @@
    background-color: $smoke;
 } 
 
- .portfolio-items {
-   @include grid-column(12);
+.portfolio-container {
+  @include grid-row();
+}
 
-   hgroup {
-    text-align: center;
-   }
-   margin-bottom: 2rem;
+.portfolio-items {
+ @include grid-column(12);
+
+ hgroup {
+  text-align: center;
  }
+ margin-bottom: 2rem;
+}
 
- // Services
-  // Services
+// Services
 
- .services-content {
-   @include grid-column(12);
-   text-align: center;
+.services-container {
+  @include grid-row();
+}
+
+.services-content {
+ @include grid-column(12);
+ text-align: center;
+}
+
+.service-column {
+ @include grid-column(12);
+ text-align: center;
+
+ @media #{$medium-up} {
+   @include grid-column(4);
  }
-
- .service-column {
-   @include grid-column(12);
-   text-align: center;
-
-   @media #{$medium-up} {
-     @include grid-column(4);
-   }
- }
+}
 
 // Clients
 #clients {
   background-color: $smoke;
 }
 
-.clients-wrapper {
+.clients-container {
   @include grid-row();
 }
 
@@ -138,7 +150,11 @@
   padding-bottom: 4rem;
 }
 
-.get-in-touch {
+.contact-container {
+  @include grid-row();
+}
+
+.contact-content {
  @include grid-column(12);
 
  @media #{$medium-up} {

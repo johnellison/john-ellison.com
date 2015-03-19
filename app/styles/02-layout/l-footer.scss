@@ -4,6 +4,10 @@ footer {
   text-align: center;
 }
 
+.footer-container {
+  @include grid-row();
+}
+
 .footer-section {
   @include grid-column(12);
   @media #{$small-only} {
