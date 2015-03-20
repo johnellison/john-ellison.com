@@ -5,8 +5,11 @@
   background-position: 50% 50%;
 
   hgroup {
-    padding-top: 11rem;
+    // padding-top: 11rem;
     text-align: center;
+    @media #{$large-up} {
+      padding-top: 7rem;
+    }
     > * {
       color: white;
     }
@@ -14,7 +17,6 @@
       line-height: 1;
     }
   }
-
   &#thengine {
     background-image: url('../images/thengine-bg.jpg');
   }
@@ -23,16 +25,5 @@
   }
   &#littleton-christian {
     background-image: url('../images/littleton-christian-bg.jpg');
-  }
-  &#writings-index {
-    background-image: url('../images/writings-bg.jpg');
-
-    @media #{$medium-up} {
-      background-image: url('../images/writings-bg-1280x710.jpg');
-    }
-
-    @media #{$large-up} {
-      background-image: url('../images/writings-bg-1440x799.jpg');
-    }
   }
 }

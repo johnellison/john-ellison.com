@@ -1,5 +1,10 @@
 // l-portfolio
+.main-article-container {
+  @include grid-row();
+}
 .main-article-content {
+    padding: 4rem 0;
+
   @include grid-column($columns: 12, $center: true);
 
   @media #{$small-up} {
@@ -12,13 +17,18 @@
 
   @media #{$large-up} {
     @include grid-column($columns: 8, $center: true);
+    padding: 2rem;
+    margin-top: -150px;
+    border-radius: $global-radius;
+    background: $white;
   }
-
-  padding: 4rem 0;
 
   img {
     margin: .5rem auto 1rem auto;
     display: block;
   }
 }
+
+ 
+
 
