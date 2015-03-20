@@ -50,6 +50,10 @@ h1 {
 
 // Story
 
+.story-container {
+  @include grid-row();
+}
+
 .story-content {
 
   margin-top: 2rem;
