@@ -22,12 +22,11 @@
 //02-layout
 @import "02-layout/l-index",
         "02-layout/l-portfolio",
-        "02-layout/l-writings",
+        "02-layout/l-404",
         "02-layout/l-footer";
 
 //03-modules
 @import "03-modules/m-arrow",
-        "03-modules/m-writings", 
         "03-modules/m-video",
         "03-modules/m-top-bar",
         "03-modules/m-portfolio",
@@ -37,10 +36,8 @@
         "03-modules/m-testimonial";
 
 //04-states
-//@import "04-states/s-index";
 
 //05-themes
-// @import "05-themes/themes";
 
 //debug
 // @import "01-base/debug";
