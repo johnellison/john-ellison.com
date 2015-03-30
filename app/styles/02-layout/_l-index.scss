@@ -4,6 +4,15 @@
   padding-bottom: 4rem;
 }
 
+hgroup.welcome {
+  position: relative;
+  animation: fade-down 1s;
+}
+
+.welcome-video {
+  animation: fade-in 2s;
+}
+
 .welcome-container {
   @include grid-row();
 }
