@@ -214,9 +214,9 @@ $body-font-weight: $font-weight-normal;
 
 // We use these to control header font sizes
 $h1-font-size: rem-calc(72);
-$h2-font-size: rem-calc(42);
-// $h3-font-size: rem-calc(27);
-// $h4-font-size: rem-calc(23);
+$h2-font-size: rem-calc(44);
+$h3-font-size: rem-calc(27);
+$h4-font-size: rem-calc(23);
 $h5-font-size: rem-calc(20);
 // $h6-font-size: 1rem;
 
@@ -1380,7 +1380,7 @@ $topbar-bg: $topbar-bg-color;
 // $topbar-title-font-size: rem-calc(12);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: $primary-color;
 // $topbar-dropdown-link-color: $white;
 // $topbar-dropdown-link-bg: $oil;
 // $topbar-dropdown-link-weight: $font-weight-normal;
