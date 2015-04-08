@@ -38,9 +38,8 @@ footer.site-footer {
 .contact-info {
   text-align: center;
 
-  p.subheader {
+  p {
     font-size: .8rem;
-    @include uppercase-styling;
     margin: 0;
     margin-top: .2rem;
   }
