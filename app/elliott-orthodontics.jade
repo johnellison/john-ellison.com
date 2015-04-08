@@ -1,0 +1,130 @@
+extends layout
+  
+block title
+  | Elliott Orthodontics — UX Design &amp; Development
+block content  
+  article
+    section.m-marquee#elliott-ortho
+      hgroup
+        h1  Elliott Orthodontics
+        h2.subheader UX Design &amp; Development
+        a.cta.white(href="http://elliottortho.com/") Visit The Finished Site
+    .main-article-container
+      .main-article-content 
+        h3 The Story
+        p By word of mouth I was introduced to Dr. Richard Elliott and his staff and asked if I could help them double the size of their practice through &lsquo;Internet Marketing&rsquo;.
+
+        p Dr. Elliott is a master of his craft. He and his team do everything they can to create a safe and comfortable environment to serve families of highlands ranch with orthodontic care. In recent years they found a shift in the way orthodontics were doing business. They needed a new approach if they were going to meet their goals in the coming years.
+
+        h3 The Problem
+        p Their web presence was out of date, looked and felt like their competitors and didn't represent Dr. Elliott and his team. There was a lot of work to be done and they didn't have the skills and resources
+
+        p With his existing website, they were getting only a few visits per day and close to 0% conversion rate. Their SEO presence was suffering from bad markup, broken links, and inconsistent local listings. The content was highly technical, meandering and self-promoting. Their photos were out of proportion, low-resolution and old.
+
+        h3 The Goal
+        p They wanted to double the size of their practice. They wanted a website that could generate leads for new patients and build a solid foundation for further marketing efforts
+
+        h3 My Approach
+        p After looking at their site analytics, I realized that a large portion of their user audience was visiting on mobile. A performance optimized mobile-first site was crucial to ensure their users could find what they needed on the go.
+
+        p I wanted to create a basic site that we could improve through various forms of testing over time. We would drive traffic to the site through a content marketing and social media strategy
+
+        h3 My Process
+
+        h4.subheader Step 1. Discovery
+        p I met with the Dr. Elliott and his team several times to better understand their problems, goals, and vision. I sketched out a couple different concepts to illustrate the how high-quality user centered content was integral to the projects success. We needed to understand their audience in order to serve them well.
+
+        p After going through
+          a(href="")  Sketching User Experiences: The Workbook
+          | , I was excited to try to articulate some ideas with pen and paper in front of a potential client and their team.
+
+        img(src="images/elliott-ortho-sketch.jpg", alt="sketching design concepts")
+
+        h4.subheader Step 2. Competitor Analysis
+        p I used the 
+          a(href="http://www.nngroup.com/articles/ten-usability-heuristics/") 10 Usability Heuristics for User Interface Design
+          |  from the Nielsen Norman Group to perform a heuristic analysis on their top five competitors. I printed off each of the websites and performed my analysis through annotation.
+        p None of the competitor websites were aesthetically pleasing or minimalist. Most of the content used inconsistent language. The layout was side-bar based with poor navigation. Color tended to saturate the page and effected overall aesthetic-usability. Typography was poorly implemented with little hierarchy and contrast.
+
+        p After the heuristic analysis, I performed a quantitative web presence analysis based upon SEO and performance metrics. 
+
+        img(src="images/elliott-ortho-competitor-analysis.jpg", alt="web presence analysis on top five orthodontic competitors")
+
+        h4.subheader Step 3. Delegation &amp; Planning
+        p I sat down with Elliott Ortho's team and we delegated project tasks on a 
+          a(href="https://trello.com/")  Trello
+          |  board. It was crucial that I had direct access to users for usability testing and I needed the Elliott Ortho staff to manage the scheduling process with users.
+
+        p I sketched out a project timeline so we could all be on the same page and be accountable for timely deliverables.
+
+        img(src="images/elliott-ortho-timeline.jpg", alt="project timeline for elliott ortho website")
+
+        h4.subheader Step 4. User Personas
+        p After interviewing a few of Elliott Ortho's former patients, I worked with Dr. Elliott's team to define major user segments. I created user personas to inform the content-writing and design process.
+
+        img(src="images/elliott-ortho-persona-1.jpg", alt="first user persona for orthodontic website design")
+
+        img(src="images/elliott-ortho-persona-2.jpg", alt="second user persona for orthodontic website design")
+
+        h4.subheader Step 4. Content Writing
+        p After it became clear that Elliott Ortho's staff did not have the resources available to write quality user-centered content, we took a different approach.
+
+        p I set up a meeting to define some language for content and design. I worked with Elliott Ortho's team to brainstorm different approaches using mind maps.
+
+        img(src="images/elliott-ortho-mind-map.jpg", alt="mind mapping design language for the site")
+
+        p Afterwards, I gathered dozens of fliers and handouts that Dr. Elliott and his team have created over the years and synthesized the documents to write content for the site.
+
+        h4.subheader Step 5. Wireframing
+        p With some preliminary content written, I began to wireframe the website starting with the mobile device. As I worked from my lower-fidelity sketches I realized that in a mobile context, the user would benefit from a quick 'call-to-action' in the form of a fixed header.
+
+        img(src="images/elliott-ortho-wireframe-1.jpg", alt="wireframing the site starting with mobile")
+
+        p In talking with Dr. Elliott, I asked him how we could show (not tell) how his practice is set apart from the rest. He answered quickly by saying, &lsquo;Each orthodontist focuses on different elements to make a smile. Some are concerned with costs and are likely to sacrifice quality in the process. We are incredibly meticulous about each aspect of our patient's smile, and our work speaks by itself.&rsquo;
+
+        p Thinking back to Dan Saffer's
+          a(href="http://www.amazon.com/Microinteractions-Color-Edition-Designing-Details/dp/1491945923") Microinteractions
+          | , I sketched out a component that would allow users to view the different aspects of &lquo;What Makes an Elliott Smile&rsquo;. They would be able to swipe between a before and after. This would allow them to identify with previous patients and know that Dr. Elliott can do incredible work with smiles like theirs.
+
+        img(src="images/elliott-ortho-wireframe-2.jpg", alt="a wireframe of the microinteraction")
+
+        h4.subheader Step 5. Iterative Development
+        p After reading 
+          em The Vanilla Web Diet
+          |  by Christian Heilmann in
+          a(href="https://shop.smashingmagazine.com/smashing-book-4-ebooks.html") The Smashing Book #4,
+          |  I decided to start try out the vanilla diet as part of my process.
+        p I added the content as HTML5 markup and hooked up all the links such that the core functionality of the site worked without any CSS or javascript. 
+
+        img(src="images/elliott-ortho-vanilla.jpg", alt="trying out the vanilla web diet")
+
+        p I used 
+          a(href="http://zurb.com/foundation")  Foundation 5 
+          |  to lay out the site. Once I had the main layout I put the site in the hands of some former patients at Elliott Ortho and asked them to perform basic tasks while I watched.
+
+        p The first thing I noticed was that on mobile, users wanted a quick way to 'access the map'. I had my computer running a local browsersync server so I quickly added a mobile-only fixed nav bar to test with the next user.
+
+        img(src="images/elliott-ortho-mobile-maps.jpg", alt="adding the mobile access map feature")
+
+        p Once we finished the first iteration of the site, it was time to push it live and optimize conversion. But first in order to have consistent analytics.
+
+        h4.subheader Step 6. Analytics Infrastructure
+        p During user testing we noticed that often times users would grab their phone and manually dial the number of the office rather than click the link 'Call Now'. This happend across several contexts. Since we wanted to measure the total conversion for the site, we needed to integrate with Elliott Ortho's scheduling platform.
+
+        p They a tool called Dolphin Management to track patient appointments and records. I worked with Bret Mette over at 
+          a(href="http://rowdydesign.com/") Rowdy Design
+          |  to design and develop a custom integration.
+
+        h4.subheader Step 6. Performance Optimization
+        p Once we launched the site I did some producting testing and optimization to ensure the site was performing at peak levels for users across devices. We exceeded our under two second load time goal (810ms) and scored above 90 for both our mobile and desktop pagespeed insights.
+
+        img(src="images/elliott-ortho-pagespeed-mobile.jpg", alt="testing the website pagespeed on mobile")
+        img(src="images/elliott-ortho-pagespeed-desktop.jpg", alt="testing the website pagespeed on desktop")
+
+        img(src="images/elliott-ortho-pingdom.jpg", alt="testing website load time with pingdom tools")
+
+        h3 Final Outcome
+        p I've teamed up with a Denver-based creative agency called
+          a(href="http://webfuz.com")  WebFuz
+          |  to help Elliott Ortho with content strategy and execution. The website has performed well since release. We've seen a 60% increase in overall traffic, a 33% decrease in bounce rate, and we are currently A/B testing to reach our converstion rate goals.
+
