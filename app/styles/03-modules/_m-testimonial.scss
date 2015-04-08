@@ -3,20 +3,23 @@
 .testimonial-container {
   @include grid-row();
   background-color: white;
-  padding: 1rem;
+  padding: 0rem 1rem 1rem 1rem;
   margin-bottom: 3rem;
   border-radius: $global-radius;
   @include global-hover();
 
   .testimonial-author {
     @include grid-column(12);
+    text-align: center;
+
 
     @media #{$medium-up} {
       @include grid-column(3);
+      text-align: left;
     }
 
     img {
-      margin-top: .5rem;
+      margin-top: 1rem;
       margin-bottom: 0rem;
       border-radius: 50%;
     }
@@ -25,9 +28,11 @@
 
   .testimonial-content {
     @include grid-column(12);
+    text-align: center;
 
     @media #{$medium-up} {
       @include grid-column(9);
+      text-align: left;
     }
 
     p.lead {
