@@ -1,0 +1,138 @@
+extends layout
+  
+block title
+  | Nomster — Ruby on Rails Development
+block content  
+  article
+    section.m-marquee#nomster
+      hgroup
+        h1 Nomster
+        h2.subheader Ruby on Rails Development
+        a.cta.white(href="http://nomster-john-ellison.herokuapp.com") Check Out The App
+    .main-article-container
+      .main-article-content 
+        h3 The Story
+        p For months I had been looking for a great way to immerse myself in learning how to code. After reading through every coding bootcamp website and review, I finally settled on 
+          a(href="http://thefirehoseproject.com") The Firehose Project.
+
+        p The Firehose Project is an online coding bootcamp based in Boston. The Firehose motto is &ldquo;We change peoples' lives so they can do what they love every single day.&rdquo;
+
+        p Their motto sounded a lot like my mission for my freelance work, so I decided to learn more. After talking with Marco over at The Firehose Project I committed to invest the next three months to The Firehose Project. I really liked their curriculum and the way they customized their curriculum to each of their students.
+
+        h3 The Problem
+        p Besides basic Javascript and some  
+          a(href="http://nodeschool.io/") NodeJS tutorials
+          | , I had little experience programming. I knew basic Object Oriented concepts from 
+          a(href="http://www.lynda.com/Programming-tutorials/Foundations-of-Programming-Object-Oriented-Design/96949-2.html") Lynda's Foundations of Programming
+          |  course, but that was about it.
+
+        h3 The Goal
+        p The goal of our second project was to learn Ruby on Rails fundamentals through building a Yelp clone.
+
+        h3 My Approach
+        p Before starting The Firehose project I went through the 
+          a(href="http://www.codecademy.com/tracks/ruby") Ruby Track
+          |  at Codecademy. I wanted a basic understanding of the Ruby languaged before I jumped into building an application in Rails.
+
+        h3 My Process
+
+        h4.subheader Step 1. Analyzing Wireframes
+        p As part of the course instructions, each student is given a wireframe of the yelp clone. As an initial step I looked over these wireframes to break down the project into a series of smaller steps.
+
+        img(src="images/homepage-wireframe.png", alt="wireframe of the nomster homepage")
+
+        img(src="images/places-wireframe.png", alt="wireframe of the nomster places page")
+
+        img(src="images/comment-wireframe.png", alt="wireframe of the nomster comment modal")
+
+        img(src="images/add-place-wireframe.png", alt="wireframe of the nomster add place page")
+
+        img(src="images/dashboard-wireframe.png", alt="wireframe of the nomster dashboard page")
+
+        h4.subheader Step 2. Data Modeling
+        p Based upon the wireframes I knew that I needed to model the data with the following entities:
+        ul
+          li User
+          li Place
+          li Photo
+          li Comment
+
+        p I created a basic diagram on dbpatterns to help me visualize Nomster's database.
+
+        img(src="images/nomster-db-pattern.png", alt="modeling the database for the nomster app")
+
+        h4.subheader Step 3. Task Breakdown
+        p I looked at the steps listed in the Nomster instructions and broke down the major tasks into a 
+          a(href="https://trello.com/") Trello 
+          |  board.
+
+        h4.subheader Step 4. Models &amp; Migrations
+        p Following the database pattern I generated each of the models.
+        
+        pre: code.language-bash rails generate model Place
+        pre: code.language-bash rails generate model Photo
+        pre: code.language-bash rails generate model Comment
+
+        h4.subheader Step 4. Content Writing
+        p After it became clear that Elliott Ortho's staff did not have the resources available to write quality user-centered content, we took a different approach.
+
+        p I set up a meeting to define some language for content and design. I worked with Elliott Ortho's team to brainstorm different approaches using mind maps.
+
+        img(src="images/elliott-ortho-mind-map.jpg", alt="mind mapping design language for the site")
+
+        p Afterwards, I gathered dozens of fliers and handouts that Dr. Elliott and his team have created over the years and synthesized the documents to write content for the site.
+
+        h4.subheader Step 5. Wireframing
+        p With some preliminary content written, I began to wireframe the website starting with the mobile device. As I worked from my lower-fidelity sketches I realized that in a mobile context, the user would benefit from a quick 'call-to-action' in the form of a fixed header.
+
+        img(src="images/elliott-ortho-wireframe-1.jpg", alt="wireframing the site starting with mobile")
+
+        p In talking with Dr. Elliott, I asked him how we could show (not tell) how his practice is set apart from the rest. He answered quickly by saying, &lsquo;Each orthodontist focuses on different elements to make a smile. Some are concerned with costs and are likely to sacrifice quality in the process. We are incredibly meticulous about each aspect of our patient's smile, and our work speaks by itself.&rsquo;
+
+        p Thinking back to Dan Saffer's
+          a(href="http://www.amazon.com/Microinteractions-Color-Edition-Designing-Details/dp/1491945923") Microinteractions
+          | , I sketched out a component that would allow users to view the different aspects of &lquo;What Makes an Elliott Smile&rsquo;. They would be able to swipe between a before and after. This would allow them to identify with previous patients and know that Dr. Elliott can do incredible work with smiles like theirs.
+
+        img(src="images/elliott-ortho-wireframe-2.jpg", alt="a wireframe of the microinteraction")
+
+        h4.subheader Step 5. Iterative Development
+        p After reading 
+          em The Vanilla Web Diet
+          |  by Christian Heilmann in
+          a(href="https://shop.smashingmagazine.com/smashing-book-4-ebooks.html") The Smashing Book #4,
+          |  I decided to start try out the vanilla diet as part of my process.
+        p I added the content as HTML5 markup and hooked up all the links such that the core functionality of the site worked without any CSS or javascript. 
+
+        img(src="images/elliott-ortho-vanilla.jpg", alt="trying out the vanilla web diet")
+
+        p I used 
+          a(href="http://zurb.com/foundation")  Foundation 5 
+          |  to lay out the site. Once I had the main layout I put the site in the hands of some former patients at Elliott Ortho and asked them to perform basic tasks while I watched.
+
+        p The first thing I noticed was that on mobile, users wanted a quick way to 'access the map'. I had my computer running a local browsersync server so I quickly added a mobile-only fixed nav bar to test with the next user.
+
+        img(src="images/elliott-ortho-mobile-maps.jpg", alt="adding the mobile access map feature")
+
+        p Once we finished the first iteration of the site, it was time to push it live and test with real users. In order to measure effectively we needed to have proper analytics infrastructure.
+
+        h4.subheader Step 6. Analytics Infrastructure
+        p During user testing we noticed that often times users would grab their phone and manually dial the number of the office rather than click the link 'Call Now'. This happend across several contexts. Since we wanted to measure the total conversion for the site, we needed to integrate with Elliott Ortho's scheduling platform.
+
+        p They a tool called Dolphin Management to track patient appointments and records. I worked with Bret Mette over at 
+          a(href="http://rowdydesign.com/") Rowdy Design
+          |  to design and develop a custom integration.
+
+        h4.subheader Step 6. Performance Optimization
+        p Once we launched the site I did some producting testing and optimization to ensure the site was performing at peak levels for users across devices. We scored above 90 for both our mobile and desktop pagespeed insights.
+
+        img(src="images/elliott-ortho-pagespeed-mobile.jpg", alt="testing the website pagespeed on mobile")
+        img(src="images/elliott-ortho-pagespeed-desktop.jpg", alt="testing the website pagespeed on desktop")
+
+        p We also met our performance goal of loading the page in under one second.
+
+        img(src="images/elliott-ortho-pingdom.jpg", alt="testing website load time with pingdom tools")
+
+        h3 Final Outcome
+        p I've teamed up with a Denver-based creative agency called 
+          a(href="http://webfuz.com") WebFuz
+          |  to help Elliott Ortho with content strategy and execution. The website has performed well since release. We've seen a 60% increase in overall traffic, a 33% decrease in bounce rate, and we are currently A/B testing to reach our converstion rate goals.
