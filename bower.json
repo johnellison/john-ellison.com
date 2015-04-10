@@ -17,7 +17,13 @@
       ]
     },
     "prism": {
-      "main": ["themes/prism-okaidia.css", "prism.js", "components/prism-bash.js"]
+      "main": [
+      "themes/prism-okaidia.css",
+      "prism.js",
+      "components/prism-bash.js",
+      "components/prism-markup.js",
+      "components/prism-ruby.js"
+      ]
     }
   }
 }

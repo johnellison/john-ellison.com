@@ -26,6 +26,8 @@ block content
           a(href="http://www.lynda.com/Programming-tutorials/Foundations-of-Programming-Object-Oriented-Design/96949-2.html") Lynda's Foundations of Programming
           |  course, but that was about it.
 
+        p I taught myself HTML, CSS, SASS, Javascript and jQuery. While I was competent in my craft, I knew I could learn faster by immersing myself in a environment with mentors and fellow developers.
+
         h3 The Goal
         p The goal of our second project was to learn Ruby on Rails fundamentals through building a Yelp clone.
 
@@ -67,20 +69,103 @@ block content
           |  board.
 
         h4.subheader Step 4. Models &amp; Migrations
-        p Following the database pattern I generated each of the models.
-        
+        p Following the database pattern I generated each of the models and migrations:
+
         pre: code.language-bash rails generate model Place
         pre: code.language-bash rails generate model Photo
         pre: code.language-bash rails generate model Comment
 
-        h4.subheader Step 4. Content Writing
-        p After it became clear that Elliott Ortho's staff did not have the resources available to write quality user-centered content, we took a different approach.
+        pre: code.language-ruby class CreatePlaces < ActiveRecord::Migration
+          |   def change
+          |     create_table :places do |t|
+          |       t.string :name
+          |       t.text :description
+          |       t.string :address
+          |       t.timestamps
+          |     end
+          |   end
+          | end
 
-        p I set up a meeting to define some language for content and design. I worked with Elliott Ortho's team to brainstorm different approaches using mind maps.
+        pre: code.language-ruby class DeviseCreateUsers < ActiveRecord::Migration
+          |   def change
+          |     create_table(:users) do |t|
+          |       ## Database authenticatable
+          |       t.string :email,              null: false, default: ""
+          |       t.string :encrypted_password, null: false, default: ""
+          | 
+          |       ## Recoverable
+          |       t.string   :reset_password_token
+          |       t.datetime :reset_password_sent_at
+          | 
+          |       ## Rememberable
+          |       t.datetime :remember_created_at
+          | 
+          |       ## Trackable
+          |       t.integer  :sign_in_count, default: 0, null: false
+          |       t.datetime :current_sign_in_at
+          |       t.datetime :last_sign_in_at
+          |       t.inet     :current_sign_in_ip
+          |       t.inet     :last_sign_in_ip
 
-        img(src="images/elliott-ortho-mind-map.jpg", alt="mind mapping design language for the site")
+          |       t.timestamps
+          |     end
+          | 
+          |     add_index :users, :email,                unique: true
+          |     add_index :users, :reset_password_token, unique: true
+          |   end
+          | end
 
-        p Afterwards, I gathered dozens of fliers and handouts that Dr. Elliott and his team have created over the years and synthesized the documents to write content for the site.
+
+        pre: code.language-ruby class AlterUserIdAddColumn < ActiveRecord::Migration
+          |   def change
+          |     add_column :places, :user_id, :integer
+          |     add_index :places, :user_id
+          |   end
+          | end
+
+
+        pre: code.language-ruby class CreateComments < ActiveRecord::Migration
+          |   def change
+          |     create_table :comments do |t|
+          |       t.text :message
+          |       t.string :rating
+          | 
+          |       t.integer :user_id
+          |       t.integer :place_id
+          | 
+          |       t.timestamps
+          |     end
+          | 
+          |     add_index :comments, [:user_id, :place_id]
+          |     add_index :comments, :place_id
+          |   end
+          | end
+
+        pre: code.language-ruby class CreatePhotos < ActiveRecord::Migration
+          |   def change
+          |     create_table :photos do |t|
+          |       t.text :caption
+          |       t.integer :place_id
+          |       t.integer :user_id
+          |       t.timestamps
+          |     end
+          | 
+          |     add_index :photos, [:user_id, :place_id]
+          |     add_index :photos, :place_id
+          |   end
+          |end
+
+        pre: code.language-ruby class AddPictureToPhotos < ActiveRecord::Migration
+          |   def change
+          |     add_column :photos, :picture, :string
+          |   end
+          | end
+
+        h4.subheader Step 4. Layout
+        p I usually use Foundation since achieving semantic markup is much easier in Foundation, but I decided to use Bootstrap to layout the Nomster application.
+
+        p Starting on the homepage, I looped through an array of places in the database and created a masonry grid with each place item.
+
 
         h4.subheader Step 5. Wireframing
         p With some preliminary content written, I began to wireframe the website starting with the mobile device. As I worked from my lower-fidelity sketches I realized that in a mobile context, the user would benefit from a quick 'call-to-action' in the form of a fixed header.
