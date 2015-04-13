@@ -7,6 +7,7 @@
 hgroup.welcome {
   position: relative;
   animation: fade-down 1s;
+  text-align: center;
 }
 
 .welcome-video {
@@ -19,7 +20,6 @@ hgroup.welcome {
 
 .welcome-content {
 @include grid-column($columns: 12, $center: true);
-text-align: center;
 padding: 0;
 p {
   margin-top: 1.5rem;
