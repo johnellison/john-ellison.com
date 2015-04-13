@@ -162,62 +162,43 @@ block content
           | end
 
         h4.subheader Step 4. Layout
-        p I usually use Foundation since achieving semantic markup is much easier in Foundation, but I decided to use Bootstrap to layout the Nomster application.
+        p I usually use Foundation since achieving semantic markup is much easier in Foundation. For the Nomster app, I decided to use Bootstrap instead. I love learning and figured giving Bootstrap a try would give me another tool in my toolbelt.
 
         p Starting on the homepage, I looped through an array of places in the database and created a masonry grid with each place item.
 
+        p I used 
+          a(href="https://github.com/kristianmandrup/masonry-rails") masonry-rails
+          |  for masonry and infinite scroll, and 
+          a(href="https://github.com/amatsuda/kaminari") kaminari
+          |  for pagination.
 
-        h4.subheader Step 5. Wireframing
-        p With some preliminary content written, I began to wireframe the website starting with the mobile device. As I worked from my lower-fidelity sketches I realized that in a mobile context, the user would benefit from a quick 'call-to-action' in the form of a fixed header.
+        img(src="images/nomster-masonry-infinite-scroll.jpg", alt="adding masonry grid and infinite scroll to my nomster app for the firehose project")
 
-        img(src="images/elliott-ortho-wireframe-1.jpg", alt="wireframing the site starting with mobile")
+        p I then moved to the places/show page and added the basic layout with Google Maps integration via 
+          a(href="https://github.com/alexreisner/geocoder") geocoder
+          |  and the 
+          a(href="https://developers.google.com/maps/") Google Maps API.
 
-        p In talking with Dr. Elliott, I asked him how we could show (not tell) how his practice is set apart from the rest. He answered quickly by saying, &lsquo;Each orthodontist focuses on different elements to make a smile. Some are concerned with costs and are likely to sacrifice quality in the process. We are incredibly meticulous about each aspect of our patient's smile, and our work speaks by itself.&rsquo;
-
-        p Thinking back to Dan Saffer's
-          a(href="http://www.amazon.com/Microinteractions-Color-Edition-Designing-Details/dp/1491945923") Microinteractions
-          | , I sketched out a component that would allow users to view the different aspects of &lquo;What Makes an Elliott Smile&rsquo;. They would be able to swipe between a before and after. This would allow them to identify with previous patients and know that Dr. Elliott can do incredible work with smiles like theirs.
-
-        img(src="images/elliott-ortho-wireframe-2.jpg", alt="a wireframe of the microinteraction")
-
-        h4.subheader Step 5. Iterative Development
-        p After reading 
-          em The Vanilla Web Diet
-          |  by Christian Heilmann in
-          a(href="https://shop.smashingmagazine.com/smashing-book-4-ebooks.html") The Smashing Book #4,
-          |  I decided to start try out the vanilla diet as part of my process.
-        p I added the content as HTML5 markup and hooked up all the links such that the core functionality of the site worked without any CSS or javascript. 
-
-        img(src="images/elliott-ortho-vanilla.jpg", alt="trying out the vanilla web diet")
+        img(src="images/nomster-places-page.jpg", alt="laying out the nomster places page")
 
         p I used 
-          a(href="http://zurb.com/foundation")  Foundation 5 
-          |  to lay out the site. Once I had the main layout I put the site in the hands of some former patients at Elliott Ortho and asked them to perform basic tasks while I watched.
+          a(href="https://github.com/plataformatec/simple_form") Simple Form
+          |  and Bootstrap modals to add photos and comments to each place.
 
-        p The first thing I noticed was that on mobile, users wanted a quick way to 'access the map'. I had my computer running a local browsersync server so I quickly added a mobile-only fixed nav bar to test with the next user.
+        img(src="images/nomster-add-photo.jpg", alt="adding photos to the nomster app")
 
-        img(src="images/elliott-ortho-mobile-maps.jpg", alt="adding the mobile access map feature")
+        img(src="images/nomster-add-comment.jpg", alt="adding comments to the nomster app")
 
-        p Once we finished the first iteration of the site, it was time to push it live and test with real users. In order to measure effectively we needed to have proper analytics infrastructure.
+        p I then used  
+          a(href="http://www.informit.com/articles/article.aspx?p=1671632&seqNum=6") Rails Singleton Resource Routes
+          |  to add a dashboard for each user.
 
-        h4.subheader Step 6. Analytics Infrastructure
-        p During user testing we noticed that often times users would grab their phone and manually dial the number of the office rather than click the link 'Call Now'. This happend across several contexts. Since we wanted to measure the total conversion for the site, we needed to integrate with Elliott Ortho's scheduling platform.
+        img(src="images/nomster-user-dashboard.jpg", alt="nomster user dashboard")
 
-        p They a tool called Dolphin Management to track patient appointments and records. I worked with Bret Mette over at 
-          a(href="http://rowdydesign.com/") Rowdy Design
-          |  to design and develop a custom integration.
-
-        h4.subheader Step 6. Performance Optimization
-        p Once we launched the site I did some producting testing and optimization to ensure the site was performing at peak levels for users across devices. We scored above 90 for both our mobile and desktop pagespeed insights.
-
-        img(src="images/elliott-ortho-pagespeed-mobile.jpg", alt="testing the website pagespeed on mobile")
-        img(src="images/elliott-ortho-pagespeed-desktop.jpg", alt="testing the website pagespeed on desktop")
-
-        p We also met our performance goal of loading the page in under one second.
-
-        img(src="images/elliott-ortho-pingdom.jpg", alt="testing website load time with pingdom tools")
+        h4.subheader Back-End
+        p Since a majority of the back-end code was supplied by The Firehose Project, I can't take credit for the back-end work. I abided in the practice of typing out each line of code without copy-pasting. I did my best to grasp what each part of the code was doing and why. It wasn't until we started the group project did I really get a handle on writing Ruby and working with Rails.
 
         h3 Final Outcome
-        p I've teamed up with a Denver-based creative agency called 
-          a(href="http://webfuz.com") WebFuz
-          |  to help Elliott Ortho with content strategy and execution. The website has performed well since release. We've seen a 60% increase in overall traffic, a 33% decrease in bounce rate, and we are currently A/B testing to reach our converstion rate goals.
+        p I am pretty pleased with the outcome of my first full-stack project. I learned a lot about 'The Rails Way', and took a few deep dives to understand the rails core and how it works. The satisfaction of creating a Rails app in a few days was huge. While I may not have written the back-end code, I felt that through process of imitation I was learning more than I would have on my own.
+
+        p One thought: I wish I would have learned TDD prior to starting this app because I think it would have deepened the habit of TDD's &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle. Once I learned TDD and tried applying it to my existing development habits, it took me some time before the &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle came second nature.
