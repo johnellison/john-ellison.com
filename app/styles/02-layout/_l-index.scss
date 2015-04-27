@@ -19,15 +19,18 @@ hgroup.welcome {
 }
 
 .welcome-content {
-@include grid-column($columns: 12, $center: true);
-padding: 0;
-p {
-  margin-top: 1.5rem;
-}
+  @include grid-column($columns: 12, $center: true);
+  padding: 0;
+  h2 {
+    text-align: center;
+  }
+  p {
+    margin-top: 1.5rem;
+  }
 
-@media #{$large-up} {
-  @include grid-column($columns: 10, $center: true);
-}
+  @media #{$large-up} {
+    @include grid-column($columns: 10, $center: true);
+  }
 }
 
 hgroup.welcome {
@@ -91,7 +94,7 @@ hgroup.welcome {
     text-align: center;
   }
 
-  p {
+  .story-text > p {
     line-height: 1.4;
     &:first-child:first-letter { 
       float: left;
@@ -174,7 +177,7 @@ hgroup.welcome {
   padding-bottom: 4rem;
 }
 
-.contact-container {
+.contact-container, .notice-container {
   @include grid-row();
 }
 
@@ -202,4 +205,20 @@ hgroup.welcome {
    margin: 0;
    color: white;
  }
+} 
+
+.notice-container {
+  margin-top: 2rem;
+}
+.notice-content {
+  @include grid-column(12);
+
+  @media #{$medium-up} {
+    @include grid-column($columns: 10, $center: true);
+  }
+  @media #{$medium-up} {
+    @include grid-column($columns: 8, $center: true);
+  }
+
+  text-align: center;
 } 

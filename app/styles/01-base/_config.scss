@@ -70,8 +70,7 @@
   color: $body-font-color;
   &:hover {
     color: $header-font-color;
-    text-decoration: none;
-  }
+    text-decoration: none; }
   &.secondary {
     border: 2px solid $secondary-color;
   }
