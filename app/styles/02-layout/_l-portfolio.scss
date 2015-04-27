@@ -13,14 +13,15 @@
 
   @media #{$medium-up} {
     @include grid-column($columns: 10, $center: true);
+    padding: 2rem;
+    margin-top: -150px;
+    border-radius: $global-radius;
+    background: $white;
   }
 
   @media #{$large-up} {
     @include grid-column($columns: 8, $center: true);
     padding: 2rem;
-    margin-top: -150px;
-    border-radius: $global-radius;
-    background: $white;
   }
 
   img {

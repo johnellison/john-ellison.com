@@ -5,9 +5,9 @@
   background-position: 50% 50%;
 
   hgroup {
-    // padding-top: 11rem;
+    padding-top: 5rem;
     text-align: center;
-    @media #{$large-up} {
+    @media #{$medium-up} {
       padding-top: 7rem;
     }
     > * {
