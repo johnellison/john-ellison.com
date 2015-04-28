@@ -63,7 +63,7 @@
 .cta {
   @include button($bg: false, $radius: $global-radius);
   padding: .5rem 1.5rem;
-  border: 2px solid $red;
+  border: 2px solid $accent-color;
   @include uppercase-styling;
   @include global-hover;
   font-weight: 500;
@@ -76,7 +76,6 @@
   }
   &.white {
     color: white !important;
-    border: 2px solid $white;
     &:hover {
       color: white;
     }
