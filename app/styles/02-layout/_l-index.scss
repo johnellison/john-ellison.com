@@ -93,22 +93,6 @@ hgroup.welcome {
   h2 {
     text-align: center;
   }
-
-  .story-text > p {
-    line-height: 1.4;
-    &:first-child:first-letter { 
-      float: left;
-      color: $header-font-color;
-      font-size: 2.75rem;
-      line-height: 2.5rem;
-      padding-top: 4px;
-      padding-right: 8px;
-      // padding-left: 3px;
-      // margin-top: -5px;
-      font-family: $header-font-family; 
-    } 
-  }
-
 }
 
  // Portfolio 
@@ -144,6 +128,10 @@ hgroup.welcome {
 .service-column {
  @include grid-column(12);
  text-align: center;
+
+ h3 {
+  margin-bottom: .5rem;
+ }
 
  @media #{$medium-up} {
    @include grid-column(4);

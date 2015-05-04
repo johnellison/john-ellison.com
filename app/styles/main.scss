@@ -8,7 +8,8 @@
 @import "settings";
 
 // You can import only specific elements by adjusting the import below
-@import "foundation/components/block-grid",
+@import "normalize",
+        "foundation/components/block-grid",
         "foundation/components/buttons",
         "foundation/components/forms",
         "foundation/components/flex-video",

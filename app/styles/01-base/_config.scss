@@ -70,6 +70,7 @@
   color: $body-font-color;
   &:hover {
     color: $header-font-color;
+    background-color: $accent-color;
     text-decoration: none; }
   &.secondary {
     border: 2px solid $secondary-color;
@@ -81,10 +82,6 @@
     }
   }
 
-}
-
-p {
-  line-height: 1.4;
 }
 
 a:hover {
@@ -99,18 +96,21 @@ p + ul {
   margin-top:
 }
 
-
-h2, h3, h4, h5, h6 {
-  margin-bottom: 0;
-  line-height: 1.3;
-}
-
 h3, h4, h5, h6 {
   font-weight: 300;
 }
 
+hgroup {
+  h2 {
+    margin-bottom: 0rem;
+    line-height: 1;
+  }
+  h4.subheader {
+    margin-top: 0rem;
+  }
+}
+
 .subheader {
-  margin-bottom: 1rem;
   font-weight: 300;
   @include uppercase-styling;
 }
@@ -131,4 +131,16 @@ code {
   background: none;
   border: none;
 }
+
+span.drop-cap { 
+  float: left;
+  color: $accent-color;
+  font-size: 6.3rem;
+  line-height: .75;
+  padding-right: .75rem;
+  // padding-left: 3px;
+  // margin-bottom: -1.2rem;
+  margin-top: .55rem;
+  font-family: $header-font-family; 
+} 
 
