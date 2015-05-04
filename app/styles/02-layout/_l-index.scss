@@ -1,58 +1,94 @@
 // l-index
 
 #welcome {
-  padding-bottom: 4rem;
+  padding-top: 14rem;
+  background-image: url('../images/video-bg-1280x720.jpg');
+  background-size: cover;
+  min-height: 760px;
+  @media #{$small-only} {
+    // background-image: url('../images/video-bg-980x1269.jpg');
+    // background-size: cover;
+    padding-top: 3.8rem;
+    min-height: 670px;
+    max-height: 745px;
+  }
+  @media #{$large-up} {
+    background-image: url('../images/video-bg-1920x1080.jpg');
+    background-size: cover;
+  }
 }
 
 hgroup.welcome {
   position: relative;
   animation: fade-down 1s;
   text-align: center;
-}
-
-.welcome-video {
-  animation: fade-in 2s;
-}
-
-.welcome-container {
-  @include grid-row();
-}
-
-.welcome-content {
-  @include grid-column($columns: 12, $center: true);
-  padding: 0;
-  h2 {
-    text-align: center;
-  }
-  p {
-    margin-top: 1.5rem;
-  }
-
-  @media #{$large-up} {
-    @include grid-column($columns: 10, $center: true);
-  }
-}
-
-hgroup.welcome {
-  padding: 2rem 0;
-  @media #{$medium-up} {
-    padding: 2.5rem 0;
-  }
-  @media #{$large-up} {
-    padding: 3rem 0;
-  }
-  @media #{$large-up} {
-    padding: 3.5rem 0;
-  }
   h1 {
     line-height: .9;
+    margin-bottom: 1.4rem;
+  }
+  .subheader {
+    color: #fff;
   }
 
+}
+
+// Play Button
+
+.play-button {
+  display: block;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  padding-top: 3.8rem;
+  @media #{$small-only} {
+    padding-top: 0rem;
+  }
+  .play {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    @include global-transition;
+
+    span {
+      border-top: 25px solid transparent;
+      border-bottom: 25px solid transparent;
+      border-left: 40px solid #fff;
+      margin-top: 20px;
+      margin-left: 15px;
+      display: inline-block;
+      @include global-transition;
+
+    }
+  }
+  &:hover {
+    .play {
+      border: 2px solid $accent-color;
+      span {
+        border-left: 40px solid $accent-color;
+      }
+    }
+  }
+}
+
+.reveal-modal {
+  .close-reveal-modal {
+    color: darken(#fff, 15%);
+    text-decoration: none;
+    @include global-transition;
+    &:hover {
+      text-decoration: none;
+      color: #fff;
+    }
+  }
 }
 
 .welcome-video {
   @include flex-video-container();
-  margin-top: 1rem;
+}
+
+.welcome-container {
+  @include grid-row();
 }
 
 .content-section {
@@ -61,14 +97,6 @@ hgroup.welcome {
    @media #{$xlarge-up} {
     padding: 6rem 0;
    }
-}
-
-// secondary nav
-
-.icon-bar {
-  label {
-    font-weight: 100;
-  }
 }
 
 // Story

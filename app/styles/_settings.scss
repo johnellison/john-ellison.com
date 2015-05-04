@@ -1,3 +1,4 @@
+
 // Foundation by ZURB
 // foundation.zurb.com
 // Licensed under MIT Open Source
@@ -119,7 +120,7 @@ $black       : #000000;
 //Variables
 $blue-grey: #464f5d ; //header
 $blue-grey-tint: lighten($blue-grey, 20%); //body-font
-$accent-color: #C7145F;
+$accent-color: #E0176B;
 
 // We use these as default colors throughout
 $primary-color: $blue-grey;
@@ -1091,18 +1092,18 @@ $include-html-range-slider-classes: false;
 // 25. Reveal
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-$include-html-reveal-classes: false;
+$include-html-reveal-classes: true;
 
 // We use these to control the style of the reveal overlay.
 // $reveal-overlay-bg: rgba($black, .45);
 // $reveal-overlay-bg-old: $black;
 
 // We use these to control the style of the modal itself.
-// $reveal-modal-bg: $white;
-// $reveal-position-top: rem-calc(100);
-// $reveal-default-width: 80%;
-// $reveal-max-width: $row-width;
-// $reveal-modal-padding: rem-calc(20);
+$reveal-modal-bg: rgba($black, .85);
+$reveal-position-top: 0;
+$reveal-default-width: 100%;
+$reveal-max-width: 100%;
+$reveal-modal-padding: rem-calc(36);
 // $reveal-box-shadow: 0 0 10px rgba($black,.4);
 
 // We use these to style the reveal close button
@@ -1113,11 +1114,11 @@ $include-html-reveal-classes: false;
 // $reveal-close-weight: $font-weight-bold;
 
 // We use this to set the default radius used throughout the core.
-// $reveal-radius: $global-radius;
+$reveal-radius: 0px;
 // $reveal-round: $global-rounded;
 
 // We use these to control the modal border
-// $reveal-border-style: solid;
+$reveal-border-style: none;
 // $reveal-border-width: 1px;
 // $reveal-border-color: $steel;
 
