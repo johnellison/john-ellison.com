@@ -223,19 +223,3 @@ hgroup.welcome {
    color: white;
  }
 } 
-
-.notice-container {
-  margin-top: 2rem;
-}
-.notice-content {
-  @include grid-column(12);
-
-  @media #{$medium-up} {
-    @include grid-column($columns: 10, $center: true);
-  }
-  @media #{$medium-up} {
-    @include grid-column($columns: 8, $center: true);
-  }
-
-  text-align: center;
-} 
