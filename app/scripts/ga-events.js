@@ -22,16 +22,13 @@
     });
   });
 
-
-  //contact from services
-  $("[data-event='service-contact-button']").on('click', function(){
+  $("[data-event='view-resume'").on('click', function() {
     ga('send', {
       'hitType' : 'event',
-      'eventCategory' : 'Contact',
-      'eventAction' : 'sent',
-      'eventLabel' : 'Learn More',
-      'eventValue' : 400
+      'eventCategory' : 'View Resume'
     });
+  })
+
   });
 }());
  
