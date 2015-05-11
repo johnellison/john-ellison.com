@@ -27,8 +27,6 @@
       'hitType' : 'event',
       'eventCategory' : 'View Resume'
     });
-  })
-
   });
 }());
  
