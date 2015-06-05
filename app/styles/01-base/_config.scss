@@ -124,7 +124,7 @@ h3.subheader {
 }
 
 img {
-  margin-bottom: 1rem;
+  margin-bottom: 1.8rem;
 }
 
 code {
@@ -132,10 +132,14 @@ code {
   border: none;
 }
 
+pre[class*="language-"] { 
+  margin-bottom: 1.8rem;
+}
+
 span.drop-cap { 
   float: left;
   color: $accent-color;
-  font-size: 6.3rem;
+  font-size: 5.9rem;
   line-height: .75;
   padding-right: .75rem;
   // padding-left: 3px;
@@ -143,4 +147,8 @@ span.drop-cap {
   margin-top: .55rem;
   font-family: $header-font-family; 
 } 
+
+blockquote {
+  border-left: 1px solid $accent-color;
+}
 

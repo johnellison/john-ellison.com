@@ -5,16 +5,18 @@
   background-position: 50% 50%;
 
   hgroup {
-    padding-top: 5rem;
+    padding-top: 3.6rem;
     text-align: center;
+    margin-bottom: 1.8rem;
     @media #{$medium-up} {
-      padding-top: 7rem;
+      padding-top: 5.4rem;
     }
     > * {
       color: white;
     }
     h1 {
       line-height: 1;
+      margin-bottom: 0;
     }
   }
   &#thengine {

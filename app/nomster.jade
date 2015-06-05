@@ -7,7 +7,7 @@ block content
     section.m-marquee#nomster
       hgroup
         h1 Nomster
-        h2.subheader Ruby on Rails Development
+        h2.subheader Full-Stack Development With Ruby on Rails
         a.cta.white(href="http://nomster-john-ellison.herokuapp.com") Check Out The App
     .main-article-container
       .main-article-content 
@@ -15,9 +15,10 @@ block content
         p For months I had been looking for a great way to immerse myself in learning how to code. After reading through every coding bootcamp website and review, I finally settled on 
           a(href="http://thefirehoseproject.com") The Firehose Project.
 
-        p The Firehose Project is an online coding bootcamp based in Boston. The Firehose motto is &ldquo;We change peoples' lives so they can do what they love every single day.&rdquo;
+        p The Firehose Project is an online coding bootcamp based in Boston. The Firehose motto is 
+          em &ldquo;We change peoples' lives so they can do what they love every single day.&rdquo;
 
-        p Their motto sounded a lot like my mission for my freelance work, so I decided to learn more. After talking with Marco over at The Firehose Project I committed to invest the next three months to The Firehose Project. I really liked their curriculum and the way they customized their curriculum to each of their students.
+        p Their motto sounded a lot like my mission for my freelance work, so I decided to learn more. After talking with Marco over at The Firehose Project and considering all my other options, I committed to invest the next three months to The Firehose Project. I really liked their curriculum and the way they customized their curriculum to each of their students.
 
         h3 The Problem
         p Besides basic Javascript and some  
@@ -26,10 +27,10 @@ block content
           a(href="http://www.lynda.com/Programming-tutorials/Foundations-of-Programming-Object-Oriented-Design/96949-2.html") Lynda's Foundations of Programming
           |  course, but that was about it.
 
-        p I taught myself HTML, CSS, SASS, Javascript and jQuery. While I was competent in my craft, I knew I could learn faster by immersing myself in a environment with mentors and fellow developers.
+        p I taught myself HTML, CSS, SASS, Javascript and jQuery for UX prototyping purposes, but I was interested in understanding the medium of my work. I wanted to learn how developers think and how to communicate with them as a UX Designer. 
 
         h3 The Goal
-        p The goal of our second project was to learn Ruby on Rails fundamentals through building a Yelp clone.
+        p The goal of our the Nomster project was to learn Ruby on Rails fundamentals through building a Yelp clone.
 
         h3 My Approach
         p Before starting The Firehose project I went through the 
@@ -52,14 +53,16 @@ block content
         img(src="images/dashboard-wireframe.png", alt="wireframe of the nomster dashboard page")
 
         h4.subheader Step 2. Data Modeling
-        p Based upon the wireframes I knew that I needed to model the data with the following entities:
+        p Based upon the wireframes I knew that I needed to model the following entities:
         ul
           li User
           li Place
           li Photo
           li Comment
 
-        p I created a basic diagram on dbpatterns to help me visualize Nomster's database.
+        p I created a basic diagram on 
+          a(href="http://dbpatterns.com/documents/5526dad81514b456664a075d/") dbpatterns
+          |  to help me visualize Nomster's database.
 
         img(src="images/nomster-db-pattern.png", alt="modeling the database for the nomster app")
 
@@ -162,7 +165,7 @@ block content
           | end
 
         h4.subheader Step 4. Layout
-        p I usually use Foundation since achieving semantic markup is much easier in Foundation. For the Nomster app, I decided to use Bootstrap instead. I love learning and figured giving Bootstrap a try would give me another tool in my toolbelt.
+        p I usually use Foundation since achieving semantic markup is much easier in Foundation than it is in Bootstrap, but for the Nomster app, I decided to use Bootstrap to get some different exposure.
 
         p Starting on the homepage, I looped through an array of places in the database and created a masonry grid with each place item.
 
@@ -196,9 +199,13 @@ block content
         img(src="images/nomster-user-dashboard.jpg", alt="nomster user dashboard")
 
         h4.subheader Step 5. Back-End
-        p Since a majority of the back-end code was supplied by The Firehose Project, I can't take credit for the back-end work. I abided in the practice of typing out each line of code without copy-pasting. I did my best to grasp what each part of the code was doing and why. It wasn't until we started the group project did I really get a handle on writing Ruby and working with Rails.
+        p Since a majority of the back-end code was supplied by The Firehose Project, I can't take credit for the back-end work. As I typed out each line of code, I did my best to grasp what each part of the code was doing and why. But It wasn't until we started the group project did I really get a handle on writing Ruby and working with Rails.
+
+        p I must say that the coding challenges they gave you in the program is probably where I had the toughest time. I'm definitely not a programmer per se and solving complex computer science problems with code gave me some serious trouble. I worked through most of the problems on a whiteboard with my mentor, and had moments of ecstacy as I started to figure them out. Solving problems like that with code is really cool&mdash;kudos to those of you who are naturals.
+
 
         h3 Final Outcome
         p I am pretty pleased with the outcome of my first full-stack project. I learned a lot about 'The Rails Way', and took a few deep dives to understand the rails core and how it works. The satisfaction of creating a Rails app in a few days was huge. While I may not have written the back-end code, I felt that through process of imitation I was learning more than I would have on my own.
 
-        p One thought: I wish I would have learned TDD prior to starting this app because I think it would have deepened the habit of TDD's &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle. Once I learned TDD and tried applying it to my existing development habits, it took me some time before the &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle came second nature.
+        p One thought: I wish I would have learned TDD prior to starting this app because I think it would have deepened the habit of TDD's &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle. Once I learned TDD and tried applying it to my existing development habits, it took me some time before the &lsquo;Red&mdash;Green&mdash;Refactor&rsquo; cycle came second nature. The guys at the Firehose project were super receptive to this and humbly asked for feedback at milestones throughout the course. If you've read this and are interested in learning how to code, I highly recommend 
+          a(href="http://www.thefirehoseproject.com/") The Firehose Project. 
