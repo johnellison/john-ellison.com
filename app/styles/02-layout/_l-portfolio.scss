@@ -30,6 +30,25 @@
   }
 }
 
- 
+.sprky-team-list {
+  list-style: none;
+  display: table;
+  margin: 0 auto;
+  margin-bottom: 1.8rem;
+  li {
+    display: inline-block;
+    text-align: center;
+    margin-right: 1.8rem;
+    img {
+        width: 150px;
+        height: 150px;
+        margin-bottom: .45rem;
+      }
+  } 
+}
+
+.sprky-wireframe {
+  border: 1px solid $primary-color;
+}
 
 

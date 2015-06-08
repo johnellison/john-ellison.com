@@ -1,0 +1,712 @@
+extends layout
+  
+block title
+  | SRPKY Chess - Learning Ruby on Rails at The Firehose Project
+block content  
+  article
+    section.m-marquee#sprky
+      hgroup
+        h1 SPRKY Chess
+        h2.subheader Full-Stack Development With Ruby on Rails
+        a.cta.white(href="http://sprky.herokuapp.com") Check Out The App
+    .main-article-container
+      .main-article-content
+        h2 Case Study 
+        p For the capstone of 
+          a(href="thefirehoseproject.com") The Firehose Project
+          |, our team was given the task of building an online chess app using Ruby on Rails.
+
+        h3 The Problem
+        p As four developers learning how to code, we were committed to building a great chess app with high quality source code and a great experience, but none of us had ever worked in a development team before and had little experience writing production-ready server-side code.
+
+        h3 The Team
+        p I had the pleasure of working with these three awesome teammates for this project:
+        ul.sprky-team-list
+          li
+            img(src="images/aaron-washburn.jpg", alt="aaron washburn ruby on rails teammate")
+            a(href="https://www.linkedin.com/in/washburnad") Aaron Washburn
+          li
+            img(src="images/hilary-sinkoff.jpg", alt="hilary sinkoff ruby on rails teammate")
+            a(href="https://github.com/hsinkoff") Hilary Sinkoff
+
+          li
+            img(src="images/michael-warren.jpg", alt="michael warren ruby on rails teammate")
+            a(href="") Michael Warren
+
+        h3 Our Process
+
+        h4.subheader Step 1. Project Management Tools
+        p Before diving into deliverables, I insisted that we use 
+          a(href="https://trello.com/") Trello
+          |  to manage tasks and 
+          a(href="https://slack.com/") Slack
+          |  for team communication. I had used these two tools together on the 
+          a(href="/cloudegy.html") Cloudegy
+          |  project and was amazed at how well they worked together. There was no way we were going to manage this project with email.
+
+        h4.subheader Step 2. Delegating Tasks
+        p We started off our first meeting with a quick overview of what we'd be building. Led by the enthusiastic Ken Mazaika (co-founder of The Firehose Project), we were buzzing with excitement.
+
+        p I took the data modeling task since that was something I had never done before. It seemed like the thought process behind data modeling and information architecture was quite similar and I wanted to get my hands dirty to see what correlations I would find.
+
+        h4.subheader Step 3. Data Modeling
+
+        img(src="images/sprky-chess-data-model.jpg", alt="the data model I created for our chess app")
+
+        h4.subheader Step 4. Wireframing
+
+        p With a few initial wireframes by teammate Michael Warren, we knew what we were building and were on our way towrards Rubyland, but first we needed to setup our deployment pipeline.
+
+        img(src="images/sprky-wireframe-1.jpg", alt="a wireframe for our sprky chess app ruby on rails firehose project").sprky-wireframe
+
+        img(src="images/sprky-wireframe-2.jpg", alt="a second wireframe for our sprky chess app ruby on rails firehose project").sprky-wireframe
+
+        img(src="images/sprky-wireframe-2.jpg", alt="a third  wireframe for our sprky chess app ruby on rails firehose project").sprky-wireframe
+
+        h4.subheader Step 5. Setting Up Deployment
+        p Aaron Washburn took on the job of setting up a new 
+          a(href="http://heroku.com/") Heroku app
+          | , 
+          a(href="http://github.com/") Github repo
+          | , and configuring continuous integration with 
+          a(href="http://codeship.io/") Codeship.
+
+        h4.subheader Step 6. Structuring The Application
+        p Based upon our data model and wireframes, we took to setting up the basic application structure in Rails.
+
+        img(src="images/sprky-structure.jpg", alt="file structure for our chess app ruby on rails the firehose project")
+
+        p We ran migrations and setup our database.
+
+        h5 schema.rb
+
+        pre: code.language-ruby.
+          ActiveRecord::Schema.define(version: 20150430224635) do
+
+            enable_extension "plpgsql"
+
+            create_table "games", force: true do |t|
+              t.string   "name"
+              t.string   "state"
+              t.integer  "white_player_id"
+              t.integer  "black_player_id"
+              t.integer  "winning_player_id"
+              t.datetime "created_at"
+              t.datetime "updated_at"
+              t.integer  "turn"
+            end
+
+            create_table "invitations", force: true do |t|
+              t.integer  "game_id"
+              t.integer  "player_id"
+              t.string   "guest_player_email"
+              t.datetime "created_at"
+              t.datetime "updated_at"
+            end
+
+            create_table "pieces", force: true do |t|
+              t.integer  "x_position"
+              t.integer  "y_position"
+              t.string   "symbol"
+              t.boolean  "color"
+              t.integer  "player_id"
+              t.integer  "game_id"
+              t.datetime "created_at"
+              t.datetime "updated_at"
+              t.string   "type"
+              t.string   "state"
+            end
+
+            create_table "players", force: true do |t|
+              t.string   "name"
+              t.datetime "created_at"
+              t.datetime "updated_at"
+              t.string   "email",                  default: "", null: false
+              t.string   "encrypted_password",     default: "", null: false
+              t.string   "reset_password_token"
+              t.datetime "reset_password_sent_at"
+              t.datetime "remember_created_at"
+              t.integer  "sign_in_count",          default: 0,  null: false
+              t.datetime "current_sign_in_at"
+              t.datetime "last_sign_in_at"
+              t.inet     "current_sign_in_ip"
+              t.inet     "last_sign_in_ip"
+            end
+
+            add_index "players", ["email"], name: "index_players_on_email", unique: true, using: :btree
+            add_index "players", ["reset_password_token"], name: "index_players_on_reset_password_token", unique: true, using: :btree
+
+          end
+
+        p We got the chess board marked up: 
+
+        pre: code.language-haml.
+          - if game
+            %p= raw show_opponent
+            %table#gameboard{"data-game-id" => game.id, "data-game-state" => game.state, "data-your-turn" => your_turn?}
+              - row_range.each do |row|
+                %tr{:class => "y-position-#{row}"}
+                  - row_range.reverse.each do |column|
+                    - query_result = game.pieces.find { |p| p["x_position"] == column && p["y_position"] == row }
+                    = raw gameboard_td(query_result, column, row)
+            %p= raw show_player
+
+        p We styled it to look like an actual chessboard instead of a table:
+
+        pre: code.language-scss.
+          #gameboard {
+            border-collapse: collapse;
+            margin: 0 auto .5em auto;
+            padding-top: 40px;
+            width: auto;
+            border: 2px solid black;
+
+            tr:nth-child(even) td:nth-child(even), tr:nth-child(odd) td:nth-child(odd) {
+              background-image: url('/assets/white-square.jpg');
+            }
+
+            tr:nth-child(even) td:nth-child(odd), tr:nth-child(odd) td:nth-child(even) {
+              background-image: url('/assets/black-square.jpg');
+            }
+
+            tr, td {
+              border: 1px solid black;
+            }
+
+            td {
+              width: 60px;
+              height: 60px;
+              padding: 0;
+              &:hover {
+                border: 2px solid $primary-color;
+              }
+              &.selected {
+                border: 2px solid $primary-color;
+                &.select-destination {
+                  border: none;
+                }
+              }
+            }
+          }
+
+        p We setup the game model to initialize the chess board with the right pieces when a game is created:
+
+        pre: code.language-ruby.
+          class Game < ActiveRecord::Base
+            after_create :initialize_board!
+            def initialize_board!
+              # White Pieces
+              (0..7).each do |i|
+                Pawn.create(
+                  game_id: id,
+                  x_position: i,
+                  y_position: 1,
+                  color: true
+                  )
+              end
+
+              Rook.create(game_id: id, x_position: 0, y_position: 0, color: true)
+              Rook.create(game_id: id, x_position: 7, y_position: 0, color: true)
+
+              Knight.create(game_id: id, x_position: 1, y_position: 0, color: true)
+              Knight.create(game_id: id, x_position: 6, y_position: 0, color: true)
+
+              Bishop.create(game_id: id, x_position: 2, y_position: 0, color: true)
+              Bishop.create(game_id: id, x_position: 5, y_position: 0, color: true)
+
+              Queen.create(game_id: id, x_position: 3, y_position: 0, color: true)
+              King.create(game_id: id, x_position: 4, y_position: 0, color: true)
+
+              # Black Pieces
+              (0..7).each do |i|
+                Pawn.create(
+                  game_id: id,
+                  x_position: i,
+                  y_position: 6,
+                  color: false
+                  )
+              end
+
+              Rook.create(game_id: id, x_position: 0, y_position: 7, color: false)
+              Rook.create(game_id: id, x_position: 7, y_position: 7, color: false)
+
+              Knight.create(game_id: id, x_position: 1, y_position: 7, color: false)
+              Knight.create(game_id: id, x_position: 6, y_position: 7, color: false)
+
+              Bishop.create(game_id: id, x_position: 2, y_position: 7, color: false)
+              Bishop.create(game_id: id, x_position: 5, y_position: 7, color: false)
+
+              Queen.create(game_id: id, x_position: 3, y_position: 7, color: false)
+              King.create(game_id: id, x_position: 4, y_position: 7, color: false)
+            end
+          end
+
+        h4.subheader Step 6. Legal Move Logic For Each Piece
+        p We added each piece type to our trello board. I volunteered to start with the pawn's legal move logic so we would have a good set of design patterns and logic for crafting the other pieces moving forward.
+
+        blockquote This is where I really started to grow as a developer. I pair programmed with team mates, talked best practices and reviewed code with my mentor. I finally got into a flow with the TDD 'red-green-refactor' cycle.
+
+        h5 pawn_legal_move_test.rb
+        
+        pre: code.language-ruby.
+          require 'test_helper'
+
+          # Tests specific to legal_move? Pawn logic
+          class PawnLegalMoveTest < ActiveSupport::TestCase
+            test 'illegal white moves' do
+              setup_game_and_white_pawn
+
+              assert_not @white_pawn.legal_move?(1, 0)
+              assert_not @white_pawn.legal_move?(0, 1)
+              assert_not @white_pawn.legal_move?(1, 4)
+              assert_not @white_pawn.legal_move?(2, 2)
+            end
+
+            test 'legal white first moves' do
+              setup_game_and_white_pawn
+
+              assert @white_pawn.legal_move?(1, 2)
+              assert @white_pawn.legal_move?(1, 3)
+            end
+
+            test 'legal white regular moves' do
+              setup_game_and_white_pawn
+              @white_pawn.update_piece(2, 3, 'moved')
+              @white_pawn.reload
+
+              assert @white_pawn.legal_move?(2, 4)
+            end
+
+            test 'illegal black moves' do
+              setup_game_and_white_pawn
+              setup_black_pawn
+
+              assert_not @black_pawn.legal_move?(1, 7)
+              assert_not @black_pawn.legal_move?(0, 6)
+              assert_not @black_pawn.legal_move?(2, 5)
+              assert_not @black_pawn.legal_move?(1, 3)
+            end
+
+            test 'legal black first moves' do
+              setup_game_and_white_pawn
+              setup_black_pawn
+
+              assert @black_pawn.legal_move?(1, 5)
+              assert @black_pawn.legal_move?(1, 4)
+            end
+
+            test 'destination obstructed' do
+              setup_game_and_white_pawn
+              setup_black_pawn
+              @black_pawn.update_piece(1, 6, 'moved')
+
+              FactoryGirl.create(
+                :pawn,
+                x_position: 1,
+                y_position: 2,
+                color: false,
+                game_id: @game.id)
+
+              FactoryGirl.create(
+                :pawn,
+                x_position: 1,
+                y_position: 5,
+                color: false,
+                game_id: @game.id)
+
+              assert_not @white_pawn.legal_move?(1, 2), 'destination obstructed'
+              assert_not @black_pawn.legal_move?(1, 5), 'destination obstructed'
+            end
+
+            def setup_game_and_white_pawn
+              @game = FactoryGirl.create(:game)
+              @white_pawn = @game.pieces.find_by(
+                x_position: 1,
+                y_position: 1)
+            end
+
+            def setup_black_pawn
+              @black_pawn = @game.pieces.find_by(
+                x_position: 1,
+                y_position: 6)
+            end
+          end
+
+
+        h5 pawn.rb excerpt:
+
+        pre: code.language-ruby.
+          class Pawn < Piece
+            def legal_move?(x, y)
+              return false if backwards_move? y
+              return false if horizontal_move? x
+
+              proper_length? y
+            end
+
+            private
+
+            def horizontal_move?(x)
+              x_diff = (x_position - x).abs
+              x_diff != 0
+            end
+
+            def backwards_move?(y)
+              color ? y_position > y : y_position < y
+            end
+
+            def first_move?(_y)
+              (y_position == 1 && color) || (y_position == 6 && !color)
+            end
+
+            def proper_length?(y)
+              (y - y_position).abs == 1
+            end
+          end
+
+        small In refactoring the code I wrote with my mentor 
+          a(href="http://www.thefirehoseproject.com/mentors") Bob Breznak
+          | , I really started to appreciate the nature of the Ruby language. The implicit return of the last statement within a method, the terse and human-readable syntax, the simple variable declarations— an appreciation for Ruby was growing.
+        hr
+
+        h4.subheader Step 7. Games Controller Logic
+        p While I was working on laying out the legal move logic for the pawn, Aaron was digging in the trenches of our games controller. We often worked together to review and refactor each other's work. There's nothing better than a second pair of eyes while you're trying to create something in code.
+
+        p Here are a few examples of some controller code we worked out. There's nothing fancy here but we're proud of the quality of the code that we wrote:
+
+        h5 games_controller_test.rb
+
+        pre: code.language-ruby.
+          require 'test_helper'
+
+          class GamesControllerTest < ActionController::TestCase
+            test 'game join success' do
+              player = FactoryGirl.create(:player)
+              sign_in player
+              game = FactoryGirl.create(:game, white_player_id: player.id)
+              patch :update, id: game.id, game: { black_player_id: 37 }
+              game.reload
+              assert_response :found
+              assert_redirected_to game_path(assigns(:game))
+              # method exists to randomize which player is white and which is black
+              # for this reason either color may end up being player 37
+              assert game.white_player_id == 37 ||  game.black_player_id == 37
+            end
+
+            test 'game join fail due to identical player_id\'s' do
+              player = FactoryGirl.create(:player)
+              sign_in player
+              game = FactoryGirl.create(:game, white_player_id: 3)
+              patch :update, id: game.id, game: { black_player_id: 3 }
+              game.reload
+              assert_response :unprocessable_entity, 'Should respond unprocessable_entity'
+            end
+
+            test 'game created with :create action' do
+              player = FactoryGirl.create(:player)
+              sign_in player
+              assert_difference('Game.count') do
+                post :create, game: { name: 'game1' }
+              end
+              assert_redirected_to game_path(assigns(:game))
+            end
+
+            test 'update should be successful' do
+              game = FactoryGirl.create(
+                :game,
+                id: 1,
+                white_player_id: 1)
+              black_player = FactoryGirl.create(:player, id: 2)
+              sign_in black_player
+
+              patch :update,
+                    id: game.id,
+                    game: { black_player_id: 2 }
+
+              assert_redirected_to game_path(game)
+            end
+
+            test 'should assign pieces after update' do
+              white_player = FactoryGirl.create(:player, id: 1)
+
+              game = FactoryGirl.create(
+                :game,
+                white_player_id: white_player.id)
+
+              black_player = FactoryGirl.create(:player, id: 2)
+              sign_in black_player
+
+              black_piece = game.pieces.where(color: false).first
+
+              patch :update,
+                    id: game.id,
+                    game: { black_player_id: black_player.id }
+
+              black_piece.reload
+
+              assert_equal black_player.id, black_piece.player_id
+            end
+
+            test 'guest can join game' do
+              host = FactoryGirl.create(:player, id: 1)
+              guest = FactoryGirl.create(:player, id: 2)
+              sign_in guest
+
+              game = FactoryGirl.create(:game, white_player_id: host.id)
+
+              patch :update, id: game.id, game: { black_player_id: guest.id }
+              game.reload
+
+              assert_response :found
+              assert_redirected_to game_path(game)
+              assert_equal guest.id, game.black_player_id
+              assert_equal host.id, game.white_player_id
+            end
+
+            test 'Should return to dashboard for unknown game' do
+              player = FactoryGirl.create(:player)
+              sign_in player
+
+              get :show, id: 99
+
+              assert_redirected_to dashboard_path
+            end
+          end
+
+        h5 games_controller.rb
+
+        pre: code.language-ruby.
+          class GamesController < ApplicationController
+            before_action :authenticate_player!
+            helper_method :game
+
+            def new
+              @game = Game.new
+            end
+
+            def create
+              @game = Game.create(game_params)
+              redirect_to game_path(@game)
+            end
+
+            def show
+              unless game.present?
+                return redirect_to dashboard_path
+              end
+            end
+
+            def index
+              redirect_to dashboard_path
+            end
+
+            def update
+              if game.valid? && unique_players?
+                game.update_attributes game_params
+                game.assign_pieces
+                return redirect_to game_path game
+              end
+
+              render :new, status: :unprocessable_entity
+            end
+
+            private
+
+            def game
+              @game ||= Game.where(id: params[:id]).last
+            end
+
+            def game_params
+              params.require(:game).permit(
+                :name,
+                :white_player_id,
+                :black_player_id)
+            end
+
+            def unique_players?
+              @game.white_player_id != game_params[:black_player_id].to_i
+            end
+          end
+
+        h4.subheader Step 8. Front-end Javascript
+
+        p Aaron created the initial front-end javascript for allowing a player to select and move the piece. We incorporated some basic logic checks on the front-end to reduce database queries, but most of the logic was done after rails received the request.
+
+        p I went through and refactored the javascript as a learning practice since I had never approached this level of complexity in Javascript.
+
+        h5 gameboard.js
+
+        pre: code.language-javascript.
+          $(document).ready(function () {
+
+            // Selecting & Moving Pieces
+            $('#gameboard td').click(function() {
+              $this = $(this);
+              // Returns boolean to determine piece is selected or not
+              var pieceIsSelected = $('#gameboard td').hasClass('selected');
+
+              if (pieceIsSelected){
+                // Returns jQuery object of selectedPiece if a piece is selected
+                var $piece = selectedPiece();
+
+                if ($piece.data('piece-id') == $this.data('piece-id')) {
+                  deselectPiece( $this );
+                } else {
+                    sendMove ($piece, $this);
+                  }
+              } else {
+                selectPiece($this);
+              }
+
+            });
+
+            function selectedPiece() {
+              return $('#gameboard td.selected');
+            }
+
+            function sendMove ($piece, $destination) {
+              var piece = {
+                id: $piece.data('piece-id'),
+                x_position: $destination.data('x-position'),
+                y_position: $destination.data('y-position')
+              }
+
+              if ( isPawnPromotion($piece, piece.y_position)) {
+                openModal('#promo-modal', function(pieceType) {
+                  piece.type = pieceType;
+                  submitPieceUpdate(piece);
+                });
+
+              } else {
+                submitPieceUpdate(piece);
+              }
+            }
+
+            function submitPieceUpdate(piece) {
+              $.ajax({
+                type: 'PATCH',
+                url: '/pieces/' + piece.id,
+                dataType: 'json',
+                data: { 
+                  piece: piece
+                },
+                success: function(data) {
+                  $(location).attr('href', data.update_url);
+                }
+              });
+            }
+
+            function selectPiece($piece) {
+              var isPlayersTurn = $('#gameboard').data('your-turn');
+
+              if (isPlayersTurn) {
+                $piece.addClass('selected');
+              }
+            }
+
+            function deselectPiece($piece) {
+              $piece.removeClass('selected');
+            }
+
+            // Pawn Promotion
+            function isPawn($piece) {
+              return ($piece.data('piece-type') == 'Pawn');
+            }
+
+            function isMovingToLastRank(y) {
+              return ((y == 0) || (y == 7));
+            }
+
+            function isPawnPromotion( $piece, y) {
+              return (isPawn($piece) && isMovingToLastRank(y)); 
+            }
+
+            // Modal
+            function openModal (modalId, callback) {
+              var $modal = $(modalId);
+
+              // Change modal-state checkbox to checked
+              $modal.prop("checked", true);
+
+              if ($modal.is(":checked")) {
+                $("body").addClass("modal-open");
+              } else {
+                $("body").removeClass("modal-open");
+              }
+
+              $(".modal-fade-screen, .modal-close").on("click", function() {
+                $(".modal-state:checked").prop("checked", false).change();
+              });
+
+              $(".modal-inner").on("click", function(e) {
+                e.stopPropagation();
+              });
+
+              // When form is submitted, pass input value into callback function
+              $('.promo-selection-submit input').on('click', function() {
+                callback( $('.promo-selection-choice input').val() );
+              });
+            }
+
+          });
+
+        h4.subheader Step 9. Allowing Pieces to Capture Opponents
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur illo ipsam, molestias impedit corrupti ipsa, minima dicta natus ut neque reprehenderit ab inventore quas repellat architecto cumque, odio, similique itaque.
+
+        //- pre: code.language-ruby.
+        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quidem sed animi, molestias, excepturi natus. Veritatis officiis labore quos a fuga eius, maxime praesentium soluta, sunt sequi quam tenetur amet.
+
+        h4.subheader Step 10. Implementing Checkmate
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora culpa quo aspernatur, assumenda asperiores quasi, delectus, quam cupiditate dolores harum, in at aliquid iste quis necessitatibus repellat illum! Ipsum, nam.
+
+        //- pre: code.language-ruby.
+        //-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+
+        h4.subheader Step 11. Branding &amp; Building A Landing Page
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora culpa quo aspernatur, assumenda asperiores quasi, delectus, quam cupiditate dolores harum, in at aliquid iste quis necessitatibus repellat illum! Ipsum, nam.
+
+        //- pre: code.language-scss.
+        //-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+
+        img(src="http://placehold.it/800x300", alt="")
+
+        h4.subheader Step 12. Crafting The UI
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+
+        //- img(src="http://placehold.it/800x400", alt="")
+
+        h4.subheader Step 13. Enabling Pawn Promotion
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+
+        //- pre: code.language-ruby.
+        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+
+
+        h4.subheader Step 14. Enabling En Passant
+
+        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+
+        //- pre: code.language-ruby.
+        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+
+        h4.subheader Step 15. Production Testing
+
+        p We went through and tried to play a few games of chess together. We found there were a few bugs that passed our test suite&mdash;most of which were centered around the checkmate logic. Aaron was a champ and dug through the bugs and fixed checkmate such that our chess game was fully functional.
+
+        h3 Outcome
+        p I learned massive amounts during the project. I learned how to create game logic in code, how to write good tests that covered edge cases, and most importantly how to collaborate with a remote team. While I enjoyed writing Ruby and learning more about the language, I definitely learned that I don't enjoy the programming-side of product development as much as I enjoy the human-side.
+
+        p The Firehose Project was an awesome experience and I can't recommend their bootcamp more highly.
+
+
+
+
+
+
+
+
+

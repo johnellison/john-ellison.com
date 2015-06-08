@@ -130,6 +130,7 @@ img {
 code {
   background: none;
   border: none;
+  font-size: .9rem;
 }
 
 pre[class*="language-"] { 
@@ -152,3 +153,11 @@ blockquote {
   border-left: 1px solid $accent-color;
 }
 
+p + ul {
+  margin-top:  -.9rem;
+}
+
+small {
+  line-height: 1;
+  font-style: italic;
+}
