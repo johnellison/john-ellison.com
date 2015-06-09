@@ -246,93 +246,6 @@ block content
 
         blockquote This is where I really started to grow as a developer. I pair programmed with team mates, talked best practices and reviewed code with my mentor. I finally got into a flow with the TDD 'red-green-refactor' cycle.
 
-        h5 pawn_legal_move_test.rb
-        
-        pre: code.language-ruby.
-          require 'test_helper'
-
-          # Tests specific to legal_move? Pawn logic
-          class PawnLegalMoveTest < ActiveSupport::TestCase
-            test 'illegal white moves' do
-              setup_game_and_white_pawn
-
-              assert_not @white_pawn.legal_move?(1, 0)
-              assert_not @white_pawn.legal_move?(0, 1)
-              assert_not @white_pawn.legal_move?(1, 4)
-              assert_not @white_pawn.legal_move?(2, 2)
-            end
-
-            test 'legal white first moves' do
-              setup_game_and_white_pawn
-
-              assert @white_pawn.legal_move?(1, 2)
-              assert @white_pawn.legal_move?(1, 3)
-            end
-
-            test 'legal white regular moves' do
-              setup_game_and_white_pawn
-              @white_pawn.update_piece(2, 3, 'moved')
-              @white_pawn.reload
-
-              assert @white_pawn.legal_move?(2, 4)
-            end
-
-            test 'illegal black moves' do
-              setup_game_and_white_pawn
-              setup_black_pawn
-
-              assert_not @black_pawn.legal_move?(1, 7)
-              assert_not @black_pawn.legal_move?(0, 6)
-              assert_not @black_pawn.legal_move?(2, 5)
-              assert_not @black_pawn.legal_move?(1, 3)
-            end
-
-            test 'legal black first moves' do
-              setup_game_and_white_pawn
-              setup_black_pawn
-
-              assert @black_pawn.legal_move?(1, 5)
-              assert @black_pawn.legal_move?(1, 4)
-            end
-
-            test 'destination obstructed' do
-              setup_game_and_white_pawn
-              setup_black_pawn
-              @black_pawn.update_piece(1, 6, 'moved')
-
-              FactoryGirl.create(
-                :pawn,
-                x_position: 1,
-                y_position: 2,
-                color: false,
-                game_id: @game.id)
-
-              FactoryGirl.create(
-                :pawn,
-                x_position: 1,
-                y_position: 5,
-                color: false,
-                game_id: @game.id)
-
-              assert_not @white_pawn.legal_move?(1, 2), 'destination obstructed'
-              assert_not @black_pawn.legal_move?(1, 5), 'destination obstructed'
-            end
-
-            def setup_game_and_white_pawn
-              @game = FactoryGirl.create(:game)
-              @white_pawn = @game.pieces.find_by(
-                x_position: 1,
-                y_position: 1)
-            end
-
-            def setup_black_pawn
-              @black_pawn = @game.pieces.find_by(
-                x_position: 1,
-                y_position: 6)
-            end
-          end
-
-
         h5 pawn.rb excerpt:
 
         pre: code.language-ruby.
@@ -373,105 +286,6 @@ block content
         p While I was working on laying out the legal move logic for the pawn, Aaron was digging in the trenches of our games controller. We often worked together to review and refactor each other's work. There's nothing better than a second pair of eyes while you're trying to create something in code.
 
         p Here are a few examples of some controller code we worked out. There's nothing fancy here but we're proud of the quality of the code that we wrote:
-
-        h5 games_controller_test.rb
-
-        pre: code.language-ruby.
-          require 'test_helper'
-
-          class GamesControllerTest < ActionController::TestCase
-            test 'game join success' do
-              player = FactoryGirl.create(:player)
-              sign_in player
-              game = FactoryGirl.create(:game, white_player_id: player.id)
-              patch :update, id: game.id, game: { black_player_id: 37 }
-              game.reload
-              assert_response :found
-              assert_redirected_to game_path(assigns(:game))
-              # method exists to randomize which player is white and which is black
-              # for this reason either color may end up being player 37
-              assert game.white_player_id == 37 ||  game.black_player_id == 37
-            end
-
-            test 'game join fail due to identical player_id\'s' do
-              player = FactoryGirl.create(:player)
-              sign_in player
-              game = FactoryGirl.create(:game, white_player_id: 3)
-              patch :update, id: game.id, game: { black_player_id: 3 }
-              game.reload
-              assert_response :unprocessable_entity, 'Should respond unprocessable_entity'
-            end
-
-            test 'game created with :create action' do
-              player = FactoryGirl.create(:player)
-              sign_in player
-              assert_difference('Game.count') do
-                post :create, game: { name: 'game1' }
-              end
-              assert_redirected_to game_path(assigns(:game))
-            end
-
-            test 'update should be successful' do
-              game = FactoryGirl.create(
-                :game,
-                id: 1,
-                white_player_id: 1)
-              black_player = FactoryGirl.create(:player, id: 2)
-              sign_in black_player
-
-              patch :update,
-                    id: game.id,
-                    game: { black_player_id: 2 }
-
-              assert_redirected_to game_path(game)
-            end
-
-            test 'should assign pieces after update' do
-              white_player = FactoryGirl.create(:player, id: 1)
-
-              game = FactoryGirl.create(
-                :game,
-                white_player_id: white_player.id)
-
-              black_player = FactoryGirl.create(:player, id: 2)
-              sign_in black_player
-
-              black_piece = game.pieces.where(color: false).first
-
-              patch :update,
-                    id: game.id,
-                    game: { black_player_id: black_player.id }
-
-              black_piece.reload
-
-              assert_equal black_player.id, black_piece.player_id
-            end
-
-            test 'guest can join game' do
-              host = FactoryGirl.create(:player, id: 1)
-              guest = FactoryGirl.create(:player, id: 2)
-              sign_in guest
-
-              game = FactoryGirl.create(:game, white_player_id: host.id)
-
-              patch :update, id: game.id, game: { black_player_id: guest.id }
-              game.reload
-
-              assert_response :found
-              assert_redirected_to game_path(game)
-              assert_equal guest.id, game.black_player_id
-              assert_equal host.id, game.white_player_id
-            end
-
-            test 'Should return to dashboard for unknown game' do
-              player = FactoryGirl.create(:player)
-              sign_in player
-
-              get :show, id: 99
-
-              assert_redirected_to dashboard_path
-            end
-          end
 
         h5 games_controller.rb
 
@@ -533,7 +347,7 @@ block content
 
         p I went through and refactored the javascript as a learning practice since I had never approached this level of complexity in Javascript.
 
-        h5 gameboard.js
+        h5 gameboard.js excerpt:
 
         pre: code.language-javascript.
           $(document).ready(function () {
@@ -606,107 +420,155 @@ block content
             function deselectPiece($piece) {
               $piece.removeClass('selected');
             }
-
-            // Pawn Promotion
-            function isPawn($piece) {
-              return ($piece.data('piece-type') == 'Pawn');
-            }
-
-            function isMovingToLastRank(y) {
-              return ((y == 0) || (y == 7));
-            }
-
-            function isPawnPromotion( $piece, y) {
-              return (isPawn($piece) && isMovingToLastRank(y)); 
-            }
-
-            // Modal
-            function openModal (modalId, callback) {
-              var $modal = $(modalId);
-
-              // Change modal-state checkbox to checked
-              $modal.prop("checked", true);
-
-              if ($modal.is(":checked")) {
-                $("body").addClass("modal-open");
-              } else {
-                $("body").removeClass("modal-open");
-              }
-
-              $(".modal-fade-screen, .modal-close").on("click", function() {
-                $(".modal-state:checked").prop("checked", false).change();
-              });
-
-              $(".modal-inner").on("click", function(e) {
-                e.stopPropagation();
-              });
-
-              // When form is submitted, pass input value into callback function
-              $('.promo-selection-submit input').on('click', function() {
-                callback( $('.promo-selection-choice input').val() );
-              });
-            }
-
           });
 
         h4.subheader Step 9. Allowing Pieces to Capture Opponents
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur illo ipsam, molestias impedit corrupti ipsa, minima dicta natus ut neque reprehenderit ab inventore quas repellat architecto cumque, odio, similique itaque.
+        h5 piece.rb excerpt:
+        pre: code.language-ruby.
+          class Piece < ActiveRecord::Base
+            def capture_move?(x, y)
+              captured_piece = game.obstruction(x, y)
+              captured_piece && captured_piece.color != color
+            end
 
-        //- pre: code.language-ruby.
-        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea quidem sed animi, molestias, excepturi natus. Veritatis officiis labore quos a fuga eius, maxime praesentium soluta, sunt sequi quam tenetur amet.
+            def can_be_captured?
+              opponents = game.pieces_remaining(!color)
+              opponents.each do |opponent|
+                if opponent.valid_move?(x_position, y_position)
+                  return true
+                end
+              end
+              false
+            end
+          end
 
-        h4.subheader Step 10. Implementing Checkmate
+        h4.subheader Step 10. Implementing Check and Checkmate
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora culpa quo aspernatur, assumenda asperiores quasi, delectus, quam cupiditate dolores harum, in at aliquid iste quis necessitatibus repellat illum! Ipsum, nam.
+        p Now that pieces could move and capture opponents according to the rules of chess, we needed to implement the most complex logic: check and checkmate.
 
-        //- pre: code.language-ruby.
-        //-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+        h5 game.rb excerpt:
+
+        pre: code.language-ruby.
+          def check?(color)
+            king = pieces.find_by(type: 'King', color: color)
+            opponents = pieces_remaining(!color)
+
+            opponents.each do |piece|
+              if piece.valid_move?(king.x_position, king.y_position)
+                @piece_causing_check = piece
+                return true
+              end
+            end
+            false
+          end
+
+          def checkmate?(color)
+            checked_king = pieces.find_by(type: 'King', color: color)
+
+            return false unless check? color
+            return false if @piece_causing_check.can_be_captured?
+            return false if checked_king.can_move_out_of_check?
+            return false if @piece_causing_check.can_be_blocked? checked_king
+
+            true
+          end
 
         h4.subheader Step 11. Branding &amp; Building A Landing Page
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora culpa quo aspernatur, assumenda asperiores quasi, delectus, quam cupiditate dolores harum, in at aliquid iste quis necessitatibus repellat illum! Ipsum, nam.
+        p While we were finishing up the check and checkmate methods, I went ahead and built the landing page to showcase our code samples and show off the app we built. After playing with many different typeface combinations I settled with 
+          a(href="https://typekit.com/fonts/adelle-sans") Adelle Sans
+          |  700 uppercase for headings and 
+          a(href="https://typekit.com/fonts/brandon-grotesque") Brandon Grotesque
+          |  300 for subheadings, paragraphs and UI elements.
 
-        //- pre: code.language-scss.
-        //-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+        img(src="images/sprky-landing-page.jpg", alt="landing page I coded for our chess app on the firehose project")
 
-        img(src="http://placehold.it/800x300", alt="")
+        p I decided to use Flexbox to create equal-height boxes for our code samples:
 
-        h4.subheader Step 12. Crafting The UI
+        pre: code.language-scss.
+           
+           .code-box-container {
+             @include display(flex);
+             @include justify-content(center);
+             @include align-items(stretch);
+             @include flex-wrap(wrap);
+             clear: both;
+           }
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+           .code-example, .code-description {
+             @include transition (all 0.2s ease-in-out);
+             margin: 0;
+             flex: 2 2 36.25em;
+             @include align-self(stretch);
+           }
 
-        //- img(src="http://placehold.it/800x400", alt="")
+        img(src="images/sprky-code-samples.jpg", alt="code samples from our chess app for the firehose project")
+
+        h4.subheader Step 12. Styling The UI
+
+        p Using SVG's and some minimal styling, I polished the UI to give it a bit of a 'real app' look and feel.
+
+        img(src="images/sprky-gameboard.jpg", alt="the gameboard I styled for sprky — the firehose project")
 
         h4.subheader Step 13. Enabling Pawn Promotion
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+        p Last on our Trello board was pawn promotion and En Passant. The pawn promotion consisted of back-end logic to verify whether the conditions for pawn promotion was met, and a front-end to enable the player to choose their piece type (queen, rook, knight, bishop).
 
-        //- pre: code.language-ruby.
-        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+        h5 pawn.rb excerpt:
 
+        pre: code.language-ruby.
+          class Pawn < Piece
+            def can_promote?(y)
+              y == 7 && color || y == 0 && !color
+            end
 
-        h4.subheader Step 14. Enabling En Passant
+            def promotion(params)
+              x = params[:x_position].to_i
+              y = params[:y_position].to_i
+              type = params[:type]
 
-        //- p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam blanditiis voluptate neque hic, fugit officiis debitis similique dolorum dicta, rerum nisi explicabo a! Facere natus, vero voluptatibus aspernatur magnam eius.
+              update_attributes(
+                x_position: nil,
+                y_position: nil,
+                state: 'off-board')
+              game.pieces.create(
+                x_position: x,
+                y_position: y,
+                type: type,
+                state: 'moved',
+                color: color,
+                player_id: player_id
+                )
+            end
+          end
 
-        //- pre: code.language-ruby.
-        //-   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus dolores eveniet qui quidem et doloribus, consequatur deserunt quos sed adipisci provident ipsam cumque quaerat tempora, dicta totam dolorem modi debitis!
+        h5 gameboard.js excerpt:
 
-        h4.subheader Step 15. Production Testing
+        pre: code.language-javascript.
+          function sendMove ($piece, $destination) {
+            var piece = {
+              id: $piece.data('piece-id'),
+              x_position: $destination.data('x-position'),
+              y_position: $destination.data('y-position')
+            }
 
-        p We went through and tried to play a few games of chess together. We found there were a few bugs that passed our test suite&mdash;most of which were centered around the checkmate logic. Aaron was a champ and dug through the bugs and fixed checkmate such that our chess game was fully functional.
+            if ( isPawnPromotion($piece, piece.y_position)) {
+              openModal('#promo-modal', function(pieceType) {
+                piece.type = pieceType;
+                submitPieceUpdate(piece);
+              });
+
+            } else {
+              submitPieceUpdate(piece);
+            }
+          }
+
+        h4.subheader Step 14. Production Testing
+
+        p We found in playing a few lives games that there were a few bugs that got through our test suite&mdash;most of which were centered around the checkmate logic. Aaron was a champ and dug through the bugs and fixed checkmate such that our chess game was fully functional.
 
         h3 Outcome
         p I learned massive amounts during the project. I learned how to create game logic in code, how to write good tests that covered edge cases, and most importantly how to collaborate with a remote team. While I enjoyed writing Ruby and learning more about the language, I definitely learned that I don't enjoy the programming-side of product development as much as I enjoy the human-side.
 
         p The Firehose Project was an awesome experience and I can't recommend their bootcamp more highly.
-
-
-
-
-
-
-
-
-
