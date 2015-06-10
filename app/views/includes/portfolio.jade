@@ -1,73 +1,48 @@
 section#portfolio.content-section(data-magellan-destination='portfolio', name='portfolio')
   .portfolio-container
+    hgroup.section-header
+      h2 Portfolio
+      h3.subheader Investing all that I am into all that I do
     .portfolio-items
-      hgroup
-        h2 Portfolio
-        h3.subheader Investing all that I am into all that I do
-      ul.m-portfolio-list.small-centered
-        li.m-portfolio-list-item
-          a(href="/sprky-chess.html" title='view the SPRKY Chess app case study')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/sprky.jpg, (default)], [images/sprky@2x.jpg, (retina)]' alt='sprky App – Ruby on Rails development')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/sprky.jpg"  alt='sprky App - Ruby on Rails Development')
-
-        li.m-portfolio-list-item
-          a(href="http://flixter-john-ellison.herokuapp.com/" title='view the flixter app live')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/flixter.jpg, (default)], [images/flixter@2x.jpg, (retina)]' alt='flixter App – Ruby on Rails development')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/flixter.jpg"  alt='flixter App - Ruby on Rails Development')
-
-        li.m-portfolio-list-item
-          a(href="/nomster.html" title='view the nomster app live')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/nomster.jpg, (default)], [images/nomster@2x.jpg, (retina)]' alt='Nomster App – Ruby on Rails development')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/nomster.jpg"  alt='Nomster App - Ruby on Rails Development')
-       
-        li.m-portfolio-list-item
-          a(href="/cloudegy.html" title='live cloudegy website')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/cloudegy.jpg, (default)], [images/cloudegy@2x.jpg, (retina)]' alt='Cloudegy Denver – Digital Product Strategy Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/cloudegy.jpg"  alt='Cloudegy - Front-End Development')
-        
-        li.m-portfolio-list-item
-          a(href="/jackie-stone-music.html" title='view jackie stone music website live')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/jackie-stone.jpg, (default)], [images/jackie-stone@2x.jpg, (retina)]' alt='Jackie Stone – UX Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Jackie Stone - Strategy & Front-End Development')
-       
-        li.m-portfolio-list-item
-          a(href="/michael-mcdaniel.html")
-            img.m-portfolio-list-thumbnail(data-interchange='[images/michael-mcdaniel-music.jpg, (default)], [images/michael-mcdaniel-music@2x.jpg, (retina)]' alt='Michael McDaniel – UX Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/michael-mcdaniel-music.jpg"  alt='Michael McDaniel – UX Design Project')
-
-        li.m-portfolio-list-item
-          a(href="/elliott-orthodontics.html" title='elliott ortho website')
-            img.m-portfolio-list-thumbnail(data-interchange='[images/elliott-ortho.jpg, (default)], [images/elliott-ortho@2x.jpg, (retina)]' alt='Elliott Ortho family orthodontist in highlands ranch')
-            noscript
-              img.m-portfolio-list-thumbnail(src="images/elliott-ortho.jpg"  alt='Elliott Ortho family orthodontist in highlands ranch')
-
-        li.m-portfolio-list-item
+      .portfolio-item
+        .portfolio-screenshot
+          a(href="/sprky-chess.html")
+            img(src="images/sprky-imac.jpg", alt="screenshot of sprky chess app on an imac" data-interchange='[images/sprky-imac.jpg, (default)], [images/sprky-imac@2x.jpg, (retina)]')
+        .portfolio-excerpt
+          hgroup.portfolio-heading
+            h3 SPRKY Chess
+            h5.subheader Full-Stack, Ruby on Rails
+          p For the capstone of The Firehose Project, we crafted an open source chess app using Ruby on Rails. With Test-Driven Development (TDD) as our guide, we built every element of the application&mdash;from the back-end Ruby to the front-end Javascript. The project was featured in 
+            a(href="www.huffingtonpost.com/ken-mazaika/when-the-heck-did-learning-to-code-become-cool_b_7471938.html") an article on the Huffington Post.
+          a.cta(href="/sprky-chess.html") View Case Study
+      .portfolio-item.odd
+        .portfolio-screenshot
           a(href="/thengine.html")
-            img.m-portfolio-list-thumbnail(data-interchange='[images/thengine.jpg, (default)], [images/thengine@2x.jpg, (retina)]' alt='Thengine – UX Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src='images/thengine.jpg', alt='Thengine – UX Research & Design Project')
-
-        li.m-portfolio-list-item
-          a(href="/littleton-christian.html")
-            img.m-portfolio-list-thumbnail(data-interchange='[images/littleton-christian.jpg, (default)], [images/littleton-christian@2x.jpg, (retina)]' alt='Littleton Christian – UX Research & Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src='images/littleton-christian.jpg', alt='Littleton Christian – UX Research & Design Project')
-
-        li.m-portfolio-list-item
-          a(href="http://roperwoodturning.com" title="link to roperwoodturning.com")
-            img.m-portfolio-list-thumbnail(data-interchange='[images/roper-woodturning.jpg, (default)], [images/roper-woodturning@2x.jpg, (retina)]', alt='Michael Roper - Website Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src='images/roper-woodturning.jpg' alt='Michael Roper - Website Design Project')
-
-        li.m-portfolio-list-item
-          a(href="http://pajaconstruction.com" title="link to pajaconstruction.com")
-            img.m-portfolio-list-thumbnail(data-interchange='[images/paja-construction.jpg, (default)], [images/paja-construction@2x.jpg, (retina)]', alt='Paja Construction – Website Design Project')
-            noscript
-              img.m-portfolio-list-thumbnail(src='images/paja-construction.jpg', alt='Paja Construction – Website Design Project')
+            img(src="images/thengine-galaxy-grey-bg.jpg", alt="screenshot of thengine's homepage on samsung galaxy")
+        .portfolio-excerpt
+          hgroup.portfolio-heading
+            h3 Thengine
+            h5.subheader UX Research &amp; Design
+          p I led research and design for a startup out of the Founders Institute based in Denver, Colorado. From user interviews to prototyping and usability testing, I helped shape the vision and execution of a seed-funded startup that created tools for local musicians and their fans.
+          a.cta(href="/thengine.html") View Case Study
+      .portfolio-item
+        .portfolio-screenshot
+          a(href="/jackie-stone-music.html")
+            img(src="images/jackie-stone-mbp-grey-bg.jpg", alt="screenshot of cloudegy homepage on an ipad" data-interchange='[images/jackie-stone-mbp-grey-bg.jpg, (default)], [images/jackie-stone-mbp@2x.jpg, (retina)]')
+        .portfolio-excerpt
+          hgroup.portfolio-heading
+            h3 Jackie Stone Music
+            h5.subheader UI Design &amp; Development
+          p I helped New Orleans musician Michael McDaniel launch a new project called "The Wildfire" to a budding nationwide audience through a mobile-first responsive experience. The site is lightweight, semantic and performs at blazing speeds on all devices.
+          a.cta(href="/jackie-stone-music.html") View Case Study
+      .portfolio-item.odd
+        .portfolio-screenshot
+          a(href="/cloudegy.html")
+            img(src="images/cloudegy-ipad-small.jpg", alt="screenshot of cloudegy homepage on an ipad" data-interchange='[images/cloudegy-ipad-small.jpg, (default)], [images/cloudegy-ipad@2x.jpg, (retina)]')
+        .portfolio-excerpt
+          hrgoup.portfolio-heading
+            h3 Cloudegy
+            h5.subheader Brand Strategy, UI Design &amp; Development
+          p As a consultant for a Microsoft Managed Partner, I led brand strategy and UI Design for a community of innovators heading to the cloud. The end result was a mobile-first responsive website that launched Cloudegy's Spring 2015 immersive experiences.
+          a.cta(href="/cloudegy.html") View Case Study
 

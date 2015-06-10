@@ -52,11 +52,6 @@
 }
 
 @mixin global-hover {
-  transition: all .2s ease-in-out;
-  &:hover {
-      transform: scale(1.009);
-      box-shadow: 2px 2px 7px $jet;
-    }
 }
 
 // Typography
@@ -65,7 +60,7 @@
   padding: .5rem 1.5rem;
   border: 2px solid $accent-color;
   @include uppercase-styling;
-  @include global-hover;
+  @include global-transition;
   font-weight: 500;
   color: $body-font-color;
   &:hover {
@@ -96,11 +91,17 @@ p + ul {
   margin-top:
 }
 
-h3, h4, h5, h6 {
+h1 {
+  font-size: 5.854rem;
+}
+
+h4, h5, h6 {
   font-weight: 300;
 }
 
-hgroup {
+hgroup.section-header {
+  text-align: center;
+  margin-bottom: 3.6rem;
   h2 {
     margin-bottom: 0rem;
     line-height: 1;
@@ -113,14 +114,15 @@ hgroup {
 .subheader {
   font-weight: 300;
   @include uppercase-styling;
-}
-
-h2.subheader {
-  font-size: 1.5rem;
+  font-size: 1.618rem;
 }
 
 h3.subheader {
-  font-size: 1.2rem;
+  font-size: 1.618rem;
+}
+
+h5.subheader {
+  font-size: 1rem;
 }
 
 img {
