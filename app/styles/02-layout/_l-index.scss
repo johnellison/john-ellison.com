@@ -141,13 +141,11 @@ hgroup.welcome {
 
 .portfolio-items {
  @include grid-column(12);
-
- margin-bottom: 2rem;
 }
 
 .portfolio-item {
   @include grid-row();
-  margin-bottom: 1.8rem;
+  margin: 1.8rem 0;
   @media #{$small-only} {
     margin-bottom: 3.6rem;
     text-align: center;
@@ -220,7 +218,8 @@ hgroup.welcome {
 
 // Clients
 #clients {
-  background-color: $smoke;
+  background-color: $white;
+  padding-bottom: 0;
 }
 
 .clients-container {
@@ -241,7 +240,6 @@ hgroup.welcome {
 // Contact
 
 #contact {
-  background: $smoke;
   padding-bottom: 4rem;
 }
 
