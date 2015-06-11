@@ -28,6 +28,13 @@
     margin: .5rem auto 1.3rem auto;
     display: block;
   }
+  hgroup {
+    text-align: center;
+    margin-bottom: 1.8rem;
+    h2, .subheader {
+      margin: 0;
+    }
+  }
 }
 
 .sprky-team-list {
@@ -49,4 +56,8 @@
 
 .sprky-wireframe {
   border: 1px solid $primary-color;
+}
+
+.portfolio-screenshots {
+  margin-bottom: 3.6rem;
 }

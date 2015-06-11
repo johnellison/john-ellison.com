@@ -11,20 +11,23 @@ block content
         a.cta.white(href="http://jackiestonemusic.com") Visit The Finished Site
     .main-article-container
       .main-article-content 
-        img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
-        img(src="images/jackie-stone-mobile.jpg", alt="jackie stone website on samsung galaxy")
-        img(src="images/jackie-stone-imac.jpg", alt="jackie stone website on an iMac")
+        hgroup
+          h2 Screenshots
+          h5.subheader Courtesty of 
+            a(href="http://browserstack.com") Browserstack
+            
+        .portfolio-screenshots
+          img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
+          img(src="images/jackie-stone-mobile.jpg", alt="jackie stone website on samsung galaxy")
+          img(src="images/jackie-stone-imac.jpg", alt="jackie stone website on an iMac")
         h2 Case Study
         h3 The Story
         p Jackie Stone grew out of the 
           a(href="/michael-mcdaniel.html") Michael McDaniel Music project.
           |  I worked with Michael to define clear goals for the website and his business. We wanted to create an online platform that would allow Michael to grow his fanbase through email subscription. The old music-business profit model of selling physical albums in stores has long been over. Profit comes from shows, and shows come from fanbases.
 
-        p Michael originally intended to release his music under his own name. After time in the studio, Michael realized that he needed a creative vehicle to fully harness the music he was producing.
-        p Jackie Stone was the creative vehicle Michael envisioned. 
-
         h3 The Problem
-        p Michael had an evolving brand image and needed a web presence that would both represent his music and allow his brand to grow. Michael needed a web platform that would not only portray his art but also allow him to build a business.
+        p Michael needed a web platform that would not only portray his art but also allow him to build a profitable business.
 
         h3 The Goal
         p The goal for the project was to create a website that would establish a foundational web presence for Michael to:
@@ -45,24 +48,24 @@ block content
         h4.subheader Step 2. Re-brand
         p Michael and I worked together over video conference to craft the Jackie Stone brand. We had long conversations about Michael's vision for his music and what role Jackie Stone would play.
 
-        p From layout, imagery and typography I gave Michael the lead and used my skills to help funnel his ideas into practical implementation.
+        p From layout to imagery and typography I gave Michael the lead and used my skills to help funnel his ideas into practical implementation.
 
-        p We settled on a album-based skeumorphic for the layout of the site where the above-the-fold would represent the album's front cover, and as the user scrolled it would be akin to flipping the album over and looking at its back. We didn't implement any animations to follow the skeumorphic strictly, but rather let the concept be a guiding constraint for design decisions. 
+        p We settled on an album-based skeumorphic for the layout of the site where the above-the-fold would represent the album's front cover, and as the user scrolled it would be akin to flipping the album over and looking at its back. We didn't follow the skeumorphic strictly, but rather let the concept be a guiding constraint for design decisions. 
 
         h4.subheader Step 3. Development
-        p I had already made user personas and journeys from the old site, and the target segments still applied. Once we had basic brand guidlines established we started working on front-end development for the site.  Michael was interested in understanding my process so we decided that we would pair program the majority of the site.
+        p I had already made user personas and journeys from the old site, so once we had basic brand guidlines established we started working on front-end development for the site.  Michael was interested in understanding my process so we decided that we would pair program the majority of the site.
 
-        p It was satisfying to fluently &lsquo;design in the browser&rsquo; with a client as a pair programming partner. I had worked hundreds of hours on my own to gain this level of fluency and to see its fruits in action was incredibly rewarding.
+        blockquote It was satisfying to fluently &lsquo;design in the browser&rsquo; with a client as a pair programming partner. I had worked hundreds of hours on my own to gain this level of fluency and to see its fruits in action was incredibly rewarding.
 
-        p I had my device lab setup with BrowserSync such that we could monitor the development from mobile up. Having a variety of form factors, operating systems and orientations allowed us to make informed decisions about our users experience of the site.
+        p I had my device lab setup with 
+          a(href="http://www.browsersync.io/") BrowserSync
+          |  such that we could monitor the development from mobile up. Having a variety of form factors, operating systems and orientations allowed us to make informed decisions about our users experience of the site.
 
         h4.subheader Step 4. Analytics Infrastructure
-         p After less than twelve hours of paired programming, we finished the front-end development of the site. I implemented custom Google Analytics event tracking to measure conversion rate and hooked up Mail Chimp to harness email subscription.
 
-        h4.subheader Step 5. Usability Testing
-        p I walked Michael through the basics of Usability testing and we tested the core user tasks with 3 to 5 users each. After a few clear usability issues had resolved we launched the site and began to test for performance.
+        p After less than twelve hours of paired programming, we finished the front-end development of the site. I implemented custom Google Analytics event tracking to measure conversion rate and hooked up Mail Chimp to harness email subscription.
 
-        h4.subheader Step 6. Performance Optimization
+        h4.subheader Step 5. Performance Optimization
         p After reading Scott Jehl's 
           em 
             a(href="http://abookapart.com/products/responsible-responsive-design")  Responsible Responsive Design,

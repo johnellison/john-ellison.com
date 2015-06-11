@@ -17,6 +17,16 @@
     h1 {
       line-height: 1;
       margin-bottom: 0;
+      font-size: 2.618rem;
+      @media #{$medium-up} {
+        font-size: 4.3rem;
+      }
+      @media #{$large-up} {
+        font-size: 6.854rem;
+      }
+    }
+    .subheader {
+      font-size: 1.618rem;
     }
   }
   &#thengine {
