@@ -1,0 +1,9 @@
+.m-image-grid {
+  @include block-grid(1);
+  @media #{$large-up} {
+    @include block-grid(2);
+  }
+  img {
+    margin: 0;
+  }
+}

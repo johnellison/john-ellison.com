@@ -4,7 +4,6 @@
   @include grid-row();
   padding: 0rem 1rem 1rem 1rem;
   margin-bottom: 1.8rem;
-  @include global-hover();
 
   .testimonial-author {
     @include grid-column(12);
@@ -48,6 +47,21 @@
       @media #{$medium-up} {
         @include grid-column($columns: 9, $pull: 3);
       }
+    }
+  }
+}
+
+.main-article-content {
+  .testimonial-container {
+    margin-bottom: 0;
+  }
+  .testimonial-content {
+    h5 {
+      font-size: 1rem;
+    }
+    p.lead {
+      margin-top: .9rem;
+      font-size: 1rem;
     }
   }
 }
