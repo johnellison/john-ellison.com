@@ -177,4 +177,7 @@ figcaption {
   margin-bottom: 1.8rem;
   padding-bottom: .45rem;
   border-radius: $global-radius;
+  p:last-child {
+    margin-bottom: .9rem;
+  }
 }
