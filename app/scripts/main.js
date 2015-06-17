@@ -28,5 +28,23 @@
     });
   }
 
+
+  // Hides the extra portfolio items on load
+  $('.m-portfolio-list').hide();
+  $('#projects').show();
+
+  // Slide toggles when clicked...
+  $( '#projects' ).click( function ( e ) {
+    var $this = $(this);
+    e.preventDefault();
+    $('.m-portfolio-list').slideToggle( 'slow', function() {
+      if ($this.text() == 'Hide More Projects') {
+        $this.text('View More Projects');
+      } else {
+        $this.text('Hide More Projects');
+      }
+    });
+  });
+
 })( jQuery );
 

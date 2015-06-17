@@ -77,3 +77,8 @@
 .thengine-screenshots-header {
   margin-top: 3.6rem;
 }
+
+.view-more-portfolio-container {
+  @include grid-row();
+  text-align: center;
+}

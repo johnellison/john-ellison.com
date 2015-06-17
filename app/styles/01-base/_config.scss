@@ -69,6 +69,9 @@
     text-decoration: none; }
   &.secondary {
     border: 2px solid $secondary-color;
+    &:hover {
+      background-color: $secondary-color;
+    }
   }
   &.white {
     color: white !important;
