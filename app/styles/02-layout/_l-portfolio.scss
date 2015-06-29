@@ -82,3 +82,14 @@
   @include grid-row();
   text-align: center;
 }
+
+.jackie-stone-wireframes-content {
+  @include grid-row();
+}
+
+.jackie-stone-wireframe {
+  @include grid-column(12);
+  @media #{$large-up} {
+    @include grid-column(6);
+  }
+}

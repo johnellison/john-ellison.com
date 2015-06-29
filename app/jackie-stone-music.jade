@@ -11,59 +11,165 @@ block content
         a.cta.white(href="http://jackiestonemusic.com") Visit The Finished Site
     .main-article-container
       .main-article-content 
-        hgroup
-          h2 Screenshots
-          h5.subheader Courtesty of 
-            a(href="http://browserstack.com") Browserstack
-            
-        .portfolio-screenshots
-          img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
-          img(src="images/jackie-stone-mobile.jpg", alt="jackie stone website on samsung galaxy")
-          img(src="images/jackie-stone-imac.jpg", alt="jackie stone website on an iMac")
+
         h2 Case Study
+
+        img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
+
         h3 The Story
-        p Jackie Stone grew out of the 
-          a(href="/michael-mcdaniel.html") Michael McDaniel Music project.
-          |  I worked with Michael to define clear goals for the website and his business. We wanted to create an online platform that would allow Michael to grow his fanbase through email subscription. The old music-business profit model of selling physical albums in stores has long been over. Profit comes from shows, and shows come from fanbases.
+        p After I interviewed Michael for 
+          a(href="/thengine.html") Thengine
+          | , Michael reached out to me and asked if I would make a website for the launch of his first album. I worked with Michael to define clear goals for the website and his business. We collaborated extensively throughout the entire design and development process.
 
-        h3 The Problem
-        p Michael needed a web platform that would not only portray his art but also allow him to build a profitable business.
+        p We wanted to create an online platform that would allow Michael to grow his fanbase through email subscription. The old music-business profit model of selling physical albums in stores has long been over. Profit comes from shows, and shows come from fanbases.
 
-        h3 The Goal
+        h4 The Problem
+        p Michael needed a web platform that would not only portray his art but also allow him to build a profitable business. He had a lot of ideas about how he wanted to portray his brand and what kind of experience he wanted his fans to have on his website, but he had trouble articulating exactly what he wanted.
+
+        img(src="images/michael-mcdaniel-problem-sketch.jpg", alt="a sketch of the problem michael was facing for this project")
+
+        h4 The Goal
         p The goal for the project was to create a website that would establish a foundational web presence for Michael to:
         ul
           li Establish his brand
           li Grow his fanbase
           li Measure engagement and
-          li Optimize conversion
+          li Optimize conversion to 4%
 
         h3 My Process
 
-        h4.subheader Step 1. Migration
-        p We had nearly finished the 
-          a(href="/michael-mcdaniel-music.html") Michael McDaniel Music project
-          |  when we decided to re-brand the project as Jackie Stone.
-        p Most of the layout and styling needed to change, so our first step was stripping away all extraneous elements of the old brand and redefining the aesthetic for the new.
+        h4.subheader Step 1. Discovery
+        p I flew Michael out to Denver for a stakeholder workshop.  I facilitated a conversation with Michael about the goals of his website and the story behind his music. We walked through the different ways we might tell the story of Michael's album and splashed as many ideas as we could onto the whiteboard.
 
-        h4.subheader Step 2. Re-brand
-        p Michael and I worked together over video conference to craft the Jackie Stone brand. We had long conversations about Michael's vision for his music and what role Jackie Stone would play.
+        img(src="images/michael-mcdaniel-whiteboard-1.jpg", alt="sketching ideas on a whiteboard for michael's site")
+        img(src="images/michael-mcdaniel-whiteboard-2.jpg", alt="brainstorming 'what is the story?'")
+        img(src="images/michael-mcdaniel-whiteboard-3.jpg", alt="sketching ideas on how to tell the story of michael's music")
+
+        p We talked about different business models within the music industry, and how Michael could position himself in the market. We looked at the radial segments of his audience&mdash;from his closest family and friends, to committed fans of his music, to the types of people he wanted to attract.
+
+        p We mapped out the major communication channels for his target audience and realized the utmost importance of his fan's inbox.
+
+        img(src="images/jackie-stone-network-map.jpg", alt="jackie stone music network mapping for design project")
+
+        p We sketched out basic personas and empathy maps to better understand the needs and expectations of our users. We quickly decided that mobile-first development was a priority. Much of Michael's fan-base was mobile and we needed to provide a quality experience for those users on the go as well as those users at home or at work.
+
+        p I helped michael prioritize a feature list for the project based on our brainstorming sessions and organized the functionality into three sprints or 'phases' on a timeline.
+
+        img(src="images/jackie-stone-feature-list.jpg", alt="a list of features for jackie stone music project")
+
+        img(src="images/michael-mcdaniel-timeline.jpg", alt="sketch of our iterative project timeline")
+
+        h4.subheader Step 2. Content Strategy
+        p The next day I facilitated a workshop surrounding the content strategy for Michael's project. We looked at how to communicate Michael's brand to his audience and created a convent inventory for the site.
+        ul.m-image-grid
+          li: img(src="images/jackie-stone-content-1.jpg", alt="")
+          li: img(src="images/jackie-stone-content-2.jpg", alt="")
+
+        h4.subheader Step 3. Wireframing
+        p From the intial personas and empathy maps, I sketched wireframes to communicate different interface approaches for Michael and I to consider. Starting with quick sloppy drawings of layout and components, we worked together to boil down the interface into a higher-fidelity prototype.
+
+        img(src="images/michael-mcdaniel-wireframe-1.jpg", alt="wireframe of a section for michael mcdaniel music website")
+
+        p Michael wanted each song to be able to be shared individually, I sketched a few different approaches for a song-sharing module. Having read through 
+          a(href="https://smacss.com/") SMACSS
+          |  a few times, I wanted to implement the modular principles I learned in the markup and stylesheet architecture.
+
+        .jackie-stone-wireframes-content
+          .jackie-stone-wireframe
+            img(src="images/michael-mcdaniel-wireframe-2.jpg", alt="wireframe of the song functionality")
+          .jackie-stone-wireframe
+            img(src="images/jackie-stone-lyrics-clicked.jpg", alt="wireframe of the song functionality once clicked")
+
+        h4.subheader Step 4. Prototyping
+        p Using a front-end framework (
+          a(href="http://foundation.zurb.com" title="zurb foundation 5 website") Zurb Foundation 5
+          | ), I prototyped out Michael's website and set up a staging site for Michael to review remotely and to allow us to test the prototype with real users.
+
+        img(src="images/michael-mcdaniel-screenshot-1.jpg", alt="")
+        img(src="images/michael-mcdaniel-screenshot-2.jpg", alt="")
+
+        p We moved quickly into developing the responsive song modules. Each song needed to have the following functionality:
+        ul
+          li Play, pause and scrub
+          li Share 
+          li View/hide lyrics
+
+        img(src="images/michael-mcdaniel-song-module-1.jpg", alt="first image of the song module I developedfirst image of the song module I designed")
+        img(src="images/michael-mcdaniel-song-module-2.jpg", alt="first image of the song module I designed")
+        img(src="images/michael-mcdaniel-song-module-3.jpg", alt="first image of the song module I designed")
+
+        h4.subheader Step 5. Testing
+        p With our live prototype up and running within a few weeks, we shared the prototype with Michael's core fanbase. We observed users on the site and asked them to think out loud so we could test the usability and effectiveness of the prototype.
+
+        img(src="images/jackie-stone-user-testing.jpg", alt="user testing for jackie stone music website")
+
+        p After receiving feedback from users, Michael realized that we needed to change directions drastically. He didn't want to portrayed as a solo singer-songwriter who strummed an acoustic guitar. Michael wanted something epic, something more meaningful.
+
+        p Michael began to envision a completely different brand and image for his music. He saw a character living in his music. It would be the creative vehicle for Michael to share his music with the world without all the strings attached to his personal life. Michael quickly arrived on the name Jackie Stone.
+
+        h4.subheader Step 6. Iteration
+        p Michael and I worked together over video conference to craft the next iteration of the site. We had long conversations about Michael's vision for his music and what role Jackie Stone would play.
 
         p From layout to imagery and typography I gave Michael the lead and used my skills to help funnel his ideas into practical implementation.
 
         p We settled on an album-based skeumorphic for the layout of the site where the above-the-fold would represent the album's front cover, and as the user scrolled it would be akin to flipping the album over and looking at its back. We didn't follow the skeumorphic strictly, but rather let the concept be a guiding constraint for design decisions. 
 
-        h4.subheader Step 3. Development
-        p I had already made user personas and journeys from the old site, so once we had basic brand guidlines established we started working on front-end development for the site.  Michael was interested in understanding my process so we decided that we would pair program the majority of the site.
+        p Michael was interested in understanding my process so we decided that we would work together remotely to make the changes for this iteration.
 
-        blockquote It was satisfying to fluently &lsquo;design in the browser&rsquo; with a client as a pair programming partner. I had worked hundreds of hours on my own to gain this level of fluency and to see its fruits in action was incredibly rewarding.
+        blockquote It was satisfying to fluently design in the browser with a client collaborating over my shoulder. I had worked hundreds of hours on my own to gain this level of fluency and to see its fruits in action was incredibly rewarding.
 
         p I had my device lab setup with 
           a(href="http://www.browsersync.io/") BrowserSync
-          |  such that we could monitor the development from mobile up. Having a variety of form factors, operating systems and orientations allowed us to make informed decisions about our users experience of the site.
+          |  such that we could monitor the development from mobile up. Having a variety of form factors, operating systems and orientations allowed us to make informed decisions about our user's experience of the site.
 
-        h4.subheader Step 4. Analytics Infrastructure
+        h4.subheader Step 7. Analytics Infrastructure
 
         p After less than twelve hours of paired programming, we finished the front-end development of the site. I implemented custom Google Analytics event tracking to measure conversion rate and hooked up Mail Chimp to harness email subscription.
+
+        pre: code.lang-javascript.
+          (function () {
+            'use strict';
+
+            jQuery(document).ready(function($) {
+                // share song
+                $(".m-share-image").on('click', function(){
+                  ga('send', {
+                    'hitType' : 'event',
+                    'eventCategory' : 'Share',
+                    'eventValue' : 2
+                  });
+                });
+
+                // submit email
+                $("#submit-email").on('click', function(){
+                  ga('send', {
+                    'hitType' : 'event',
+                    'eventCategory' : 'Submit Email',
+                    'eventLabel' : 'Submit',
+                    'eventValue' : 3
+                  });
+                });
+
+                // contact button
+                $("[data-event='contact']").on('click', function(){
+                  ga('send', {
+                    'hitType' : 'event',
+                    'eventCategory' : 'Contact',
+                    'eventValue' : 100
+                  });
+                });
+
+                // play song
+                $('.m-song-wrapper').on($.jPlayer.event.play, function(e) {
+                 // var title = $(e.target).children('audio').attr('title');
+                  ga('send', {
+                    'hitType' : 'event',
+                    'eventCategory' : 'Play'
+                  });
+                });
+
+            }(jQuery));
+          }());
 
         h4.subheader Step 5. Performance Optimization
         p After reading Scott Jehl's 
@@ -90,4 +196,14 @@ block content
         p If you're interested in seeing the finished product, you can check out the
           a(href="http://jackiestonemusic.com" title="view the jackie stone music website")  Jackie Stone Music
           |  website live.
+
+        hgroup
+          h2 Screenshots
+          h5.subheader Courtesty of 
+            a(href="http://browserstack.com") Browserstack
+            
+        .portfolio-screenshots
+          img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
+          img(src="images/jackie-stone-mobile.jpg", alt="jackie stone website on samsung galaxy")
+          img(src="images/jackie-stone-imac.jpg", alt="jackie stone website on an iMac")
   
