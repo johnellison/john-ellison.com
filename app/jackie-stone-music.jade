@@ -16,12 +16,17 @@ block content
 
         img(src="images/jackie-stone-mbp.jpg", alt="jackie stone website on a mac book pro")
 
-        h3 The Story
-        p After I interviewed Michael for 
-          a(href="/thengine.html") Thengine
-          | , Michael reached out to me and asked if I would make a website for the launch of his first album. I worked with Michael to define clear goals for the website and his business. We collaborated extensively throughout the entire design and development process.
+        .callout
+          p Jackie Stone is the stage name for New Orleans musician Michael McDaniel. I interviewed Michael as part of user research for  
+            a(href="/thengine.html") Thengine
+            |  and afterwards he followed up with me about designing the website for his upcoming album launch.
 
-        p We wanted to create an online platform that would allow Michael to grow his fanbase through email subscription. The old music-business profit model of selling physical albums in stores has long been over. Profit comes from shows, and shows come from fanbases.
+        h3 The Story
+        p 
+          span.drop-cap M
+          |  ichael and I worked together to define goals for the website as well as his music business. We collaborated extensively throughout the entire design and development process and ended up with a clean mobile-first responsive website for the launch of his first album, &lsquo;The Wildfire&rsquo;.
+
+        p We wanted to create an online platform that would allow Michael to grow his fanbase through email subscription. The old music-business profit model of selling physical albums in stores has long been over. Profit now comes from shows, and shows come from fanbases.
 
         h4 The Problem
         p Michael needed a web platform that would not only portray his art but also allow him to build a profitable business. He had a lot of ideas about how he wanted to portray his brand and what kind of experience he wanted his fans to have on his website, but he had trouble articulating exactly what he wanted.
@@ -51,7 +56,7 @@ block content
 
         img(src="images/jackie-stone-network-map.jpg", alt="jackie stone music network mapping for design project")
 
-        p We sketched out basic personas and empathy maps to better understand the needs and expectations of our users. We quickly decided that mobile-first development was a priority. Much of Michael's fan-base was mobile and we needed to provide a quality experience for those users on the go as well as those users at home or at work.
+        p We sketched out basic personas and empathy maps to better understand the needs and expectations of Michael's users. We quickly decided that mobile-first development was a priority. Much of Michael's fan-base was mobile and we needed to provide a quality experience for those users on the go as well as those users at home or at work.
 
         p I helped michael prioritize a feature list for the project based on our brainstorming sessions and organized the functionality into three sprints or 'phases' on a timeline.
 
@@ -70,20 +75,25 @@ block content
 
         img(src="images/michael-mcdaniel-wireframe-1.jpg", alt="wireframe of a section for michael mcdaniel music website")
 
-        p Michael wanted each song to be able to be shared individually, I sketched a few different approaches for a song-sharing module. Having read through 
+        p Michael wanted each song to be able to be shared individually, and for users to be able to view the lyrics for each song while they were listening to them. I sketched a few different approaches for a song-sharing module. Having read through 
           a(href="https://smacss.com/") SMACSS
           |  a few times, I wanted to implement the modular principles I learned in the markup and stylesheet architecture.
 
         .jackie-stone-wireframes-content
           .jackie-stone-wireframe
-            img(src="images/michael-mcdaniel-wireframe-2.jpg", alt="wireframe of the song functionality")
+            figure
+              img(src="images/michael-mcdaniel-wireframe-2.jpg", alt="wireframe of the song functionality")
+              figcaption Sketching the initial song modules on a portrait-oriented device.
+
           .jackie-stone-wireframe
-            img(src="images/jackie-stone-lyrics-clicked.jpg", alt="wireframe of the song functionality once clicked")
+            figure
+              img(src="images/jackie-stone-lyrics-clicked.jpg", alt="wireframe of the song functionality once clicked")
+              figcaption The position and state of the 'Lyrics' button changes depending on viewport width.
 
         h4.subheader Step 4. Prototyping
         p Using a front-end framework (
           a(href="http://foundation.zurb.com" title="zurb foundation 5 website") Zurb Foundation 5
-          | ), I prototyped out Michael's website and set up a staging site for Michael to review remotely and to allow us to test the prototype with real users.
+          | ), I prototyped out Michael's website and set up a staging site for Michael to review remotely and allow us to observe real users performing tasks on the prototype.
 
         img(src="images/michael-mcdaniel-screenshot-1.jpg", alt="")
         img(src="images/michael-mcdaniel-screenshot-2.jpg", alt="")
@@ -94,9 +104,21 @@ block content
           li Share 
           li View/hide lyrics
 
-        img(src="images/michael-mcdaniel-song-module-1.jpg", alt="first image of the song module I developedfirst image of the song module I designed")
-        img(src="images/michael-mcdaniel-song-module-2.jpg", alt="first image of the song module I designed")
-        img(src="images/michael-mcdaniel-song-module-3.jpg", alt="first image of the song module I designed")
+
+        figure
+          img(src="images/michael-mcdaniel-song-module-1.jpg", alt="first image of the song module I developedfirst image of the song module I designed")
+          figcaption The song module in its normal state.
+          br
+
+        figure
+          img(src="images/michael-mcdaniel-song-module-2.jpg", alt="first image of the song module I designed")
+          figcaption Once the user has tapped or clicked the share icon or label the share buttons appear.
+          br
+
+        figure
+          img(src="images/michael-mcdaniel-song-module-3.jpg", alt="first image of the song module I designed")
+          figcaption If a user clicks the 'Lyrics' button, a jQuery slideDown animation opens up an image of the lyrics for the user to read.
+          br
 
         h4.subheader Step 5. Testing
         p With our live prototype up and running within a few weeks, we shared the prototype with Michael's core fanbase. We observed users on the site and asked them to think out loud so we could test the usability and effectiveness of the prototype.
@@ -107,12 +129,35 @@ block content
 
         p Michael began to envision a completely different brand and image for his music. He saw a character living in his music. It would be the creative vehicle for Michael to share his music with the world without all the strings attached to his personal life. Michael quickly arrived on the name Jackie Stone.
 
+        p Also, one consistent feature request from users was to have the ability for the songs to play through so they could continue scrolling down the site and not need to play the next song after the current song ended. I dug into the jPlayer API and found an 'end of song' (event.ended) event that I used to trigger the next song to play.
+
+        pre: code.lang-javascript.
+          (function playNextSong() {
+            songs.slice(0, -1).forEach(function(song, index) {
+              var songNumber = index + 1;
+              $("#jquery_jplayer_audio_" + songNumber)
+                .bind($.jPlayer.event.ended, function(event) {
+                  $("#jquery_jplayer_audio_" + (songNumber + 1)).jPlayer("play");
+                });
+            });
+          }());
+
         h4.subheader Step 6. Iteration
         p Michael and I worked together over video conference to craft the next iteration of the site. We had long conversations about Michael's vision for his music and what role Jackie Stone would play.
 
         p From layout to imagery and typography I gave Michael the lead and used my skills to help funnel his ideas into practical implementation.
 
         p We settled on an album-based skeumorphic for the layout of the site where the above-the-fold would represent the album's front cover, and as the user scrolled it would be akin to flipping the album over and looking at its back. We didn't follow the skeumorphic strictly, but rather let the concept be a guiding constraint for design decisions. 
+
+        figure
+          img(src="images/jackie-stone-iteration-1.jpg", alt="")
+          figcaption Brainstorming with Michael regarding the implementation of the album skeumorphic.
+
+        br
+
+        figure
+          img(src="images/jackie-stone-iteration-2.jpg", alt="")
+          figcaption Sketching out the possible interaction design for the album skeumorphic.
 
         p Michael was interested in understanding my process so we decided that we would work together remotely to make the changes for this iteration.
 
@@ -178,7 +223,19 @@ block content
           |  I was committed to improving performance on my front-end development projects.
         p I read up on how to 
           a(href="http://zurb.com/article/1373/hit-the-weights-and-take-the-bloat-out-of")  reduce code bloat on CSS frameworks
-          | , and began to check items off my performance checklist.  
+          | , and began to check items off my performance checklist.
+
+        p Also, I noticed that because the actual song files were quite large and we were hosting the songs ourselves&mdash;there was a lag in the page load time caused by the songs. I wrote a small bit of jQuery to load the songs after the user had scrolled to a define waypoint on the page.
+
+        pre: code.lang-javascript.
+          $("#jquery_jplayer_audio_1").waypoint(function(direction) {
+            createSongs();
+            },
+          {
+            triggerOnce: true,
+            offset: 'bottom-in-view'
+          });
+
 
         p In less than two hours I had the website loading in under 500ms and scoring above 90 for both mobile and desktop Pagespeed Insights:
 
@@ -191,7 +248,7 @@ block content
         .callout
           include views/includes/michael-mcdaniel-testimonial
 
-        p Michael has a performant website that successfully represents the Jackie Stone brand and has allowed him to grow his fanbase.
+        p Michael has a performant website that successfully represents the Jackie Stone brand and has allowed him to grow his fanbase from 0 to over 450 subscribers.
 
         p If you're interested in seeing the finished product, you can check out the
           a(href="http://jackiestonemusic.com" title="view the jackie stone music website")  Jackie Stone Music

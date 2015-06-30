@@ -91,7 +91,7 @@ ul {
 }
 
 p + ul {
-  margin-top:
+  margin-top: -1.8rem;
 }
 
 h1 {
@@ -160,10 +160,6 @@ span.drop-cap {
 blockquote {
   border-left: 1px solid $accent-color;
   font-style: italic;
-}
-
-p + ul {
-  margin-top:  -.9rem;
 }
 
 figcaption {
