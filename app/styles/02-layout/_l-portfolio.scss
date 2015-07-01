@@ -40,11 +40,12 @@
   }
 }
 
-.sprky-team-list {
+.sprky-team-list, .thengine-team-list, .cloudegy-team-list {
   list-style: none;
   display: table;
   margin: 0 auto;
   margin-bottom: 1.8rem;
+  text-align: center;
   li {
     display: inline-block;
     text-align: center;
