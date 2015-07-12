@@ -46,5 +46,10 @@
     });
   });
 
+  (function setCopyrightYear() {
+    var currentYear = new Date().getFullYear();
+    $('.copyright-year').text(currentYear);
+  })();
+
 })( jQuery );
 

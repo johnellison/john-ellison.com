@@ -1,17 +1,18 @@
-footer.site-footer
+footer.site-footer.h-card
   .footer-container
     .footer-section
       h4 Copyright
       p &copy; 
-        span 2015
+        //- set by javascript
+        span.copyright-year 2015
         |  John Ellison LLC
     .footer-section
       h4 Handcrafted by
-      img.contact-photo(src='images/john-ellison-wedding-headshot-right-150x150.png', alt='john ellison headshot') 
+      img.contact-photo.u-photo(src='images/john-ellison-wedding-headshot-right-150x150.png', alt='john ellison headshot') 
       .contact-info
-        h5 John Ellison
+        h5.p-name: a.u-url(href="http://john-ellison.com") John Ellison
         //- p.subheader Storyteller &amp; UX Designer
-        p I'm a digital designer passionate about living a great story.
+        p.p-role I'm a digital designer passionate about living a great story.
     .footer-section
       h4 Connect
       ul.social-list
@@ -34,4 +35,4 @@ footer.site-footer
           a(href='http://instagram.com/jbellison11' title="follow me on Instagram" rel='me')
             i.fi-social-instagram.social-list-icon
       small
-        a(href="mailto:john@john-ellison.com?Saw%20Your%20Website") john@john-ellison.com
+        a(href="mailto:john@john-ellison.com?Saw%20Your%20Website").u-email john@john-ellison.com
