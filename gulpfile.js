@@ -7,8 +7,8 @@ var browserSync = require('browser-sync');
 var reload = browserSync.reload;
 
 gulp.task('pdf', function () {
-  return gulp.src('app/pdf/*')
-    .pipe(gulp.dest('dist/pdf'));
+  return gulp.src('app/*.pdf')
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('views', function () {

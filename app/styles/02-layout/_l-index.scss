@@ -80,19 +80,23 @@ hgroup.welcome {
 .play-button {
   display: block;
   margin: 0 auto;
+  @media #{$medium-up} {
+    margin: 3.8rem auto 0 auto;
+  }
   width: 100px;
   height: 100px;
-  padding-top: 3.8rem;
-  @media #{$small-only} {
-    padding-top: 0rem;
-  }
   .play {
     height: 100px;
     width: 100px;
     border-radius: 50%;
     border: 2px solid #fff;
     @include global-transition;
-
+    &:hover {
+      border: 2px solid $accent-color;
+      span {
+        border-left: 40px solid $accent-color;
+      }
+    }
     span {
       border-top: 25px solid transparent;
       border-bottom: 25px solid transparent;
@@ -102,14 +106,6 @@ hgroup.welcome {
       display: inline-block;
       @include global-transition;
 
-    }
-  }
-  &:hover {
-    .play {
-      border: 2px solid $accent-color;
-      span {
-        border-left: 40px solid $accent-color;
-      }
     }
   }
 }

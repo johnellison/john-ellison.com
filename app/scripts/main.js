@@ -4,8 +4,9 @@
   'use strict'; 
 
   $( document ).foundation();
- 
-  $( '.play-button' ).click( function ( e ) {
+
+  // video modal on index
+  $( '.play' ).click( function ( e ) {
     e.preventDefault();
 
     $( '#video-modal' ).foundation( 'reveal', 'open' );
