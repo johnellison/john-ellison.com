@@ -16,6 +16,14 @@
     background-image: url('../images/video-bg-1920x1080.jpg');
     background-size: cover;
   }
+  @media #{$xlarge-up} {
+    padding-top: 18rem;
+    min-height: 1024px;
+  }
+  @media #{$xxlarge-up} {
+    padding-top: 25rem;
+    min-height: 1200px;
+  }
   // this is my story
   em {
     text-align: center;
