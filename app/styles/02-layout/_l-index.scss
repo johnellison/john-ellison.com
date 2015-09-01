@@ -33,6 +33,9 @@
     @media #{$medium-up} {
       top: 4.5rem;
     }
+    @media #{$xlarge-up} {
+      top: 1.8rem;
+    }
     &.accent {
       color: $accent-color;
     }
@@ -60,6 +63,9 @@ hgroup.welcome {
       font-size: 6.854rem;
       margin-bottom: 1.4rem;
     }
+    @media #{$xlarge-up} {
+      font-size: 8.6rem;
+    }
   }
   .subheader {
     color: #fff;
@@ -79,6 +85,9 @@ hgroup.welcome {
     @media #{$large-up} {
       font-size: 1.618rem;
     }
+    @media #{$xlarge-up} {
+      font-size: 2rem;
+    }
   }
 
 }
@@ -90,6 +99,9 @@ hgroup.welcome {
   margin: 0 auto;
   @media #{$medium-up} {
     margin: 3.8rem auto 0 auto;
+  }
+  @media #{$xlarge-up} {
+    margin-top: 7.6rem;
   }
   width: 100px;
   height: 100px;
