@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+<url>
+  <loc>http://john-ellison.com/</loc>
+  <lastmod>2015-09-01T10:17:05+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/pdf/john-ellison-cv.pdf</loc>
+  <lastmod>2015-08-04T14:41:51+00:00</lastmod>
+  <changefreq>yearly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/thengine.html</loc>
+  <lastmod>2015-08-04T14:44:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/jackie-stone-music.html</loc>
+  <lastmod>2015-08-04T14:44:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/cloudegy.html</loc>
+  <lastmod>2015-08-04T14:44:14+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/sprky-chess.html</loc>
+  <lastmod>2015-08-04T14:44:16+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>http://john-ellison.com/elliott-orthodontics.html</loc>
+  <lastmod>2015-08-04T14:44:15+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+</urlset>
