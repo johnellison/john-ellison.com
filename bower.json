@@ -1,10 +1,12 @@
 {
-  "name": "sites",
+  "name": "john-ellison.com",
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-    "modernizr": "~2.8.1",
-    "foundation": "~5.5.3"
+    "foundation": "zurb/bower-foundation",
+    "foundation-icon-fonts": "zurb/foundation-icon-fonts",
+    "smooth-scroll": "~1.0.1",
+    "prism": "*"
   },
   "overrides": {
     "foundation": {
@@ -14,10 +16,15 @@
         "js/foundation/foundation.reveal.js",
         "js/foundation/foundation.topbar.js"
       ]
+    },
+    "prism": {
+      "main": [
+        "themes/prism-okaidia.css",
+        "prism.js",
+        "components/prism-bash.js",
+        "components/prism-markup.js",
+        "components/prism-ruby.js"
+      ]
     }
-  },
-  "devDependencies": {
-    "chai": "~3.4.2",
-    "mocha": "~2.3.4"
   }
 }

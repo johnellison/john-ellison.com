@@ -16,14 +16,14 @@
     background-image: url('../images/video-bg-1920x1080.jpg');
     background-size: cover;
   }
-  @media #{$xlarge-up} {
-    padding-top: 18rem;
-    min-height: 1024px;
-  }
-  @media #{$xxlarge-up} {
-    padding-top: 25rem;
-    min-height: 1200px;
-  }
+  // @media #{$xlarge-up} {
+  //   padding-top: 18rem;
+  //   min-height: 1024px;
+  // }
+  // @media #{$xxlarge-up} {
+  //   padding-top: 25rem;
+  //   min-height: 1200px;
+  // }
   // this is my story
   em {
     text-align: center;
@@ -63,9 +63,9 @@ hgroup.welcome {
       font-size: 6.854rem;
       margin-bottom: 1.4rem;
     }
-    @media #{$xlarge-up} {
-      font-size: 8.6rem;
-    }
+    // @media #{$xlarge-up} {
+    //   font-size: 8.6rem;
+    // }
   }
   .subheader {
     color: #fff;
@@ -85,9 +85,9 @@ hgroup.welcome {
     @media #{$large-up} {
       font-size: 1.618rem;
     }
-    @media #{$xlarge-up} {
-      font-size: 2rem;
-    }
+    // @media #{$xlarge-up} {
+    //   font-size: 2rem;
+    // }
   }
 
 }
@@ -191,11 +191,11 @@ hgroup.welcome {
   }
 }
 
- // Portfolio 
+ // Portfolio
 
 #portfolio {
    background-color: $smoke;
-} 
+}
 
 .portfolio-container {
   @include grid-row();
@@ -247,7 +247,7 @@ hgroup.welcome {
   h3 {
     margin-bottom: 0;
   }
-  .subheader { 
+  .subheader {
     margin-top: 0;
     margin-bottom: .9rem;
   }
@@ -334,4 +334,4 @@ hgroup.welcome {
    color: white;
    display: inline-block;
  }
-} 
+}
