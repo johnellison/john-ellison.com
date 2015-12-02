@@ -38,7 +38,7 @@
         2,
         "single"
       ],
-      "no-undef": 1
+      "no-undef": 0
     }
   }
 }

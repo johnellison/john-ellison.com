@@ -3,7 +3,18 @@
   "private": true,
   "dependencies": {
     "jquery": "~2.1.1",
-    "modernizr": "~2.8.1"
+    "modernizr": "~2.8.1",
+    "foundation": "~5.5.3"
+  },
+  "overrides": {
+    "foundation": {
+      "main": [
+        "js/foundation/foundation.js",
+        "js/foundation/foundation.interchange.js",
+        "js/foundation/foundation.reveal.js",
+        "js/foundation/foundation.topbar.js"
+      ]
+    }
   },
   "devDependencies": {
     "chai": "~3.4.2",
