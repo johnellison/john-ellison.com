@@ -10,23 +10,23 @@
 // Animations
 
 @keyframes fade-down {
-  from { 
+  from {
     opacity: 0;
     transform: translateY(-150px);
    }
-  to   { 
-    opacity: 1; 
+  to   {
+    opacity: 1;
     transform: translateY(0);
   }
 }
 
 @keyframes fade-in {
-  from { 
+  from {
     opacity: 0;
     // transform: translateY(150px);
    }
-  to   { 
-    opacity: 1; 
+  to   {
+    opacity: 1;
     // transform: translateY(0);
   }
 }
@@ -141,11 +141,11 @@ code {
   font-size: .9rem;
 }
 
-pre[class*="language-"] { 
+pre[class*="language-"] {
   margin-bottom: 1.8rem;
 }
 
-span.drop-cap { 
+span.drop-cap {
   float: left;
   color: $accent-color;
   font-size: 5.9rem;
@@ -154,8 +154,8 @@ span.drop-cap {
   // padding-left: 3px;
   // margin-bottom: -1.2rem;
   margin-top: .55rem;
-  font-family: $header-font-family; 
-} 
+  font-family: $header-font-family;
+}
 
 blockquote {
   border-left: 1px solid $accent-color;
@@ -179,4 +179,8 @@ figcaption {
   p:last-child {
     margin-bottom: .9rem;
   }
+}
+
+.radius {
+  border-radius: $global-radius;
 }
