@@ -85,9 +85,9 @@ hgroup.welcome {
     @media #{$large-up} {
       font-size: 1.618rem;
     }
-    // @media #{$xlarge-up} {
-    //   font-size: 2rem;
-    // }
+    @media #{$xxlarge-up} {
+      color: darken($primary-color, 10%);
+    }
   }
 
 }
@@ -222,7 +222,7 @@ hgroup.welcome {
   }
   .portfolio-excerpt {
     @media #{$medium-up} {
-      padding-top: .9rem;
+      // padding-top: .9rem;
     }
   }
   &.odd {
