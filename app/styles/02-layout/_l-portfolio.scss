@@ -40,7 +40,7 @@
   }
 }
 
-.sprky-team-list, .thengine-team-list, .cloudegy-team-list {
+.people-list {
   list-style: none;
   display: table;
   margin: 0 auto;
@@ -55,7 +55,15 @@
         height: 150px;
         margin-bottom: .45rem;
       }
-  } 
+  }
+}
+
+.people-list--small {
+  @extend .people-list;
+  li img {
+    width: 64px;
+    height: 64px;
+  }
 }
 
 .sprky-wireframe {
