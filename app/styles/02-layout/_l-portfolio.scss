@@ -66,8 +66,8 @@
   }
 }
 
-.sprky-wireframe {
-  border: 1px solid $primary-color;
+.sketch {
+  border: 1px solid lighten($body-font-color, 20%);
 }
 
 .l-portfolio-screenshots {
