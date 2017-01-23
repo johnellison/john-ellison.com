@@ -1,0 +1,293 @@
+extends layout
+
+block title
+  | Prosper Case Study - John Ellison Portfolio
+
+block content
+  article
+    section.m-marquee#prosper
+      hgroup
+        h1 Prosper
+        h2.subheader Digital Product Design
+        h4.subheader
+        //- a.cta.white(href="http://prosper.community") See The Site
+    .main-article-container
+      .main-article-content
+        h2 Case Study
+        //- img(src="images/prosper.jpg" alt="a live screenshot of thengine's homepage on a macbook pro" title="Thengine MVP UX Device Mockup 1")
+        .callout
+          p As the founder of Prosper Community, I led a distributed team of over 100 volunteers to design and build an open source product that helps relief organizations make sense of "who is doing what&mdash;where" amidst the refugee crisis.
+
+        h2 Context
+        p
+          | In October, I attended 
+          a(href='https://twitter.com/willsh') John Willshire
+          | 's 
+          a(href='https://90days.john-ellison.com/content/all/?q=popular+thing+for+broken+thing') Popular Thing for Broken Thing
+          |  workshop facilitated by 
+          a(href='https://twitter.com/bensauer') Ben Sauer
+          |  at Clearleft for the 
+          a(href='http://clearleftinterns.tumblr.com/') Clearleft Interns
+          | . In the middle of the workshop I was staring at two sticky notes in front of me. The note on the left was a 'popular thing': Slack, a team communication app with a great user experience. The note on the right was a 'broken thing': Immigration and the refugee crisis, a complex crisis affecting millions worldwide.
+        p
+          img(src='/images/slack-and-migration.jpg', alt='my popular thing for broken thing combo: slack and migration')
+        p
+          | As the workshop progressed, I pitched my two sticky notes as a startup concept to the rest of the workshop participants. By the end of the session, I had a really deep feeling in my chest that I had to do this—I had to see if 'it' could work.
+        p
+          | I didn't have the clearest idea of what 'it' was, but in true Design Thinking fashion, I decided to think by building. I envisioned a global community of professionals working together to help refugees. I decided to build a landing page to test the concept.
+        p The very first iteration looked like this:
+        p
+          img(src='/images/refugee-community-landing-page.jpg', alt='')
+        p
+          | Quickly I realized that I had I spent 
+          em way too much time
+          |  on this first iteration. I was focusing on things that really 
+          em didn't matter
+          |  and forgetting the big picture of the value proposition and target audience. I should've started by making a lean canvas of some kind instead of building a website, but I guess that is what experience is for—to teach you things you didn't know before...
+        p
+          | I pitched the landing page to the team at Clearleft and asked for their feedback. I spoke to some people in a cafe and decided to pivot the concept to this:
+        p
+          img(src='/images/strc.jpg', alt='')
+        p
+          | Once I had receive the in-person feedback I was looking for, I decided to spread the word online. I sent out a few links and got a lot of humbling messages in response. Talented, skilled and experienced professionals from all over the world wanted to help.
+        p
+          | Within a month of launching the landing page, the proposition had changed dozens of times and finally it felt like we were headed in the right direction.
+        p
+          | Once we narrowed in on 'digital workers' as our target audience, we started gaining momentum and clarified our sense of identity and purpose. We suddenly had a team of 20 volunteers with a wide range of skills who were asking the same questions:
+        blockquote
+          p How can we help refugees prosper in Europe using design and technology?
+        p
+          | With this question as our guide, we iterated again and this time had a proper brand and ethos behind what we were proposing:
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-11-57-26-AM.png', alt='')
+        p
+          | Now that we knew who we were (
+          em a community of digital workers
+          | ), what we wanted to do (
+          em help refugees prosper in Europe
+          | ), we had to figure out the best way to do it.
+        p We wanted to find a 'first project' to test the validity of our concept.
+        h2 Project Process
+        p I've broken down the process of our product development cycle:
+        ol
+          li Research  
+          li Design  
+          li Data  
+          li Development  
+          li Iteration  
+        h3 1. Research
+        p
+          | We decided to research the wide range of problems that could be solved by a distributed team of volunteers using human-centered design and open-source technology. We were pretty clear about our constraints:
+        ul
+          li We didn't have a lot of time or money
+          li We needed to measure the impact of anything we built
+          li We wanted to be able to produce something that could  scale
+        p
+          | As a team of volunteers all over the world we began our research with three major activities:
+        ul
+          li User interviews
+          li Searching, reading, discussing
+          li Crowdsourcing
+        h4 User Interviews
+        p
+          | We wanted to begin with the 
+          em real human needs
+          |  that made up this complex humanitarian crisis, so we decided to interview as many people as we could to get an understanding of the problems of the crisis that we could solve as a community. We spoke to project founders, NGO staff, volunteers, refugees and government officials.
+        p
+          | We recorded our interviews and wrote reflections about what we experienced on our team's Slack channel. I started a Google Doc with a list of potential problems that could be solved. Other team members began to add to it as they discovered problems from their research.
+        h4 Searching, Reading, Discussing
+        p
+          | We used Google search and social networks to gather information about problems that people were experiencing on the ground across Europe. We wanted to understand what affected both refuge seekers and providers.
+        p
+          | After reading an article we would post it into our #research channel on Slack and provide a few comments or reactions. Sometimes it would spark bigger discussions and other times it would simply add to our growing list of problems that were candidates for solving.
+        h4 Crowdsourcing
+        p
+          | We reached out to the broader community of the crisis and asked for their feedback: What problems are you experiencing on the ground? Rather than put together a formal survey and review responses programatically, the crowdsourced problem lists served as fuel for our discussion and reflection. We began to see trends around certain topics and themes.
+        p
+          | With a weekly meeting in place we discussed through these as a team and decided democratically on the first problem we should try and solve as a community.
+        h3 2. Design
+        p
+          | To collect our initial research findings into one place and to provide the team with a central point of information regarding the project, I wrote a detailed brief.
+        h4 Problem
+        p In the brief, we defined the problem that we wanted to solve as follows:
+        blockquote
+          p
+            | Initiatives addressing the refugee crisis are scattered all across the web. This makes it difficult for refugees, volunteers, and donors to find exactly what they are looking for and leads to duplication of efforts.
+        h4 Solution
+        p We defined our proposed solution as:
+        blockquote
+          p
+            | Create a free-open source platform that centralizes all of the initiatives of the refugee crisis in one place.
+        h4 Approach
+        p We defined our approach as:
+        blockquote
+          p Using human-centered design so the application meets real human needs.
+        p
+          | With the limited resources available, we wanted to do as little design and development as possible with the maximum impact.
+        h4#audiences Audiences
+        p In our research we defined four target audiences for our application:
+        ul
+          li Refugees
+          li Volunteers
+          li Donors
+          li Project Founders
+        h4 Challenges
+        p
+          | We knew it would be difficult to perform proper user-centered design with a team of distributed volunteers, but we wanted to give it a try. We had some very skilled and experienced designers on board to help guide the design process, but we didn't have very much time.
+        p
+          | Design takes a consistent level of understanding, commitment and contribution. With volunteers all over the world contributing an hour or two a week, it proved to be 
+          em incredibly difficult
+          |  to gain real insights and to articulate those insights in a way that could be absorbed by the community.
+        p
+          | As a result, we ended up moving forward on a massive stack of assumptions with very little blueprint as to 
+          em what we were building
+          |  or 
+          em who we were building it for
+          | .
+        p
+          | Looking back, I would have tried to find a corporate sponsor (like Clearleft) to help us navigate through the Discovery and Design phase so that we had a clear blueprint and strong foundation for our community to build upon.
+        p
+          | But as we all know, working in perfect conditions never happens so we kept moving forward and did the best with what had, but as a result—a large amount of the project knowledge rested in the minds of a few core contributors and the rest of the community participated on the fringe.
+        h4 Prototyping
+        p
+          | As an approach for the MVP, we decided that we would use Google Sheets as a database and would render the data into a user interface using front-end javascript. 
+          a(href='https://twitter.com/Bobbrez') Bob Breznak
+          | , my former mentor at The Firehose Project, was the brains behind this concept.
+        p
+          | This approach would allow us to leverage our community of volunteers to clean the data within the spreadsheet. If we moved the data into a proper relational database, it would set a much higher bar for people to access the data or would require development resources to build even the simplest CRUD interface.
+        p
+          | In a quick 30-minute session, I threw up a landing page that expressed the concept of the application and asked users to submit their project to our database. We used Google Forms to gather the data into a spreadsheet.
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-11-40-PM.png', alt='refugee projects prototype')
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-13-23-PM.png', alt='refugee projects form')
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-16-54-PM.png', alt='refugee projects form data')
+        p
+          | With the approach for our MVP outlined, the next steps were all about gathering as much data as possible. As we began writing the form questions we realized the importance and complexity of data that we were facing.
+        h3 3. Data
+        p
+          | We wanted to reach a critical mass of project data that would provide value to our target users and would allow us to leverage user engagement and grow both the value we created as well as our user base.
+        h4 Creating A Data Model
+        p
+          | I worked with a couple of our developers who had strong experience in data management to develop a working data model:
+        p
+          img(src='/images/data-model-19-11-15.jpg', alt='data-model-19-11-15')
+        p
+          | We iterated upon the model a few times until we felt we had a good foundation to begin to publicize our landing page and ask people to submit their project data.
+          
+        h4 Gathering Data
+        p
+          | Within a few days we had 30-some projects listed in our spreadsheet. Within a couple weeks we had discovered that many people across Europe were collecting lists of projects in order to make sense of the chaotic crisis.
+        p
+          | Many of the people gathering lists had no design or development background and were motivated purely by the value that a list of projects gave them within their involvement in the crisis—usually as a volunteer or project founder of some kind.
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-20-51-PM.png', alt='')
+        h5 Importing Data
+        p
+          | We gathered a list of external sources of refugee project data and stuck them into our team's Google drive. One of our talented developers began building a tool that would allow us to import multiple external data sources into our spreadsheet.
+        p
+          | Once the import tool was working, we mapped the external data sources to our Google Sheets database and ran the script. We received over 130 submissions to the Google Form via our landing page, but after running the first data import we had over 1000 projects.
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-22-58-PM.png', alt='')
+        p
+          | It was exciting to see the script execute and watch as all the rows filled it with valuable data—knowing that each piece of data was one small component of a big complex puzzle that spanned from the Middle East to Scandanavia.
+        h3 4. Development
+        p
+          | With a working data model and a growing database, Bob had a couple hours to spare and decided to develop the prototype we had spoken about a while back. The result was a simple interface that allowed users to search through our database or browse projects by category.
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-24-15-PM.png', alt='')
+        p
+          | The code behind the prototype is pretty straightforward. Bob used a few libraries to handle core functions of the application:
+        ul
+          li
+            a(href='https://github.com/jsoma/tabletop') Tabletop.js
+            |  - Takes a Google Sheet and makes it easily accessible to Javascript via JSON
+          li
+            a(href='https://github.com/olivernn/lunr.js') Lunr.js
+            |  - A small full-text search library for use in the browser. It indexes JSON documents and provides a simple search interface for retrieving documents that best match text queries.
+          li
+            a(href='https://github.com/metafizzy/isotope') Isotope
+            |  - Filter and sort magical layouts
+        p
+          | In just 
+          a(href='https://github.com/prosper-community/gawa/blob/master/public/js/main.js') 204 lines of Javascript
+          | , Bob was able to link together the open source libraries above to accomplish the functional requirements of our prototype—including the measurement of search queries and user actions on a Mixpanel dashboard.
+        p
+          img(src='/images/Screen-Shot-2016-03-16-at-12-29-32-PM.png', alt='')
+        p
+          | I went through his code line-by-line to fully understand how it works. It's amazing how much I've learned simply from working with people who are smarter and more experienced than me.
+        p
+          | As soon as our database scaled, it created some bugs with  the prototyped code that Bob had written. With a basic understanding of how it worked, I was able to fix them and push it back into production. While I definitely couldn't have written the code from scratch it was a pleasure to be able to make a contribution to the javascript side of the codebase where necessary!
+        h3 5. Iteration
+        p
+          | Once we had a wider range of data, it created new issues and challenges for the UI. Some projects only had a name. Some projects had both an organization name 
+          em and
+          |  a project name. Some had incredibly long descriptions and some had no content at all.
+        p
+          | As a result of these issues, I spent some time re-thinking the way we displayed project information:
+        p
+          img(src='/images/project-card-mind-map-1080x764.jpg', alt='project card mind map')
+        p
+          img(src='/images/project-card-sketch-1-1080x764.jpg', alt='project card UI sketch 1')
+        p
+          img(src='/images/project-card-sketch-2-1080x764.jpg', alt='project card UI sketch 2')
+        p
+          | Once I was satisfied with a general approach for displaying project information on a card, I set out to implementing it for the live prototype:
+        p
+          img(src='/images/card-design.png', alt='Lale help project card')
+        h4 Back To The Canvas: Discerning The Way Forward
+        p
+          | Upon launching the prototype we had a significant contraction in the energy and size of our active team. It seemed pretty clear that we needed to find another way forward to further the mission of RefugeeProjects.com.
+        p
+          | I spent a few days trying variations of the Lean Canvas to discern the best way forward, asking myself:
+        blockquote
+          p How might RefugeeProjects.com be financially sustained?
+        p
+          img(src='/images/refugee-projects-canvas.jpg', alt='refugeeprojects.com lean canvas')
+        p
+          | In working over the canvas with a few designers at Clearleft, I realized I had a range of options regarding financial sustainability:
+        ul
+          li Crowdfund
+          li Traditional Fundraise
+          li Corporate sponsorship
+        p
+          | But those elements were just the financial side of things, it didn't even touch the reality of 
+          em how
+          |  we would actually design and develop the MVP that we'd built. It became pretty clear that we had three main approaches for execution moving forward:
+        ul
+          li Hire a full-time product team (very expensive but effective and powerful)
+          li
+            | Leverage volunteer efforts with a full-time project manager and volunteer coordinator
+          li
+            | Leverage corporate sponsorships in the form of 'product sprints' to increment the project forward version-by-version
+        p
+          | I quickly realized in performing these canvas activities that I'd completely run out of steam. I'd been working nights and weekends, thinking about this project every hour of the day. I had a huge sense of urgency to 
+          em get something out there
+          | , but I neglected some crucial considerations along the way.
+        p
+          | I should have considered these elements of financial sustainability and long-term growth and development from 
+          em the very onset
+          | . I blindly started out with a concept 
+          em a community of digital workers collaborating to help refugees prosper in Europe
+          |  without an understanding of what we would actually be doing together and how it would actually work.
+        
+        h2 Reflection & Projection
+        p  We took an infrastructure approach to a large problem and decided to create something that could potentially have a bigger more long-term impact than something that focused on immediate needs.
+        p
+          | We wanted to do something that only design and technology could do—to serve the community of the crisis in a way that other people couldn't. Building the central database of refugee crisis initiatives was a really challenging and complex process. Our application is just a proof of concept, but in testing it with users and sharing it with the world it became clear that there is a genuine need for this type of tool in the crisis landscape.
+        p
+          | A wide variety of actors (both refuge seekers and providers) benefit from making sense of who is doing what, where and from being able to communicate with the initiatives that meet their needs.
+        p
+          | Whether our application becomes an indispensable tool for refugee support organization or not, I feel that we've accomplished something special and have learned a lot along the way.
+          
+        h2 App Version 2.0
+        
+        h3 Mobile UI Flow
+        img(src="/images/prosper-mobile-ui-flow-1.0.jpg", alt="prosper mobile ui flow 1.0" data-interchange='[images/prosper-mobile-ui-flow-1.0.jpg, (default)], [images/prosper-mobile-ui-flow-1.0@2x.jpg, (retina)]')
+        
+        h3 Tablet UI Flow
+        img(src="/images/prosper-tablet-ui-flow-1.0.jpg", alt="prosper tablet ui flow 1.0" data-interchange='[images/prosper-tablet-ui-flow-1.0.jpg, (default)], [images/prosper-tablet-ui-flow-1.0@2x.jpg, (retina)]')
+        
+        h3 Desktop UI Flow
+        img(src="/images/prosper-desktop-ui-flow-1.0.jpg", alt="prosper desktop ui flow 1.0" data-interchange='[images/prosper-desktop-ui-flow-1.0.jpg, (default)], [images/prosper-desktop-ui-flow-1.0@2x.jpg, (retina)]')
