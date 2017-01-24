@@ -140,7 +140,7 @@ block content
 
         p We got the chess board marked up: 
 
-        pre: code.language-haml.
+        pre: code.
           - if game
             %p= raw show_opponent
             %table#gameboard{"data-game-id" => game.id, "data-game-state" => game.state, "data-your-turn" => your_turn?}
@@ -153,7 +153,7 @@ block content
 
         p We styled it to look like an actual chessboard instead of a table:
 
-        pre: code.language-scss.
+        pre: code.language-css.
           #gameboard {
             border-collapse: collapse;
             margin: 0 auto .5em auto;
@@ -485,8 +485,7 @@ block content
 
         p I decided to use Flexbox to create equal-height boxes for our code samples:
 
-        pre: code.language-scss.
-           
+        pre: code.language-css.
            .code-box-container {
              @include display(flex);
              @include justify-content(center);
@@ -575,3 +574,5 @@ block content
         h3 Press
         p The Huffington Post picked up an article where Firehose Project founder Ken Mazaika featured our chess app: 
           a(href="http://www.huffingtonpost.com/ken-mazaika/when-the-heck-did-learning-to-code-become-cool_b_7471938.html") huffingtonpost.com/ken-mazaika/when-the-heck-did-learning-to-code-become-cool
+
+      include views/includes/contact

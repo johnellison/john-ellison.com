@@ -7,7 +7,7 @@ block content
   article
     section.m-marquee#prosper
       hgroup
-        h1 Prosper
+        h1 Prosper App
         h2.subheader Digital Product Design
         h4.subheader
         //- a.cta.white(href="http://prosper.community") See The Site
@@ -18,63 +18,16 @@ block content
         .callout
           p As the founder of Prosper Community, I led a distributed team of over 100 volunteers to design and build an open source product that helps relief organizations make sense of "who is doing what&mdash;where" amidst the refugee crisis.
 
-        h2 Context
-        p
-          | In October, I attended 
-          a(href='https://twitter.com/willsh') John Willshire
-          | 's 
-          a(href='https://90days.john-ellison.com/content/all/?q=popular+thing+for+broken+thing') Popular Thing for Broken Thing
-          |  workshop facilitated by 
-          a(href='https://twitter.com/bensauer') Ben Sauer
-          |  at Clearleft for the 
-          a(href='http://clearleftinterns.tumblr.com/') Clearleft Interns
-          | . In the middle of the workshop I was staring at two sticky notes in front of me. The note on the left was a 'popular thing': Slack, a team communication app with a great user experience. The note on the right was a 'broken thing': Immigration and the refugee crisis, a complex crisis affecting millions worldwide.
-        p
-          img(src='/images/slack-and-migration.jpg', alt='my popular thing for broken thing combo: slack and migration')
-        p
-          | As the workshop progressed, I pitched my two sticky notes as a startup concept to the rest of the workshop participants. By the end of the session, I had a really deep feeling in my chest that I had to do this—I had to see if 'it' could work.
-        p
-          | I didn't have the clearest idea of what 'it' was, but in true Design Thinking fashion, I decided to think by building. I envisioned a global community of professionals working together to help refugees. I decided to build a landing page to test the concept.
-        p The very first iteration looked like this:
-        p
-          img(src='/images/refugee-community-landing-page.jpg', alt='')
-        p
-          | Quickly I realized that I had I spent 
-          em way too much time
-          |  on this first iteration. I was focusing on things that really 
-          em didn't matter
-          |  and forgetting the big picture of the value proposition and target audience. I should've started by making a lean canvas of some kind instead of building a website, but I guess that is what experience is for—to teach you things you didn't know before...
-        p
-          | I pitched the landing page to the team at Clearleft and asked for their feedback. I spoke to some people in a cafe and decided to pivot the concept to this:
-        p
-          img(src='/images/strc.jpg', alt='')
-        p
-          | Once I had receive the in-person feedback I was looking for, I decided to spread the word online. I sent out a few links and got a lot of humbling messages in response. Talented, skilled and experienced professionals from all over the world wanted to help.
-        p
-          | Within a month of launching the landing page, the proposition had changed dozens of times and finally it felt like we were headed in the right direction.
-        p
-          | Once we narrowed in on 'digital workers' as our target audience, we started gaining momentum and clarified our sense of identity and purpose. We suddenly had a team of 20 volunteers with a wide range of skills who were asking the same questions:
-        blockquote
-          p How can we help refugees prosper in Europe using design and technology?
-        p
-          | With this question as our guide, we iterated again and this time had a proper brand and ethos behind what we were proposing:
-        p
-          img(src='/images/Screen-Shot-2016-03-16-at-11-57-26-AM.png', alt='')
-        p
-          | Now that we knew who we were (
-          em a community of digital workers
-          | ), what we wanted to do (
-          em help refugees prosper in Europe
-          | ), we had to figure out the best way to do it.
-        p We wanted to find a 'first project' to test the validity of our concept.
         h2 Project Process
-        p I've broken down the process of our product development cycle:
+        p While the project wasn't a linear p rocess, for the sake of presenting this case study in logical parts, I've broken down our product cycle into five main phases:
+        
         ol
           li Research  
           li Design  
           li Data  
           li Development  
           li Iteration  
+          
         h3 1. Research
         p
           | We decided to research the wide range of problems that could be solved by a distributed team of volunteers using human-centered design and open-source technology. We were pretty clear about our constraints:
@@ -233,9 +186,26 @@ block content
         p
           img(src='/images/project-card-sketch-2-1080x764.jpg', alt='project card UI sketch 2')
         p
-          | Once I was satisfied with a general approach for displaying project information on a card, I set out to implementing it for the live prototype:
+          | Once I was satisfied with a general approach for displaying project information on a card, I set out to implementing it in code for the live prototype:
         p
           img(src='/images/card-design.png', alt='Lale help project card')
+          
+        h3 Alpha App
+        ul.m-image-grid
+          li
+            figure  
+              img(src="/images/refugee-projects-screenshot-0.jpg", alt="prosper app alpha screenshot 0")
+              figcaption Homescreen
+        
+          li
+            figure
+              img(src="/images/refugee-projects-screenshot-1.jpg", alt="prosper app alpha screenshot 1")
+              figcaption Search results
+          li
+            figure
+              img(src="/images/refugee-projects-screenshot-2.jpg", alt="prosper app alpha screenshot 2")
+              figcaption Map view
+        
         h4 Back To The Canvas: Discerning The Way Forward
         p
           | Upon launching the prototype we had a significant contraction in the energy and size of our active team. It seemed pretty clear that we needed to find another way forward to further the mission of RefugeeProjects.com.
@@ -271,17 +241,40 @@ block content
           | . I blindly started out with a concept 
           em a community of digital workers collaborating to help refugees prosper in Europe
           |  without an understanding of what we would actually be doing together and how it would actually work.
-        
-        h2 Reflection & Projection
-        p  We took an infrastructure approach to a large problem and decided to create something that could potentially have a bigger more long-term impact than something that focused on immediate needs.
-        p
-          | We wanted to do something that only design and technology could do—to serve the community of the crisis in a way that other people couldn't. Building the central database of refugee crisis initiatives was a really challenging and complex process. Our application is just a proof of concept, but in testing it with users and sharing it with the world it became clear that there is a genuine need for this type of tool in the crisis landscape.
-        p
-          | A wide variety of actors (both refuge seekers and providers) benefit from making sense of who is doing what, where and from being able to communicate with the initiatives that meet their needs.
-        p
-          | Whether our application becomes an indispensable tool for refugee support organization or not, I feel that we've accomplished something special and have learned a lot along the way.
           
-        h2 App Version 2.0
+        h2 Beta App Redesign
+        
+        p Soon after we launched the prototype we had a massive influx of learning about the app we designed, the people we intended for it to serve and how it needed to function to meet their needs. Having accumulated a massive amount of project knowledge, I had a very clear vision for the product we needed to create to solve the problems we identified.
+        
+        p This time I took to Sketch and started creating higher fidelity versions of the app. By this time our project stakeholders had grown to include other organizations and so we had the benefit and challenge of a more diverse project team to move the application forward.
+        
+        p There are some screenshots of the redesign below. You can also download the redesign files and take a closer look at the design documentation if you'd like:
+        
+        a.cta(href="https://www.dropbox.com/sh/mpr96lfte5fych2/AAAQPns8oe_MwdWet0GtI6tCa?dl=0") View Design Docs
+        
+        br
+        hr
+        
+        h3 Mobile Mockups
+        
+        ul.m-image-grid
+          li
+            figure
+              img(src="/images/prosper-app-v2-mobile-1.jpg", alt="prosper app v2 mobile screenshot 1", width="350" data-interchange='[images/prosper-app-v2-mobile-1.jpg, (default)], [images/prosper-app-v2-mobile-1@2x.jpg, (retina)]')
+              figcaption Home screen
+          li
+            figure
+              img(src="/images/prosper-app-v2-mobile-2.jpg", alt="prosper app v2 mobile screenshot 2", width="350" data-interchange='[images/prosper-app-v2-mobile-2.jpg, (default)], [images/prosper-app-v2-mobile-2@2x.jpg, (retina)]')
+              figcaption Search results
+          li
+            figure
+              img(src="/images/prosper-app-v2-mobile-3.jpg", alt="prosper app v2 mobile screenshot 3", width="350" data-interchange='[images/prosper-app-v2-mobile-3.jpg, (default)], [images/prosper-app-v2-mobile-3@2x.jpg, (retina)]')
+              figcaption Project page
+              
+          li
+            figure
+              img(src="/images/prosper-app-v2-mobile-4.jpg", alt="prosper app v2 mobile screenshot 4", width="350" data-interchange='[images/prosper-app-v2-mobile-4.jpg, (default)], [images/prosper-app-v2-mobile-4@2x.jpg, (retina)]')
+              figcaption Edit project page
         
         h3 Mobile UI Flow
         img(src="/images/prosper-mobile-ui-flow-1.0.jpg", alt="prosper mobile ui flow 1.0" data-interchange='[images/prosper-mobile-ui-flow-1.0.jpg, (default)], [images/prosper-mobile-ui-flow-1.0@2x.jpg, (retina)]')
@@ -291,3 +284,14 @@ block content
         
         h3 Desktop UI Flow
         img(src="/images/prosper-desktop-ui-flow-1.0.jpg", alt="prosper desktop ui flow 1.0" data-interchange='[images/prosper-desktop-ui-flow-1.0.jpg, (default)], [images/prosper-desktop-ui-flow-1.0@2x.jpg, (retina)]')
+        
+        h2 Reflection & Projection
+        p  We took an infrastructure approach to a large problem and decided to create something that could potentially have a bigger more long-term impact than something that focused on immediate needs.
+        p
+          | We wanted to do something that only design and technology could do—to serve the community of the crisis in a way that other people couldn't. Building the central database of refugee crisis initiatives was a really challenging and complex process. Our application is just a proof of concept, but in testing it with users and sharing it with the world it became clear that there is a genuine need for this type of tool in the crisis landscape.
+        p
+          | A wide variety of actors (both refuge seekers and providers) benefit from making sense of who is doing what, where and from being able to communicate with the initiatives that meet their needs.
+        p
+          | Whether our application becomes an indispensable tool for refugee support organization or not, I feel that we've accomplished something special and have learned a lot along the way.
+        
+      include views/includes/contact
