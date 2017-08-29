@@ -8,6 +8,7 @@
   .testimonial-author {
     @include grid-column(12);
     text-align: center;
+    h5 { margin-bottom: 0; }
 
     @media #{$medium-up} {
       @include grid-column(3);
